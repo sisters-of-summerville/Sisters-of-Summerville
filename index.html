@@ -264,10 +264,10 @@
       grid-template-rows: auto auto;
       gap: 0.6rem;
     }
-    .caption-box  { grid-column: 1/-1; grid-row: 1; aspect-ratio: auto; min-height: 160px; }
-    .nav-arrow-left  { grid-column: 1; grid-row: 2; }
-    .comic-img-wrap  { grid-column: 2; grid-row: 2; }
-    .nav-arrow-right { grid-column: 3; grid-row: 2; }
+    .caption-box  { grid-column: 1/-1; grid-row: 2; aspect-ratio: auto; min-height: 160px; }
+    .nav-arrow-left  { grid-column: 1; grid-row: 1; }
+    .comic-img-wrap  { grid-column: 2; grid-row: 1; }
+    .nav-arrow-right { grid-column: 3; grid-row: 1; }
   }
   @media (max-width: 480px) {
     .about-grid { grid-template-columns: 1fr; }
@@ -383,16 +383,16 @@
     <div class="viewer-row">
       <button class="nav-arrow nav-arrow-left"  id="arrowNewer" onclick="navigateComic(-1)" title="Newer episode">◀</button>
 
+      <div class="comic-img-wrap">
+        <img id="singleImg" src="" alt="">
+      </div>
+
       <div class="caption-box">
         <div class="caption-date"  id="singleDate"></div>
         <div class="caption-title" id="singleTitle"></div>
         <div class="caption-divider"></div>
         <p  class="caption-text"   id="singleIntro"></p>
         <div class="caption-tags"  id="singleTags"></div>
-      </div>
-
-      <div class="comic-img-wrap">
-        <img id="singleImg" src="" alt="">
       </div>
 
       <button class="nav-arrow nav-arrow-right" id="arrowOlder" onclick="navigateComic(1)" title="Older episode">▶</button>
@@ -596,10 +596,5 @@ document.addEventListener('keydown', e => {
     if (e.key === 'Escape')     backToGallery();
   }
 });
-// ── INIT
-loadComics();
-showTab('comics', null);
-document.querySelector('#view-gallery .nav-link').classList.add('active');
-</script>
-</body>
-</html>
+
+// ─�
