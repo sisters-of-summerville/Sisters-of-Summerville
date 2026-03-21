@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sisters of Summerville</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bangers&family=Nunito:wght@400;600;700&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-deep:    #0e0c10;
+    --bg-mid:     #16131b;
+    --bg-card:    #1e1a26;
+    --bg-hover:   #252030;
+    --amber:      #f5a623;
+    --amber-glow: #ff9900;
+    --blue-glow:  #3ab5ff;
+    --pink:       #e85fa0;
+    --text-main:  #f0eaf8;
+    --text-muted: #8a7fa0;
+    --border:     #2e2840;
+    --border-lit: #3d3560;
+    --radius:     14px;
+    --shadow-card: 0 4px 32px rgba(0,0,0,0.55);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Nunito', sans-serif;
+    background: var(--bg-deep);
+    color: var(--text-main);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* ── NOISE OVERLAY ── */
+  body::before {
+    content: '';
+    position: fixed; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none; z-index: 0; opacity: 0.35;
+  }
+
+  /* ── HEADER ── */
+  header {
+    position: relative;
+    text-align: center;
+    padding: 3.5rem 1.5rem 2.5rem;
+    background: linear-gradient(180deg, #100d18 0%, var(--bg-deep) 100%);
+    border-bottom: 1px solid var(--border);
+    overflow: hidden;
+  }
+
+  header::before {
+    content: '';
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 60% 40% at 50% 0%, rgba(245,166,35,0.12) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 30% at 20% 100%, rgba(58,181,255,0.07) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .site-eyebrow {
+    font-family: 'Caveat', cursive;
+    font-size: 1.1rem;
+    color: var(--amber);
+    letter-spacing: 0.08em;
+    margin-bottom: 0.4rem;
+    position: relative;
+  }
+
+  .site-title {
+    font-family: 'Bangers', cursive;
+    font-size: clamp(3rem, 8vw, 6rem);
+    letter-spacing: 0.04em;
+    line-height: 1;
+    position: relative;
+    background: linear-gradient(135deg, #ffe0a0 0%, var(--amber) 45%, #ff7a1a 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: drop-shadow(0 0 28px rgba(245,166,35,0.35));
+  }
+
+  .site-subtitle {
+    font-family: 'Bangers', cursive;
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+    letter-spacing: 0.2em;
+    color: var(--blue-glow);
+    margin-top: 0.25rem;
+    position: relative;
+    text-transform: uppercase;
+  }
+
+  .header-tagline {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    margin-top: 0.9rem;
+    font-style: italic;
+    position: relative;
+  }
+
+  .header-pets {
+    font-size: 2rem;
+    margin-top: 0.5rem;
+    position: relative;
+  }
+
+  /* ── NAV ── */
+  nav {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1rem 1.5rem;
+    background: var(--bg-mid);
+    border-bottom: 1px solid var(--border);
+    flex-wrap: wrap;
+    position: sticky; top: 0; z-index: 100;
+    backdrop-filter: blur(12px);
+  }
+
+  .nav-link {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    text-decoration: none;
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    border: 1px solid transparent;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    background: none;
+  }
+
+  .nav-link:hover, .nav-link.active {
+    color: var(--amber);
+    border-color: rgba(245,166,35,0.35);
+    background: rgba(245,166,35,0.08);
+  }
+
+  /* ── MAIN LAYOUT ── */
+  main { max-width: 1200px; margin: 0 auto; padding: 2rem 1.5rem 4rem; position: relative; z-index: 1; }
+
+  /* ── SECTION HEADINGS ── */
+  .section-head {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.8rem;
+  }
+
+  .section-head h2 {
+    font-family: 'Bangers', cursive;
+    font-size: 2rem;
+    letter-spacing: 0.06em;
+    color: var(--text-main);
+  }
+
+  .section-head .accent-line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, var(--border-lit), transparent);
+  }
+
+  /* ── SEARCH BAR ── */
+  .search-wrap {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .search-input {
+    flex: 1;
+    min-width: 220px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-lit);
+    border-radius: 10px;
+    padding: 0.7rem 1.1rem;
+    color: var(--text-main);
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+
+  .search-input::placeholder { color: var(--text-muted); }
+
+  .search-input:focus {
+    border-color: var(--amber);
+    box-shadow: 0 0 0 3px rgba(245,166,35,0.12);
+  }
+
+  .search-clear {
+    background: var(--bg-card);
+    border: 1px solid var(--border-lit);
+    border-radius: 10px;
+    padding: 0.7rem 1.1rem;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    cursor: pointer;
+    font-family: 'Nunito', sans-serif;
+    transition: all 0.2s;
+  }
+
+  .search-clear:hover { color: var(--text-main); border-color: var(--amber); }
+
+  .search-count {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+    font-style: italic;
+  }
+
+  .search-count span { color: var(--amber); font-style: normal; font-weight: 700; }
+
+  /* ── COMIC GRID ── */
+  .comic-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.75rem;
+  }
+
+  /* ── COMIC CARD ── */
+  .comic-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+    box-shadow: var(--shadow-card);
+    animation: fadeUp 0.4s ease both;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .comic-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--amber);
+    box-shadow: 0 8px 40px rgba(245,166,35,0.18), var(--shadow-card);
+  }
+
+  .comic-card:hover .card-img-wrap::after { opacity: 1; }
+
+  .card-img-wrap {
+    position: relative;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    background: var(--bg-mid);
+  }
+
+  .card-img-wrap::after {
+    content: '🔍 View';
+    position: absolute; inset: 0;
+    background: rgba(14,12,16,0.55);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Bangers', cursive;
+    font-size: 1.4rem;
+    letter-spacing: 0.08em;
+    color: var(--amber);
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+
+  .card-img-wrap img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+  }
+
+  .comic-card:hover .card-img-wrap img { transform: scale(1.03); }
+
+  .card-body { padding: 1.1rem 1.2rem 1.3rem; }
+
+  .card-episode {
+    font-family: 'Caveat', cursive;
+    font-size: 0.85rem;
+    color: var(--blue-glow);
+    margin-bottom: 0.25rem;
+    letter-spacing: 0.04em;
+  }
+
+  .card-title {
+    font-family: 'Bangers', cursive;
+    font-size: 1.3rem;
+    letter-spacing: 0.04em;
+    line-height: 1.2;
+    margin-bottom: 0.55rem;
+    color: var(--text-main);
+  }
+
+  .card-intro {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.55;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 1.2rem;
+    border-top: 1px solid var(--border);
+    background: rgba(0,0,0,0.15);
+  }
+
+  .card-date {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+  }
+
+  .card-share-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    color: var(--text-muted);
+    padding: 0.2rem 0.4rem;
+    border-radius: 6px;
+    transition: color 0.2s, background 0.2s;
+  }
+
+  .card-share-btn:hover { color: var(--amber); background: rgba(245,166,35,0.1); }
+
+  /* ── NO RESULTS ── */
+  .no-results {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 4rem 2rem;
+    color: var(--text-muted);
+  }
+
+  .no-results .emoji { font-size: 3rem; display: block; margin-bottom: 1rem; }
+  .no-results p { font-size: 1.1rem; }
+
+  /* ── MODAL ── */
+  .modal-backdrop {
+    display: none;
+    position: fixed; inset: 0;
+    background: rgba(8,7,12,0.92);
+    z-index: 200;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    backdrop-filter: blur(6px);
+  }
+
+  .modal-backdrop.open { display: flex; }
+
+  .modal {
+    background: var(--bg-card);
+    border: 1px solid var(--border-lit);
+    border-radius: var(--radius);
+    max-width: 780px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 24px 80px rgba(0,0,0,0.8), 0 0 0 1px rgba(245,166,35,0.1);
+    animation: modalPop 0.25s ease;
+  }
+
+  @keyframes modalPop {
+    from { opacity: 0; transform: scale(0.95) translateY(12px); }
+    to   { opacity: 1; transform: scale(1) translateY(0); }
+  }
+
+  .modal-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 1.4rem 1.6rem 1rem;
+    border-bottom: 1px solid var(--border);
+    gap: 1rem;
+  }
+
+  .modal-ep { font-family: 'Caveat', cursive; font-size: 1rem; color: var(--blue-glow); }
+
+  .modal-title {
+    font-family: 'Bangers', cursive;
+    font-size: 1.9rem;
+    letter-spacing: 0.04em;
+    line-height: 1.15;
+    background: linear-gradient(135deg, #ffe0a0, var(--amber));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .modal-close {
+    background: none;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    width: 36px; height: 36px;
+    color: var(--text-muted);
+    font-size: 1.2rem;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: all 0.2s;
+    display: flex; align-items: center; justify-content: center;
+  }
+
+  .modal-close:hover { border-color: var(--pink); color: var(--pink); }
+
+  .modal-img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    display: block;
+    background: var(--bg-mid);
+  }
+
+  .modal-body { padding: 1.5rem 1.6rem 0.5rem; }
+
+  .modal-intro {
+    font-size: 0.97rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+    white-space: pre-line;
+  }
+
+  .modal-share {
+    display: flex;
+    gap: 0.6rem;
+    padding: 1.2rem 1.6rem 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .share-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    font-size: 0.8rem;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: all 0.2s;
+    text-decoration: none;
+    letter-spacing: 0.04em;
+  }
+
+  .share-fb   { background: rgba(24,119,242,0.15); border-color: rgba(24,119,242,0.4); color: #6ba3f5; }
+  .share-x    { background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.18); color: #ccc; }
+  .share-copy { background: rgba(245,166,35,0.1); border-color: rgba(245,166,35,0.35); color: var(--amber); }
+
+  .share-btn:hover { filter: brightness(1.2); transform: translateY(-1px); }
+
+  /* ── ABOUT SECTION ── */
+  #about {
+    margin-top: 5rem;
+    background: var(--bg-mid);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 2.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  #about::before {
+    content: '';
+    position: absolute; top: -40px; right: -40px;
+    width: 200px; height: 200px;
+    background: radial-gradient(ellipse, rgba(245,166,35,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 2rem;
+    align-items: start;
+  }
+
+  .about-avatar {
+    width: 90px; height: 90px;
+    border-radius: 50%;
+    border: 3px solid var(--amber);
+    background: var(--bg-card);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 3rem;
+    box-shadow: 0 0 24px rgba(245,166,35,0.25);
+    flex-shrink: 0;
+  }
+
+  .about-name {
+    font-family: 'Bangers', cursive;
+    font-size: 1.9rem;
+    letter-spacing: 0.05em;
+    color: var(--text-main);
+    margin-bottom: 0.3rem;
+  }
+
+  .about-role {
+    font-family: 'Caveat', cursive;
+    font-size: 1rem;
+    color: var(--blue-glow);
+    margin-bottom: 0.9rem;
+  }
+
+  .about-bio {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin-bottom: 1.2rem;
+  }
+
+  .about-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+
+  .tag {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    border: 1px solid var(--border-lit);
+    color: var(--text-muted);
+    font-weight: 700;
+    letter-spacing: 0.04em;
+  }
+
+  .tag-amber { border-color: rgba(245,166,35,0.4); color: var(--amber); background: rgba(245,166,35,0.07); }
+  .tag-blue  { border-color: rgba(58,181,255,0.35); color: var(--blue-glow); background: rgba(58,181,255,0.07); }
+  .tag-pink  { border-color: rgba(232,95,160,0.35); color: var(--pink); background: rgba(232,95,160,0.07); }
+
+  .about-links { margin-top: 1.2rem; display: flex; gap: 0.75rem; flex-wrap: wrap; }
+
+  .about-link {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    border: 1px solid var(--border-lit);
+    padding: 0.35rem 0.85rem;
+    border-radius: 8px;
+    transition: all 0.2s;
+  }
+
+  .about-link:hover { color: var(--amber); border-color: var(--amber); }
+
+  /* ── NEWSLETTER ── */
+  #newsletter {
+    margin-top: 2.5rem;
+    background: linear-gradient(135deg, rgba(58,181,255,0.06) 0%, rgba(245,166,35,0.06) 100%);
+    border: 1px solid var(--border-lit);
+    border-radius: var(--radius);
+    padding: 2.2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .newsletter-title {
+    font-family: 'Bangers', cursive;
+    font-size: 2rem;
+    letter-spacing: 0.06em;
+    margin-bottom: 0.5rem;
+  }
+
+  .newsletter-sub {
+    font-size: 0.92rem;
+    color: var(--text-muted);
+    margin-bottom: 1.4rem;
+    line-height: 1.6;
+  }
+
+  .newsletter-form {
+    display: flex;
+    gap: 0.6rem;
+    max-width: 460px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+  }
+
+  .newsletter-input {
+    flex: 1;
+    min-width: 200px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-lit);
+    border-radius: 10px;
+    padding: 0.7rem 1.1rem;
+    color: var(--text-main);
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  .newsletter-input::placeholder { color: var(--text-muted); }
+  .newsletter-input:focus { border-color: var(--amber); }
+
+  .newsletter-btn {
+    background: linear-gradient(135deg, var(--amber-glow), var(--amber));
+    border: none;
+    border-radius: 10px;
+    padding: 0.7rem 1.5rem;
+    color: #0e0c10;
+    font-family: 'Bangers', cursive;
+    font-size: 1.1rem;
+    letter-spacing: 0.08em;
+    cursor: pointer;
+    transition: filter 0.2s, transform 0.2s;
+    white-space: nowrap;
+  }
+
+  .newsletter-btn:hover { filter: brightness(1.1); transform: translateY(-2px); }
+
+  .newsletter-note {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-top: 0.75rem;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    text-align: center;
+    padding: 2.5rem 1.5rem;
+    border-top: 1px solid var(--border);
+    color: var(--text-muted);
+    font-size: 0.82rem;
+    line-height: 1.8;
+    position: relative; z-index: 1;
+  }
+
+  footer a { color: var(--amber); text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+
+  /* ── TOAST ── */
+  .toast {
+    position: fixed; bottom: 1.5rem; right: 1.5rem;
+    background: var(--bg-card);
+    border: 1px solid var(--amber);
+    border-radius: 10px;
+    padding: 0.7rem 1.2rem;
+    color: var(--amber);
+    font-size: 0.9rem;
+    font-weight: 700;
+    z-index: 999;
+    transform: translateY(80px);
+    opacity: 0;
+    transition: all 0.3s ease;
+    pointer-events: none;
+  }
+
+  .toast.show { transform: translateY(0); opacity: 1; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 560px) {
+    .about-grid { grid-template-columns: 1fr; }
+    .about-avatar { margin: 0 auto; }
+    .comic-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ── SCROLL BAR ── */
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--bg-deep); }
+  ::-webkit-scrollbar-thumb { background: var(--border-lit); border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: var(--amber); }
+</style>
+</head>
+<body>
+
+<!-- ── HEADER ── -->
+<header>
+  <div class="site-eyebrow">✨ A Daily AI-Generated Comic Strip ✨</div>
+  <h1 class="site-title">Sisters of Summerville</h1>
+  <div class="site-subtitle">Honey Bear &amp; Bootsie Belle</div>
+  <p class="header-tagline">One fluffy Yorkie. One scheming tuxedo cat. Infinite chaos.</p>
+  <div class="header-pets">🐶🐱</div>
+</header>
+
+<!-- ── NAV ── -->
+<nav>
+  <a class="nav-link active" onclick="showSection('comics')">📖 Comics</a>
+  <a class="nav-link" onclick="showSection('about')">🎨 About</a>
+  <a class="nav-link" onclick="showSection('newsletter')">📬 Newsletter</a>
+  <a class="nav-link" href="https://facebook.com/profile.php?id=61581673621814" target="_blank">👍 Facebook</a>
+</nav>
+
+<!-- ── MAIN ── -->
+<main>
+
+  <!-- COMICS SECTION -->
+  <section id="section-comics">
+    <div class="section-head">
+      <h2>📚 All Episodes</h2>
+      <div class="accent-line"></div>
+    </div>
+
+    <div class="search-wrap">
+      <input class="search-input" id="searchInput" type="text" placeholder="🔎  Search episodes by title or keyword…" oninput="handleSearch()">
+      <button class="search-clear" onclick="clearSearch()">✕ Clear</button>
+    </div>
+
+    <p class="search-count" id="searchCount"></p>
+
+    <div class="comic-grid" id="comicGrid"></div>
+  </section>
+
+  <!-- ABOUT SECTION (hidden by default) -->
+  <section id="section-about" style="display:none;">
+    <div id="about">
+      <div class="section-head" style="margin-bottom:1.5rem;">
+        <h2>🎨 About the Creator</h2>
+        <div class="accent-line"></div>
+      </div>
+      <div class="about-grid">
+        <div class="about-avatar">🎨</div>
+        <div>
+          <div class="about-name">Sisters of Summerville</div>
+          <div class="about-role">Daily AI Comic Strip · Summerville, SC</div>
+          <p class="about-bio">
+            Welcome to Sisters of Summerville! I'm a creator, storyteller, and AI enthusiast based in Summerville, SC. 
+            Every day, Honey Bear (a sassy Yorkie) and Bootsie Belle (a scheming tuxedo cat) get into fresh trouble — powered entirely by AI image generation and a whole lot of love for pet chaos.
+            <br><br>
+            This project blends my passion for AI, multimedia storytelling, and the very real personalities of my two furry sisters. 
+            <strong style="color:var(--text-main);">6 months of episodes and counting!</strong>
+          </p>
+          <div class="about-tags">
+            <span class="tag tag-amber">AI Art</span>
+            <span class="tag tag-amber">Generative AI</span>
+            <span class="tag tag-blue">Multimedia</span>
+            <span class="tag tag-blue">Summerville SC</span>
+            <span class="tag tag-pink">Yorkie Life</span>
+            <span class="tag tag-pink">Tuxedo Cat</span>
+            <span class="tag">Daily Comic</span>
+            <span class="tag">LangChain</span>
+          </div>
+          <div class="about-links">
+            <a class="about-link" href="https://facebook.com/profile.php?id=61581673621814" target="_blank">👍 Facebook</a>
+            <a class="about-link" href="https://github.com" target="_blank">🐙 GitHub Portfolio</a>
+            <a class="about-link" href="mailto:hello@example.com">✉️ Contact</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER SECTION (hidden by default) -->
+  <section id="section-newsletter" style="display:none;">
+    <div id="newsletter">
+      <div class="newsletter-title">📬 Get New Episodes Delivered</div>
+      <p class="newsletter-sub">
+        New comic every day! Subscribe and be the first to see Honey Bear's latest disaster<br>
+        and Bootsie Belle's inevitable scheme.
+      </p>
+      <div class="newsletter-form">
+        <input class="newsletter-input" type="email" placeholder="your@email.com" id="newsletterEmail">
+        <button class="newsletter-btn" onclick="handleNewsletterSubmit()">SUBSCRIBE</button>
+      </div>
+      <p class="newsletter-note">No spam. Just chaos. Unsubscribe anytime. 🐾</p>
+    </div>
+  </section>
+
+</main>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <p>🐾 <strong>Sisters of Summerville</strong> · Daily AI Comic Strip · Summerville, SC</p>
+  <p>Created with AI · <a href="https://facebook.com/profile.php?id=61581673621814" target="_blank">Facebook</a> · <a href="https://github.com" target="_blank">GitHub</a></p>
+  <p style="margin-top:0.5rem;font-size:0.72rem;opacity:0.5;">#SistersOfSummerville #YorkieLife #TuxedoCat #PetComedy #AIChaos</p>
+</footer>
+
+<!-- ── MODAL ── -->
+<div class="modal-backdrop" id="modalBackdrop" onclick="closeModalOnBackdrop(event)">
+  <div class="modal" id="modal">
+    <div class="modal-header">
+      <div>
+        <div class="modal-ep" id="modalEp"></div>
+        <div class="modal-title" id="modalTitle"></div>
+      </div>
+      <button class="modal-close" onclick="closeModal()">✕</button>
+    </div>
+    <img class="modal-img" id="modalImg" src="" alt="">
+    <div class="modal-body">
+      <p class="modal-intro" id="modalIntro"></p>
+    </div>
+    <div class="modal-share" id="modalShare"></div>
+  </div>
+</div>
+
+<!-- ── TOAST ── -->
+<div class="toast" id="toast"></div>
+
+<script>
+// ═══════════════════════════════════════════════════════
+//  COMIC DATA — Add new episodes here (newest first!)
+//  Each entry: { ep, date, title, intro, image, tags }
+//  image: path to your image file, e.g. "images/ep007.png"
+//         OR a full URL to a hosted image
+// ═══════════════════════════════════════════════════════
+const COMICS = [
+  {
+    ep: "Ep. 7",
+    date: "March 20, 2025",
+    title: "Siri AI-Collar",
+    image: "images/ep007.png", // ← Replace with your image path or URL
+    tags: ["AI", "gadgets", "Siri", "chaos"],
+    intro: `What could possibly go wrong when Dad brings home the future of pet technology?
+
+When Honey Bear becomes the proud…and slightly panicked…test subject for a glowing AI-powered collar with GPS tracking, live streaming video, and voice-activated Siri inside…chaos is only a bark away!
+
+Bootsie Belle launches a full-scale feline cyber-intrusion behind the couch, wires flying and curiosity blazing. But when hacking fails, Honey Bear turns to voice commands. Unfortunately, Siri seems to have an AI hearing problem and Honey Bear's snacks are in danger!
+
+One tiny Yorkie learns that smart technology isn't always…well…smart.`
+  },
+  {
+    ep: "Ep. 6",
+    date: "March 19, 2025",
+    title: "The Great Couch Heist",
+    image: "images/ep006.png",
+    tags: ["couch", "snacks", "teamwork"],
+    intro: `Honey Bear discovers the last of the treat bag wedged deep in the couch cushions. A simple mission… or so she thought.
+
+Bootsie Belle has been watching. Planning. Waiting for exactly this moment to establish permanent couch sovereignty. 
+
+What follows is a masterclass in feline negotiation, furniture acrobatics, and one very confused Yorkie wondering how she ended up sleeping on the floor.`
+  },
+  {
+    ep: "Ep. 5",
+    date: "March 18, 2025",
+    title: "Zoom Call Chaos",
+    image: "images/ep005.png",
+    tags: ["zoom", "work", "interruption"],
+    intro: `Dad is on a Very Important Work Call. The camera is on. The whole company is watching.
+
+Honey Bear decides this is the perfect moment for her most dramatic entrance yet. Bootsie Belle, naturally, positions herself directly in front of the camera for maximum exposure.
+
+Fifteen executives. Two pets. Zero professionalism. Everyone agrees it was the best meeting in years.`
+  },
+  {
+    ep: "Ep. 4",
+    date: "March 17, 2025",
+    title: "The Forbidden Sunbeam",
+    image: "images/ep004.png",
+    tags: ["nap", "sunbeam", "territory"],
+    intro: `There is one perfect sunbeam on the living room floor. It appears daily, exactly at 2pm, and lasts for precisely 47 minutes.
+
+Both sisters have laid claim. Both sisters are prepared to defend that claim with naps, glares, and increasingly dramatic repositioning.
+
+A story of warmth, rivalry, and the universal truth that the best spot is always the one someone else is sitting in.`
+  },
+  {
+    ep: "Ep. 3",
+    date: "March 16, 2025",
+    title: "Delivery Day Disaster",
+    image: "images/ep003.png",
+    tags: ["delivery", "boxes", "chaos"],
+    intro: `The doorbell rings. A large mysterious box arrives. 
+
+For Honey Bear, this is a Level Five Intruder Alert requiring immediate investigation and possibly some barking. For Bootsie Belle, this is simply a new throne.
+
+The packing peanuts end up EVERYWHERE. Nobody is sorry.`
+  },
+  {
+    ep: "Ep. 2",
+    date: "March 15, 2025",
+    title: "The Great Escape",
+    image: "images/ep002.png",
+    tags: ["escape", "backyard", "adventure"],
+    intro: `Honey Bear has discovered a gap in the fence. Freedom lies beyond! Squirrels! New smells! Infinite adventure!
+
+Bootsie Belle watches from the window with the quiet confidence of a cat who has never once had the urge to leave a perfectly air-conditioned home.
+
+"I'll be right back," says Honey Bear.
+She is not right back.`
+  },
+  {
+    ep: "Ep. 1",
+    date: "March 14, 2025",
+    title: "First Day",
+    image: "images/ep001.png",
+    tags: ["origin", "introduction", "family"],
+    intro: `Every legend has an origin story.
+
+Honey Bear the Yorkie — enthusiastic, bow-wearing, deeply suspicious of the vacuum cleaner. 
+Bootsie Belle the tuxedo cat — sophisticated, plotting, professionally judgmental.
+
+They didn't choose to be sisters. But somehow, against all odds, they make it work.
+(Mostly. Sort of. On Tuesdays.)`
+  }
+];
+
+// ═══════════════════════════════════════════════════════
+//  RENDER ENGINE
+// ═══════════════════════════════════════════════════════
+let filteredComics = [...COMICS];
+
+function renderGrid(comics) {
+  const grid = document.getElementById('comicGrid');
+  const count = document.getElementById('searchCount');
+
+  count.innerHTML = comics.length === COMICS.length
+    ? `Showing all <span>${COMICS.length}</span> episodes`
+    : `Found <span>${comics.length}</span> of ${COMICS.length} episodes`;
+
+  if (comics.length === 0) {
+    grid.innerHTML = `<div class="no-results"><span class="emoji">🔍</span><p>No episodes found. Try a different search!</p></div>`;
+    return;
+  }
+
+  grid.innerHTML = comics.map((c, i) => `
+    <article class="comic-card" onclick="openModal(${COMICS.indexOf(c)})" style="animation-delay:${i * 0.04}s">
+      <div class="card-img-wrap">
+        <img src="${c.image}" alt="${c.title}" onerror="this.src='https://placehold.co/600x600/1e1a26/f5a623?text=${encodeURIComponent(c.title)}'">
+      </div>
+      <div class="card-body">
+        <div class="card-episode">${c.ep} · ${c.date}</div>
+        <div class="card-title">${c.title}</div>
+        <p class="card-intro">${c.intro.replace(/\n/g,' ')}</p>
+      </div>
+      <div class="card-footer">
+        <span class="card-date">${c.tags.slice(0,3).map(t=>`#${t}`).join(' ')}</span>
+        <button class="card-share-btn" onclick="event.stopPropagation(); shareComic(${COMICS.indexOf(c)})" title="Share">⬆️</button>
+      </div>
+    </article>
+  `).join('');
+}
+
+function handleSearch() {
+  const q = document.getElementById('searchInput').value.toLowerCase().trim();
+  if (!q) { filteredComics = [...COMICS]; }
+  else {
+    filteredComics = COMICS.filter(c =>
+      c.title.toLowerCase().includes(q) ||
+      c.intro.toLowerCase().includes(q) ||
+      c.ep.toLowerCase().includes(q) ||
+      c.tags.some(t => t.toLowerCase().includes(q))
+    );
+  }
+  renderGrid(filteredComics);
+}
+
+function clearSearch() {
+  document.getElementById('searchInput').value = '';
+  filteredComics = [...COMICS];
+  renderGrid(filteredComics);
+}
+
+// ═══════════════════════════════════════════════════════
+//  MODAL
+// ═══════════════════════════════════════════════════════
+function openModal(idx) {
+  const c = COMICS[idx];
+  document.getElementById('modalEp').textContent = `${c.ep} · ${c.date}`;
+  document.getElementById('modalTitle').textContent = c.title;
+  document.getElementById('modalImg').src = c.image;
+  document.getElementById('modalImg').onerror = function(){ this.src=`https://placehold.co/780x780/1e1a26/f5a623?text=${encodeURIComponent(c.title)}`; };
+  document.getElementById('modalIntro').textContent = c.intro;
+
+  const shareUrl = `${window.location.href}#${c.ep.replace(/\s+/g,'')}`;
+  const shareText = `Sisters of Summerville: "${c.title}" 🐶🐱 #SistersOfSummerville`;
+
+  document.getElementById('modalShare').innerHTML = `
+    <a class="share-btn share-fb" href="https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}&quote=${encodeURIComponent(shareText)}" target="_blank">👍 Facebook</a>
+    <a class="share-btn share-x"  href="https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(shareUrl)}" target="_blank">🐦 X / Twitter</a>
+    <button class="share-btn share-copy" onclick="copyShareLink('${shareUrl}')">🔗 Copy Link</button>
+  `;
+
+  document.getElementById('modalBackdrop').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+  document.getElementById('modalBackdrop').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function closeModalOnBackdrop(e) {
+  if (e.target === document.getElementById('modalBackdrop')) closeModal();
+}
+
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+// ═══════════════════════════════════════════════════════
+//  SHARE
+// ═══════════════════════════════════════════════════════
+function shareComic(idx) {
+  const c = COMICS[idx];
+  const shareUrl = window.location.href;
+  const text = `Sisters of Summerville: "${c.title}" 🐶🐱 ${shareUrl}`;
+  if (navigator.share) {
+    navigator.share({ title: c.title, text, url: shareUrl }).catch(()=>{});
+  } else {
+    copyShareLink(shareUrl);
+  }
+}
+
+function copyShareLink(url) {
+  navigator.clipboard.writeText(url).then(() => showToast('🔗 Link copied!')).catch(()=> showToast('Could not copy'));
+}
+
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2800);
+}
+
+// ═══════════════════════════════════════════════════════
+//  SECTION NAV
+// ═══════════════════════════════════════════════════════
+function showSection(name) {
+  ['comics','about','newsletter'].forEach(s => {
+    document.getElementById(`section-${s}`).style.display = (s === name) ? 'block' : 'none';
+  });
+  document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+  event.target.classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// ═══════════════════════════════════════════════════════
+//  NEWSLETTER (placeholder — wire to Mailchimp / ConvertKit)
+// ═══════════════════════════════════════════════════════
+function handleNewsletterSubmit() {
+  const email = document.getElementById('newsletterEmail').value.trim();
+  if (!email || !email.includes('@')) { showToast('Please enter a valid email!'); return; }
+  showToast('🐾 Thanks! You\'re on the list!');
+  document.getElementById('newsletterEmail').value = '';
+}
+
+// ── INIT ──
+renderGrid(COMICS);
+</script>
+</body>
+</html>
