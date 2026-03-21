@@ -44,8 +44,8 @@
     line-height: 0;
   }
   .site-banner img {
-    max-width: 640px;
-    width: 88%;
+    max-width: 420px;
+    width: 60%;
     height: auto;
     display: inline-block;
   }
@@ -145,7 +145,7 @@
   #view-single { display: none; }
 
   .single-banner { background: #000; text-align: center; padding: 0.5rem 0 0; line-height: 0; }
-  .single-banner img { max-width: 520px; width: 78%; height: auto; display: inline-block; }
+  .single-banner img { max-width: 360px; width: 52%; height: auto; display: inline-block; }
 
   .comic-viewer { max-width: 1060px; margin: 0.9rem auto 0; padding: 0 1rem 0.5rem; }
 
@@ -597,3 +597,9 @@ document.addEventListener('keydown', e => {
 });
 
 // ── INIT
+loadComics();
+showTab('comics', null);
+document.querySelector('#view-gallery .nav-link').classList.add('active');
+</script>
+</body>
+</html>
