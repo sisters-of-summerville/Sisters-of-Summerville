@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- cf-email-obfuscation: off -->
+<title>Sisters of Summerville</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bangers&family=Nunito:wght@400;600;700&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-deep:    #0a0808;
+    --bg-mid:     #131010;
+    --bg-card:    #1c1818;
+    --amber:      #f5a623;
+    --amber-glow: #ff9900;
+    --text-main:  #f0eaf8;
+    --text-muted: #8a7f7f;
+    --border:     #2a2020;
+    --border-lit: #3d2f20;
+    --radius:     12px;
+    --shadow:     0 4px 32px rgba(0,0,0,0.6);
+  }
+
+  html { zoom: 1.25; }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Nunito', sans-serif;
+    background: var(--bg-deep);
+    color: var(--text-main);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* ── BANNER ── */
+  .site-banner {
+    display: block;
+    width: 100%;
+    background: #000;
+    text-align: center;
+    padding: 0.5rem 0 0;
+    line-height: 0;
+  }
+  .site-banner img {
+    max-width: 420px;
+    width: 60%;
+    height: auto;
+    display: inline-block;
+  }
+
+  /* ── NAV ── */
+  nav {
+    display: flex;
+    justify-content: center;
+    gap: 0.4rem;
+    padding: 0.55rem 1rem;
+    background: var(--bg-mid);
+    border-bottom: 1px solid var(--border-lit);
+    flex-wrap: wrap;
+    position: sticky; top: 0; z-index: 100;
+    backdrop-filter: blur(12px);
+  }
+  .nav-link {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700; font-size: 0.78rem;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    color: var(--text-muted); text-decoration: none;
+    padding: 0.3rem 0.85rem; border-radius: 20px;
+    border: 1px solid transparent;
+    transition: all 0.2s; cursor: pointer; background: none;
+  }
+  .nav-link:hover, .nav-link.active {
+    color: var(--amber);
+    border-color: rgba(245,166,35,0.35);
+    background: rgba(245,166,35,0.08);
+  }
+
+  /* ── GALLERY MAIN ── */
+  main { max-width: 1200px; margin: 0 auto; padding: 1.4rem 1.5rem 3rem; }
+
+  .section-head { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.2rem; }
+  .section-head h2 { font-family: 'Bangers', cursive; font-size: 1.7rem; letter-spacing: 0.06em; white-space: nowrap; }
+  .accent-line { flex: 1; height: 1px; background: linear-gradient(90deg, var(--border-lit), transparent); }
+
+  .search-wrap { display: flex; gap: 0.6rem; margin-bottom: 0.9rem; flex-wrap: wrap; }
+  .search-input {
+    flex: 1; min-width: 200px;
+    background: var(--bg-card); border: 1px solid var(--border-lit);
+    border-radius: 10px; padding: 0.55rem 1rem;
+    color: var(--text-main); font-family: 'Nunito', sans-serif; font-size: 0.88rem; outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .search-input::placeholder { color: var(--text-muted); }
+  .search-input:focus { border-color: var(--amber); box-shadow: 0 0 0 3px rgba(245,166,35,0.1); }
+  .search-clear {
+    background: var(--bg-card); border: 1px solid var(--border-lit);
+    border-radius: 10px; padding: 0.55rem 0.95rem;
+    color: var(--text-muted); font-size: 0.82rem;
+    cursor: pointer; font-family: 'Nunito', sans-serif; transition: all 0.2s;
+  }
+  .search-clear:hover { color: var(--text-main); border-color: var(--amber); }
+
+  .search-count { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 1.1rem; font-style: italic; }
+  .search-count span { color: var(--amber); font-style: normal; font-weight: 700; }
+
+  /* ── GRID ── */
+  .comic-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    gap: 1.25rem;
+  }
+  .comic-card {
+    background: var(--bg-card); border: 1px solid var(--border);
+    border-radius: var(--radius); overflow: hidden;
+    cursor: pointer; transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+    box-shadow: var(--shadow); animation: fadeUp 0.35s ease both;
+  }
+  @keyframes fadeUp { from { opacity:0; transform:translateY(14px); } to { opacity:1; transform:translateY(0); } }
+  .comic-card:hover { transform: translateY(-4px); border-color: var(--amber); box-shadow: 0 8px 36px rgba(245,166,35,0.15), var(--shadow); }
+
+  .card-img-wrap { position: relative; aspect-ratio: 1/1; overflow: hidden; background: var(--bg-mid); }
+  .card-img-wrap::after {
+    content: '🔍 Read'; position: absolute; inset: 0;
+    background: rgba(10,8,8,0.5); display: flex; align-items: center; justify-content: center;
+    font-family: 'Bangers', cursive; font-size: 1.25rem; letter-spacing: 0.08em; color: var(--amber);
+    opacity: 0; transition: opacity 0.2s;
+  }
+  .comic-card:hover .card-img-wrap::after { opacity: 1; }
+  .card-img-wrap img { width:100%; height:100%; object-fit:cover; transition: transform 0.3s; }
+  .comic-card:hover .card-img-wrap img { transform: scale(1.03); }
+
+  .card-body { padding: 0.85rem 1rem 0.95rem; }
+  .card-meta { font-family: 'Caveat', cursive; font-size: 0.8rem; color: #3ab5ff; margin-bottom: 0.15rem; }
+  .card-title { font-family: 'Bangers', cursive; font-size: 1.15rem; letter-spacing: 0.04em; margin-bottom: 0.35rem; }
+  .card-intro { font-size: 0.8rem; color: var(--text-muted); line-height: 1.5;
+    display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+
+  .no-results { grid-column: 1/-1; text-align: center; padding: 3rem; color: var(--text-muted); }
+
+  /* ══════════════════════════════════════
+     SINGLE COMIC VIEW
+  ══════════════════════════════════════ */
+  #view-single { display: none; }
+
+  .single-banner { background: #000; text-align: center; padding: 0.5rem 0 0; line-height: 0; }
+  .single-banner img { max-width: 360px; width: 52%; height: auto; display: inline-block; }
+
+  .comic-viewer { max-width: 1060px; margin: 0.9rem auto 0; padding: 0 1rem 0.5rem; }
+
+  /* Row 2 grid */
+  .viewer-row {
+    display: grid;
+    grid-template-columns: 52px 1fr 1fr 52px;
+    gap: 0.9rem;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  .nav-arrow {
+    display: flex; align-items: center; justify-content: center;
+    width: 44px; height: 44px;
+    border-radius: 50%; border: 2px solid var(--border-lit);
+    background: var(--bg-card); color: var(--amber);
+    font-size: 1.3rem; cursor: pointer; transition: all 0.2s;
+    flex-shrink: 0; align-self: center;
+    user-select: none; line-height: 1;
+  }
+  .nav-arrow:hover:not(.disabled) { background: rgba(245,166,35,0.14); border-color: var(--amber); transform: scale(1.08); }
+  .nav-arrow.disabled { color: #2e2828; border-color: #1e1a1a; cursor: default; pointer-events: none; }
+
+  /* Caption box */
+  .caption-box {
+    background: var(--bg-card); border: 1px solid var(--border-lit);
+    border-radius: var(--radius); padding: 1.1rem 1.3rem;
+    aspect-ratio: 1/1; overflow-y: auto;
+    display: flex; flex-direction: column; gap: 0.55rem;
+  }
+  .caption-date { font-family: 'Caveat', cursive; font-size: 0.92rem; color: #3ab5ff; }
+  .caption-title {
+    font-family: 'Bangers', cursive; font-size: 1.55rem; letter-spacing: 0.04em;
+    background: linear-gradient(135deg, #ffe0a0, var(--amber));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    line-height: 1.15;
+  }
+  .caption-divider { height: 1px; background: var(--border-lit); }
+  .caption-text { font-size: 0.86rem; color: var(--text-muted); line-height: 1.65; white-space: pre-line; flex: 1; }
+  .caption-tags { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: auto; padding-top: 0.4rem; }
+  .caption-tag { font-size: 0.68rem; padding: 0.12rem 0.55rem; border-radius: 20px; border: 1px solid var(--border-lit); color: var(--text-muted); font-weight: 700; }
+
+  /* Comic image */
+  .comic-img-wrap { aspect-ratio: 1/1; border-radius: var(--radius); overflow: hidden; background: var(--bg-mid); border: 1px solid var(--border-lit); }
+  .comic-img-wrap img { width:100%; height:100%; object-fit:cover; display:block; }
+
+  /* Row 3: share */
+  .share-row { display: flex; justify-content: center; gap: 0.65rem; margin-bottom: 1rem; flex-wrap: wrap; }
+  .share-btn {
+    display: flex; align-items: center; gap: 0.35rem;
+    padding: 0.5rem 1.15rem; border-radius: 8px;
+    font-family: 'Nunito', sans-serif; font-weight: 700; font-size: 0.82rem;
+    cursor: pointer; border: 1px solid transparent; transition: all 0.18s;
+    text-decoration: none; letter-spacing: 0.04em;
+  }
+  .share-fb   { background: rgba(24,119,242,0.1);  border-color: rgba(24,119,242,0.4); color: #6ba3f5; }
+  .share-x    { background: rgba(255,255,255,0.04); border-color: rgba(255,255,255,0.14); color: #bbb; }
+  .share-copy { background: rgba(245,166,35,0.08);  border-color: rgba(245,166,35,0.35); color: var(--amber); }
+  .share-back { background: rgba(192,57,43,0.08);   border-color: rgba(192,57,43,0.3);  color: #e87c6e; }
+  .share-btn:hover { filter: brightness(1.2); transform: translateY(-1px); }
+
+  /* ── FOOTER ── */
+  .site-footer {
+    text-align: center; padding: 1.4rem 1.5rem 1.8rem;
+    border-top: 1px solid var(--border);
+    color: var(--text-muted); font-size: 0.78rem; line-height: 1.9;
+  }
+  .site-footer a { color: var(--amber); text-decoration: none; }
+  .site-footer a:hover { text-decoration: underline; }
+  .footer-tags { font-size: 0.68rem; opacity: 0.4; margin-top: 0.2rem; }
+
+  /* ── ABOUT / NEWSLETTER ── */
+  #section-about, #section-newsletter { display: none; }
+
+  .about-box { background: var(--bg-card); border: 1px solid var(--border-lit); border-radius: var(--radius); padding: 1.8rem; max-width: 680px; margin: 0 auto; }
+  .about-grid { display: grid; grid-template-columns: auto 1fr; gap: 1.4rem; align-items: start; }
+  .about-avatar { width: 76px; height: 76px; border-radius: 50%; border: 2px solid var(--amber); background: var(--bg-mid); display: flex; align-items: center; justify-content: center; font-size: 2.3rem; box-shadow: 0 0 18px rgba(245,166,35,0.18); }
+  .about-name { font-family: 'Bangers', cursive; font-size: 1.6rem; letter-spacing: 0.05em; }
+  .about-role { font-family: 'Caveat', cursive; font-size: 0.92rem; color: #3ab5ff; margin-bottom: 0.7rem; }
+  .about-bio  { font-size: 0.9rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 0.9rem; }
+  .about-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .tag { font-size: 0.7rem; padding: 0.18rem 0.6rem; border-radius: 20px; border: 1px solid var(--border-lit); color: var(--text-muted); font-weight: 700; }
+  .tag-amber { border-color: rgba(245,166,35,0.4); color: var(--amber); background: rgba(245,166,35,0.07); }
+  .tag-blue  { border-color: rgba(58,181,255,0.35); color: #3ab5ff; background: rgba(58,181,255,0.07); }
+  .about-links { margin-top: 0.9rem; display: flex; gap: 0.55rem; flex-wrap: wrap; }
+  .about-link { font-size: 0.8rem; font-weight: 700; color: var(--text-muted); text-decoration: none; border: 1px solid var(--border-lit); padding: 0.28rem 0.75rem; border-radius: 8px; transition: all 0.2s; }
+  .about-link:hover { color: var(--amber); border-color: var(--amber); }
+
+  .newsletter-box { background: linear-gradient(135deg, rgba(58,181,255,0.04), rgba(245,166,35,0.04)); border: 1px solid var(--border-lit); border-radius: var(--radius); padding: 1.8rem; max-width: 480px; margin: 0 auto; text-align: center; }
+  .newsletter-title { font-family: 'Bangers', cursive; font-size: 1.8rem; letter-spacing: 0.06em; margin-bottom: 0.45rem; }
+  .newsletter-sub { font-size: 0.86rem; color: var(--text-muted); margin-bottom: 1.1rem; line-height: 1.6; }
+  .newsletter-form { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+  .newsletter-input { flex: 1; min-width: 170px; background: var(--bg-card); border: 1px solid var(--border-lit); border-radius: 9px; padding: 0.6rem 0.9rem; color: var(--text-main); font-family: 'Nunito', sans-serif; font-size: 0.88rem; outline: none; transition: border-color 0.2s; }
+  .newsletter-input::placeholder { color: var(--text-muted); }
+  .newsletter-input:focus { border-color: var(--amber); }
+  .newsletter-btn { background: linear-gradient(135deg, var(--amber-glow), var(--amber)); border: none; border-radius: 9px; padding: 0.6rem 1.2rem; color: #0a0808; font-family: 'Bangers', cursive; font-size: 1rem; letter-spacing: 0.08em; cursor: pointer; transition: filter 0.2s, transform 0.2s; }
+  .newsletter-btn:hover { filter: brightness(1.1); transform: translateY(-2px); }
+  .newsletter-note { font-size: 0.7rem; color: var(--text-muted); margin-top: 0.6rem; }
+
+  /* ── TOAST ── */
+  .toast { position: fixed; bottom: 1.5rem; right: 1.5rem; background: var(--bg-card); border: 1px solid var(--amber); border-radius: 10px; padding: 0.6rem 1rem; color: var(--amber); font-size: 0.86rem; font-weight: 700; z-index: 999; transform: translateY(80px); opacity: 0; transition: all 0.3s; pointer-events: none; }
+  .toast.show { transform: translateY(0); opacity: 1; }
+
+  /* ── SCROLLBAR ── */
+  ::-webkit-scrollbar { width: 5px; }
+  ::-webkit-scrollbar-track { background: var(--bg-deep); }
+  ::-webkit-scrollbar-thumb { background: var(--border-lit); border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: var(--amber); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 680px) {
+    .viewer-row {
+      grid-template-columns: 40px 1fr 40px;
+      grid-template-rows: auto auto;
+      gap: 0.6rem;
+    }
+    .caption-box  { grid-column: 1/-1; grid-row: 2; aspect-ratio: auto; min-height: 160px; }
+    .nav-arrow-left  { grid-column: 1; grid-row: 1; }
+    .comic-img-wrap  { grid-column: 2; grid-row: 1; }
+    .nav-arrow-right { grid-column: 3; grid-row: 1; }
+  }
+  @media (max-width: 480px) {
+    .about-grid { grid-template-columns: 1fr; }
+    .about-avatar { margin: 0 auto; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════
+     GALLERY VIEW
+═══════════════════════════════════════ -->
+<div id="view-gallery">
+
+  <div class="site-banner">
+    <img src="sos-banner.png" alt="Sisters of Summerville"
+         onerror="this.style.display='none'; document.getElementById('banner-fallback').style.display='block'">
+    <div id="banner-fallback" style="display:none; font-family:'Bangers',cursive; font-size:3rem; letter-spacing:0.05em; color:#f5a623; padding:1.2rem 0 0.6rem; text-shadow:0 0 30px rgba(245,166,35,0.4);">Sisters of Summerville</div>
+  </div>
+
+  <nav>
+    <button class="nav-link active" onclick="showTab('comics',this)">📖 Comics</button>
+    <button class="nav-link" onclick="showTab('about',this)">🎨 About</button>
+    <button class="nav-link" onclick="showTab('newsletter',this)">📬 Newsletter</button>
+    <a class="nav-link" href="https://facebook.com/profile.php?id=61581673621814" target="_blank">👍 Facebook</a>
+  </nav>
+
+  <main>
+
+    <!-- COMICS TAB -->
+    <section id="section-comics">
+      <div class="section-head">
+        <h2>📚 All Episodes</h2>
+        <div class="accent-line"></div>
+      </div>
+      <div class="search-wrap">
+        <input class="search-input" id="searchInput" type="text" placeholder="🔎  Search by title or keyword…" oninput="handleSearch()">
+        <button class="search-clear" onclick="clearSearch()">✕ Clear</button>
+      </div>
+      <p class="search-count" id="searchCount"></p>
+      <div class="comic-grid" id="comicGrid"></div>
+    </section>
+
+    <!-- ABOUT TAB -->
+    <section id="section-about">
+      <div class="section-head"><h2>🎨 About</h2><div class="accent-line"></div></div>
+      <div class="about-box">
+        <div class="about-grid">
+          <div class="about-avatar">🎨</div>
+          <div>
+            <div class="about-name">Sisters of Summerville</div>
+            <div class="about-role">Daily AI Comic Strip · Summerville, SC</div>
+            <p class="about-bio">Honey Bear (a sassy Yorkie) and Bootsie Belle (a scheming tuxedo cat) get into fresh trouble powered by AI image generation and an artist's whole lot of love for pet chaos. This "Sisters of Summerville" blends a passion for AI, multimedia storytelling, and the very real personalities of two furry sisters.</p>
+            <div class="about-tags">
+              <span class="tag tag-amber">AI Art</span>
+              <span class="tag tag-amber">Generative AI</span>
+              <span class="tag tag-blue">Multimedia</span>
+              <span class="tag tag-blue">Summerville SC</span>
+              <span class="tag">Yorkie Life</span>
+              <span class="tag">Tuxedo Cat</span>
+              <span class="tag">Daily Comic</span>
+            </div>
+            <div class="about-links">
+              <a class="about-link" href="https://facebook.com/profile.php?id=61581673621814" target="_blank">👍 Facebook</a>
+              <a class="about-link" href="https://github.com" target="_blank">🐙 GitHub</a>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NEWSLETTER TAB -->
+    <section id="section-newsletter">
+      <div class="section-head"><h2>📬 Newsletter</h2><div class="accent-line"></div></div>
+      <div class="newsletter-box">
+        <div class="newsletter-title">Get New Episodes!</div>
+        <p class="newsletter-sub">New comic every day. Be the first to see Honey Bear's latest disaster and Bootsie Belle's inevitable scheme.</p>
+        <div class="newsletter-form">
+          <input class="newsletter-input" type="email" placeholder="your@email.com" id="newsletterEmail">
+          <button class="newsletter-btn" onclick="handleNewsletter()">SUBSCRIBE</button>
+        </div>
+        <p class="newsletter-note">No spam. Just chaos. Unsubscribe anytime. 🐾</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div>🐾 <strong>Sisters of Summerville</strong> · Daily AI Comic Strip · Summerville, SC</div>
+    <div>Created with AI · <a href="https://facebook.com/profile.php?id=61581673621814" target="_blank">Facebook</a> · <a href="https://github.com" target="_blank">GitHub</a></div>
+    <div class="footer-tags">#SistersOfSummerville #YorkieLife #TuxedoCat #PetComedy #AIChaos</div>
+  </footer>
+
+</div><!-- /view-gallery -->
+
+
+<!-- ══════════════════════════════════════
+     SINGLE COMIC VIEW
+═══════════════════════════════════════ -->
+<div id="view-single">
+
+  <!-- ROW 1: Logo -->
+  <div class="single-banner">
+    <img src="sos-banner.png" alt="Sisters of Summerville"
+         onerror="this.style.display='none'; document.getElementById('single-banner-fallback').style.display='block'">
+    <div id="single-banner-fallback" style="display:none; font-family:'Bangers',cursive; font-size:2.6rem; letter-spacing:0.05em; color:#f5a623; padding:1rem 0 0.5rem; text-shadow:0 0 30px rgba(245,166,35,0.4);">Sisters of Summerville</div>
+  </div>
+
+  <div class="comic-viewer">
+
+    <!-- ROW 2: ◀ | caption | image | ▶ -->
+    <div class="viewer-row">
+      <button class="nav-arrow nav-arrow-left"  id="arrowNewer" onclick="navigateComic(-1)" title="Newer episode">◀</button>
+
+      <div class="comic-img-wrap">
+        <img id="singleImg" src="" alt="">
+      </div>
+
+      <div class="caption-box">
+        <div class="caption-date"  id="singleDate"></div>
+        <div class="caption-title" id="singleTitle"></div>
+        <div class="caption-divider"></div>
+        <p  class="caption-text"   id="singleIntro"></p>
+        <div class="caption-tags"  id="singleTags"></div>
+      </div>
+
+      <button class="nav-arrow nav-arrow-right" id="arrowOlder" onclick="navigateComic(1)" title="Older episode">▶</button>
+    </div>
+
+    <!-- ROW 3: Share buttons -->
+    <div class="share-row">
+      <a   class="share-btn share-fb"   id="shareFb" href="#" target="_blank">👍 Facebook</a>
+      <a   class="share-btn share-x"    id="shareX"  href="#" target="_blank">🐦 X / Twitter</a>
+      <button class="share-btn share-copy" onclick="copyLink()">🔗 Copy Link</button>
+      <button class="share-btn share-back" onclick="backToGallery()">◀ All Episodes</button>
+    </div>
+
+  </div>
+
+  <!-- ROW 4: Footer -->
+  <footer class="site-footer">
+    <div>🐾 <strong>Sisters of Summerville</strong> · Daily AI Comic Strip · Summerville, SC</div>
+    <div>Created with AI · <a href="https://facebook.com/profile.php?id=61581673621814" target="_blank">Facebook</a> · <a href="https://github.com" target="_blank">GitHub</a></div>
+    <div class="footer-tags">#SistersOfSummerville #YorkieLife #TuxedoCat #PetComedy #AIChaos</div>
+  </footer>
+
+</div><!-- /view-single -->
+
+<div class="toast" id="toast"></div>
+
+<script>
+// ══════════════════════════════════════════
+//  STATE
+// ══════════════════════════════════════════
+let COMICS = [];
+let currentIndex = 0;
+let filteredComics = [];
+
+// ══════════════════════════════════════════
+//  LOAD captions.json
+// ══════════════════════════════════════════
+async function loadComics() {
+  try {
+    const res = await fetch('captions.json');
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    COMICS = await res.json();
+    filteredComics = [...COMICS];
+    renderGrid(filteredComics);
+  } catch (e) {
+    document.getElementById('comicGrid').innerHTML =
+      `<div class="no-results"><p>⚠️ Could not load captions.json — make sure it is in the same folder as index.html.<br><small>${e.message}</small></p></div>`;
+  }
+}
+
+// ══════════════════════════════════════════
+//  GALLERY RENDER
+// ══════════════════════════════════════════
+function renderGrid(comics) {
+  const grid  = document.getElementById('comicGrid');
+  const count = document.getElementById('searchCount');
+
+  count.innerHTML = comics.length === COMICS.length
+    ? `Showing all <span>${COMICS.length}</span> episodes`
+    : `Found <span>${comics.length}</span> of ${COMICS.length} episodes`;
+
+  if (!comics.length) {
+    grid.innerHTML = `<div class="no-results"><p>🔍 No episodes found. Try a different search!</p></div>`;
+    return;
+  }
+
+  grid.innerHTML = comics.map((c, i) => {
+    const globalIdx = COMICS.indexOf(c);
+    return `
+      <article class="comic-card" onclick="openComic(${globalIdx})" style="animation-delay:${i*0.04}s">
+        <div class="card-img-wrap">
+          <img src="${c.image}" alt="${c.title}"
+               onerror="this.src='https://placehold.co/600x600/1c1818/f5a623?text=${encodeURIComponent(c.title)}'">
+        </div>
+        <div class="card-body">
+          <div class="card-meta">${c.date}</div>
+          <div class="card-title">${c.title}</div>
+          <p class="card-intro">${c.intro.replace(/\n/g,' ')}</p>
+        </div>
+      </article>`;
+  }).join('');
+}
+
+// ══════════════════════════════════════════
+//  SEARCH
+// ══════════════════════════════════════════
+function handleSearch() {
+  const q = document.getElementById('searchInput').value.toLowerCase().trim();
+  filteredComics = q
+    ? COMICS.filter(c =>
+        c.title.toLowerCase().includes(q) ||
+        c.intro.toLowerCase().includes(q) ||
+        c.date.includes(q) ||
+        (c.tags||[]).some(t => t.toLowerCase().includes(q)))
+    : [...COMICS];
+  renderGrid(filteredComics);
+}
+
+function clearSearch() {
+  document.getElementById('searchInput').value = '';
+  filteredComics = [...COMICS];
+  renderGrid(filteredComics);
+}
+
+// ══════════════════════════════════════════
+//  SINGLE COMIC VIEW
+// ══════════════════════════════════════════
+function openComic(idx) {
+  currentIndex = idx;
+  renderSingle();
+  document.getElementById('view-gallery').style.display = 'none';
+  document.getElementById('view-single').style.display  = 'block';
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function renderSingle() {
+  const c = COMICS[currentIndex];
+
+  document.getElementById('singleDate').textContent  = c.date;
+  document.getElementById('singleTitle').textContent = c.title;
+  document.getElementById('singleIntro').textContent = c.intro;
+
+  const img = document.getElementById('singleImg');
+  img.src = c.image; img.alt = c.title;
+  img.onerror = () => { img.src = `https://placehold.co/800x800/1c1818/f5a623?text=${encodeURIComponent(c.title)}`; };
+
+  document.getElementById('singleTags').innerHTML =
+    (c.tags||[]).map(t => `<span class="caption-tag">#${t}</span>`).join('');
+
+  // Arrows: array is newest-first (index 0 = newest)
+  // Left ◀ = newer = lower index   Right ▶ = older = higher index
+  document.getElementById('arrowNewer').classList.toggle('disabled', currentIndex <= 0);
+  document.getElementById('arrowOlder').classList.toggle('disabled', currentIndex >= COMICS.length - 1);
+
+  // Share URLs
+  const pageUrl   = window.location.href.split('#')[0] + '#' + encodeURIComponent(c.date);
+  const shareText = `Sisters of Summerville: "${c.title}" 🐶🐱 #SistersOfSummerville`;
+  document.getElementById('shareFb').href = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(pageUrl)}&quote=${encodeURIComponent(shareText)}`;
+  document.getElementById('shareX').href  = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(pageUrl)}`;
+}
+
+// dir: -1 = newer (◀), +1 = older (▶)
+function navigateComic(dir) {
+  const next = currentIndex + dir;
+  if (next < 0 || next >= COMICS.length) return;
+  currentIndex = next;
+  renderSingle();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function backToGallery() {
+  document.getElementById('view-single').style.display  = 'none';
+  document.getElementById('view-gallery').style.display = 'block';
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function copyLink() {
+  const c   = COMICS[currentIndex];
+  const url = window.location.href.split('#')[0] + '#' + encodeURIComponent(c.date);
+  navigator.clipboard.writeText(url)
+    .then(()  => showToast('🔗 Link copied!'))
+    .catch(()  => showToast('Could not copy link'));
+}
+
+// ══════════════════════════════════════════
+//  TAB SWITCHER
+// ══════════════════════════════════════════
+function showTab(name, btn) {
+  ['comics','about','newsletter'].forEach(s => {
+    document.getElementById(`section-${s}`).style.display = (s === name) ? 'block' : 'none';
+  });
+  document.querySelectorAll('#view-gallery .nav-link').forEach(l => l.classList.remove('active'));
+  if (btn) btn.classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// ══════════════════════════════════════════
+//  NEWSLETTER
+// ══════════════════════════════════════════
+function handleNewsletter() {
+  const email = document.getElementById('newsletterEmail').value.trim();
+  if (!email || !email.includes('@')) { showToast('Please enter a valid email!'); return; }
+  // Send to Beehiiv hosted subscribe page with email pre-filled
+  window.open(`https://summerville.beehiiv.com/subscribe?email=${encodeURIComponent(email)}`, '_blank');
+  showToast("🐾 Taking you to subscribe now!");
+  document.getElementById('newsletterEmail').value = '';
+}
+
+// ══════════════════════════════════════════
+//  TOAST
+// ══════════════════════════════════════════
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg; t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2800);
+}
+
+// Keyboard nav on single view
+document.addEventListener('keydown', e => {
+  if (document.getElementById('view-single').style.display === 'block') {
+    if (e.key === 'ArrowLeft')  navigateComic(-1);
+    if (e.key === 'ArrowRight') navigateComic(1);
+    if (e.key === 'Escape')     backToGallery();
+  }
+});
+
+// ─�
