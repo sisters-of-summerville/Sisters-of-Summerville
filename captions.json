@@ -1,645 +1,1212 @@
 [
   {
+    "date": "March 22, 2026",
+    "title": "TITLE",
+    "image": "images/2026/2026-03-22.JPEG",
+    "tags": [ "", "", "" ],
+    "intro": "DESCRIPTION"
+  },
+  {
+    "date": "March 21, 2026",
+    "title": "TITLE",
+    "image": "images/2026/2026-03-21.JPEG",
+    "tags": [ "", "", "" ],
+    "intro": "DESCRIPTION"
+  },
+  {
+    "date": "March 20, 2026",
+    "title": "TITLE",
+    "image": "images/2026/2026-03-20.JPEG",
+    "tags": [ "", "", "" ],
+    "intro": "DESCRIPTION"
+  },
+  {
+    "date": "March 19, 2026",
+    "title": "TITLE",
+    "image": "images/2026/2026-03-19.JPEG",
+    "tags": [ "", "", "" ],
+    "intro": "DESCRIPTION"
+  },
+  {
+    "date": "March 18, 2026",
+    "title": "TITLE",
+    "image": "images/2026/2026-03-18.PNG",
+    "tags": [ "", "", "" ],
+    "intro": "DESCRIPTION"
+  },
+  {
+    "date": "March 17, 2026",
+    "title": "TITLE",
+    "image": "images/2026/2026-03-17.JPEG",
+    "tags": [ "", "", "" ],
+    "intro": "DESCRIPTION"
+  },
+  {
+    "date": "March 16, 2026",
+    "title": "TITLE",
+    "image": "images/2026/2026-03-16.JPEG",
+    "tags": [ "", "", "" ],
+    "intro": "DESCRIPTION"
+  },
+  {
+    "date": "March 15, 2026",
+    "title": "TITLE",
+    "image": "images/2026/2026-03-15.JPEG",
+    "tags": [ "", "", "" ],
+    "intro": "DESCRIPTION"
+  },
+  {
+    "date": "March 14, 2026",
+    "title": "TITLE",
+    "image": "images/2026/2026-03-14.PNG",
+    "tags": [ "", "", "" ],
+    "intro": "DESCRIPTION"
+  },
+  {
+    "date": "March 13, 2026",
+    "title": "TITLE",
+    "image": "images/2026/2026-03-13.JPEG",
+    "tags": [ "", "", "" ],
+    "intro": "DESCRIPTION"
+  },
+  {
+    "date": "March 12, 2026",
+    "title": "TITLE",
+    "image": "images/2026/2026-03-12.JPEG",
+    "tags": [ "", "", "" ],
+    "intro": "DESCRIPTION"
+  },
+  {
+    "date": "March 11, 2026",
+    "title": "TITLE",
+    "image": "images/2026/2026-03-11.JPEG",
+    "tags": [ "", "", "" ],
+    "intro": "DESCRIPTION"
+  },
+  {
+    "date": "March 10, 2026",
+    "title": "TITLE",
+    "image": "images/2026/2026-03-10.PNG",
+    "tags": [ "", "", "" ],
+    "intro": "DESCRIPTION"
+  },
+  {
+    "date": "March 09, 2026",
+    "title": "TITLE",
+    "image": "images/2026/2026-03-09.JPEG",
+    "tags": [ "", "", "" ],
+    "intro": "DESCRIPTION"
+  },
+  {
+    "date": "March 08, 2026",
+    "title": "TITLE",
+    "image": "images/2026/2026-03-08.PNG",
+    "tags": [ "", "", "" ],
+    "intro": "DESCRIPTION"
+  },
+  {
+    "date": "March 07, 2026",
+    "title": "TITLE",
+    "image": "images/2026/2026-03-07.PNG",
+    "tags": [ "", "", "" ],
+    "intro": "DESCRIPTION"
+  },
+  {
+    "date": "March 06, 2026",
+    "title": "TITLE",
+    "image": "images/2026/2026-03-06.JPEG",
+    "tags": [ "", "", "" ],
+    "intro": "DESCRIPTION"
+  },
+  {
+    "date": "March 05, 2026",
+    "title": "TITLE",
+    "image": "images/2026/2026-03-05.JPEG",
+    "tags": [ "", "", "" ],
+    "intro": "DESCRIPTION"
+  },
+  {
+    "date": "March 04, 2026",
+    "title": "TITLE",
+    "image": "images/2026/2026-03-04.JPEG",
+    "tags": [ "", "", "" ],
+    "intro": "DESCRIPTION"
+  },
+  {
+    "date": "March 03, 2026",
+    "title": "TITLE",
+    "image": "images/2026/2026-03-03.JPEG",
+    "tags": [ "", "", "" ],
+    "intro": "DESCRIPTION"
+  },
+  {
+    "date": "March 02, 2026",
+    "title": "TITLE",
+    "image": "images/2026/2026-03-02.JPEG",
+    "tags": [ "", "", "" ],
+    "intro": "DESCRIPTION"
+  },
+  {
+    "date": "March 01, 2026",
+    "title": "TITLE",
+    "image": "images/2026/2026-03-01.JPEG",
+    "tags": [ "", "", "" ],
+    "intro": "DESCRIPTION"
+  },
+  {
+    "date": "February 28, 2026",
+    "title": "TITLE",
+    "image": "images/2026/2026-02-28.JPEG",
+    "tags": [ "", "", "" ],
+    "intro": "DESCRIPTION"
+  },
+  {
+    "date": "February 27, 2026",
+    "title": "TITLE",
+    "image": "images/2026/2026-02-27.PNG",
+    "tags": [ "", "", "" ],
+    "intro": "DESCRIPTION"
+  },
+  {
+    "date": "February 26, 2026",
+    "title": "TITLE",
+    "image": "images/2026/2026-02-26.PNG",
+    "tags": [ "", "", "" ],
+    "intro": "DESCRIPTION"
+  },
+  {
+    "date": "February 25, 2026",
+    "title": "TITLE",
+    "image": "images/2026/2026-02-25.JPEG",
+    "tags": [ "", "", "" ],
+    "intro": "DESCRIPTION"
+  },
+  {
+    "date": "February 24, 2026",
+    "title": "TITLE",
+    "image": "images/2026/2026-02-24.JPEG",
+    "tags": [ "", "", "" ],
+    "intro": "DESCRIPTION"
+  },
+  {
+    "date": "February 23, 2026",
+    "title": "TITLE",
+    "image": "images/2026/2026-02-23.PNG",
+    "tags": [ "", "", "" ],
+    "intro": "DESCRIPTION"
+  },
+  {
+    "date": "February 22, 2026",
+    "title": "TITLE",
+    "image": "images/2026/2026-02-22.JPEG",
+    "tags": [ "", "", "" ],
+    "intro": "DESCRIPTION"
+  },
+  {
+    "date": "February 21, 2026",
+    "title": "TITLE",
+    "image": "images/2026/2026-02-21.PNG",
+    "tags": [ "", "", "" ],
+    "intro": "DESCRIPTION"
+  },
+  {
+    "date": "February 20, 2026",
+    "title": "TITLE",
+    "image": "images/2026/2026-02-20.JPEG",
+    "tags": [ "", "", "" ],
+    "intro": "DESCRIPTION"
+  },
+  {
+    "date": "February 19, 2026",
+    "title": "TITLE",
+    "image": "images/2026/2026-02-19.JPEG",
+    "tags": [ "", "", "" ],
+    "intro": "DESCRIPTION"
+  },
+  {
+    "date": "February 18, 2026",
+    "title": "TITLE",
+    "image": "images/2026/2026-02-18.JPEG",
+    "tags": [ "", "", "" ],
+    "intro": "DESCRIPTION"
+  },
+  {
+    "date": "February 17, 2026",
+    "title": "TITLE",
+    "image": "images/2026/2026-02-17.JPEG",
+    "tags": [ "", "", "" ],
+    "intro": "DESCRIPTION"
+  },
+  {
+    "date": "February 16, 2026",
+    "title": "TITLE",
+    "image": "images/2026/2026-02-16.JPEG",
+    "tags": [ "", "", "" ],
+    "intro": "DESCRIPTION"
+  },
+  {
+    "date": "February 15, 2026",
+    "title": "TITLE",
+    "image": "images/2026/2026-02-15.JPEG",
+    "tags": [ "", "", "" ],
+    "intro": "DESCRIPTION"
+  },
+  {
+    "date": "February 14, 2026",
+    "title": "TITLE",
+    "image": "images/2026/2026-02-14.PNG",
+    "tags": [ "", "", "" ],
+    "intro": "DESCRIPTION"
+  },
+  {
+    "date": "February 13, 2026",
+    "title": "TITLE",
+    "image": "images/2026/2026-02-13.JPEG",
+    "tags": [ "", "", "" ],
+    "intro": "DESCRIPTION"
+  },
+  {
+    "date": "February 12, 2026",
+    "title": "TITLE",
+    "image": "images/2026/2026-02-12.JPEG",
+    "tags": [ "", "", "" ],
+    "intro": "DESCRIPTION"
+  },
+  {
+    "date": "February 11, 2026",
+    "title": "TITLE",
+    "image": "images/2026/2026-02-11.JPEG",
+    "tags": [ "", "", "" ],
+    "intro": "DESCRIPTION"
+  },
+  {
+    "date": "February 10, 2026",
+    "title": "TITLE",
+    "image": "images/2026/2026-02-10.PNG",
+    "tags": [ "", "", "" ],
+    "intro": "DESCRIPTION"
+  },
+  {
+    "date": "February 09, 2026",
+    "title": "TITLE",
+    "image": "images/2026/2026-02-09.PNG",
+    "tags": [ "", "", "" ],
+    "intro": "DESCRIPTION"
+  },
+  {
+    "date": "February 08, 2026",
+    "title": "TITLE",
+    "image": "images/2026/2026-02-08.PNG",
+    "tags": [ "", "", "" ],
+    "intro": "DESCRIPTION"
+  },
+  {
+    "date": "February 07, 2026",
+    "title": "TITLE",
+    "image": "images/2026/2026-02-07.JPEG",
+    "tags": [ "", "", "" ],
+    "intro": "DESCRIPTION"
+  },
+  {
+    "date": "February 06, 2026",
+    "title": "TITLE",
+    "image": "images/2026/2026-02-06.JPEG",
+    "tags": [ "", "", "" ],
+    "intro": "DESCRIPTION"
+  },
+  {
+    "date": "February 05, 2026",
+    "title": "TITLE",
+    "image": "images/2026/2026-02-05.JPEG",
+    "tags": [ "", "", "" ],
+    "intro": "DESCRIPTION"
+  },
+  {
+    "date": "February 04, 2026",
+    "title": "TITLE",
+    "image": "images/2026/2026-02-04.JPEG",
+    "tags": [ "", "", "" ],
+    "intro": "DESCRIPTION"
+  },
+  {
+    "date": "February 03, 2026",
+    "title": "TITLE",
+    "image": "images/2026/2026-02-03.JPEG",
+    "tags": [ "", "", "" ],
+    "intro": "DESCRIPTION"
+  },
+  {
+    "date": "February 02, 2026",
+    "title": "TITLE",
+    "image": "images/2026/2026-02-02.PNG",
+    "tags": [ "", "", "" ],
+    "intro": "DESCRIPTION"
+  },
+  {
+    "date": "February 01, 2026",
+    "title": "TITLE",
+    "image": "images/2026/2026-02-01.JPEG",
+    "tags": [ "", "", "" ],
+    "intro": "DESCRIPTION"
+  },
+  {
+    "date": "January 31, 2026",
+    "title": "TITLE",
+    "image": "images/2026/2026-01-31.PNG",
+    "tags": [ "", "", "" ],
+    "intro": "DESCRIPTION"
+  },
+  {
+    "date": "January 30, 2026",
+    "title": "TITLE",
+    "image": "images/2026/2026-01-30.PNG",
+    "tags": [ "", "", "" ],
+    "intro": "DESCRIPTION"
+  },
+  {
+    "date": "January 29, 2026",
+    "title": "TITLE",
+    "image": "images/2026/2026-01-29.JPEG",
+    "tags": [ "", "", "" ],
+    "intro": "DESCRIPTION"
+  },
+  {
+    "date": "January 28, 2026",
+    "title": "TITLE",
+    "image": "images/2026/2026-01-28.JPEG",
+    "tags": [ "", "", "" ],
+    "intro": "DESCRIPTION"
+  },
+  {
+    "date": "January 27, 2026",
+    "title": "TITLE",
+    "image": "images/2026/2026-01-27.JPEG",
+    "tags": [ "", "", "" ],
+    "intro": "DESCRIPTION"
+  },
+  {
+    "date": "January 26, 2026",
+    "title": "TITLE",
+    "image": "images/2026/2026-01-26.JPEG",
+    "tags": [ "", "", "" ],
+    "intro": "DESCRIPTION"
+  },
+  {
+    "date": "January 25, 2026",
+    "title": "TITLE",
+    "image": "images/2026/2026-01-25.JPEG",
+    "tags": [ "", "", "" ],
+    "intro": "DESCRIPTION"
+  },
+  {
+    "date": "January 24, 2026",
+    "title": "TITLE",
+    "image": "images/2026/2026-01-24.JPEG",
+    "tags": [ "", "", "" ],
+    "intro": "DESCRIPTION"
+  },
+  {
+    "date": "January 23, 2026",
+    "title": "TITLE",
+    "image": "images/2026/2026-01-23.JPEG",
+    "tags": [ "", "", "" ],
+    "intro": "DESCRIPTION"
+  },
+  {
+    "date": "January 22, 2026",
+    "title": "TITLE",
+    "image": "images/2026/2026-01-22.PNG",
+    "tags": [ "", "", "" ],
+    "intro": "DESCRIPTION"
+  },
+  {
+    "date": "January 21, 2026",
+    "title": "TITLE",
+    "image": "images/2026/2026-01-21.JPEG",
+    "tags": [ "", "", "" ],
+    "intro": "DESCRIPTION"
+  },
+  {
+    "date": "January 20, 2026",
+    "title": "TITLE",
+    "image": "images/2026/2026-01-20.PNG",
+    "tags": [ "", "", "" ],
+    "intro": "DESCRIPTION"
+  },
+  {
+    "date": "January 19, 2026",
+    "title": "TITLE",
+    "image": "images/2026/2026-01-19.PNG",
+    "tags": [ "", "", "" ],
+    "intro": "DESCRIPTION"
+  },
+  {
+    "date": "January 18, 2026",
+    "title": "TITLE",
+    "image": "images/2026/2026-01-18.JPEG",
+    "tags": [ "", "", "" ],
+    "intro": "DESCRIPTION"
+  },
+  {
+    "date": "January 17, 2026",
+    "title": "TITLE",
+    "image": "images/2026/2026-01-17.PNG",
+    "tags": [ "", "", "" ],
+    "intro": "DESCRIPTION"
+  },
+  {
+    "date": "January 16, 2026",
+    "title": "TITLE",
+    "image": "images/2026/2026-01-16.PNG",
+    "tags": [ "", "", "" ],
+    "intro": "DESCRIPTION"
+  },
+  {
+    "date": "January 15, 2026",
+    "title": "TITLE",
+    "image": "images/2026/2026-01-15.JPEG",
+    "tags": [ "", "", "" ],
+    "intro": "DESCRIPTION"
+  },
+  {
+    "date": "January 14, 2026",
+    "title": "TITLE",
+    "image": "images/2026/2026-01-14.PNG",
+    "tags": [ "", "", "" ],
+    "intro": "DESCRIPTION"
+  },
+  {
+    "date": "January 13, 2026",
+    "title": "TITLE",
+    "image": "images/2026/2026-01-13.JPEG",
+    "tags": [ "", "", "" ],
+    "intro": "DESCRIPTION"
+  },
+  {
+    "date": "January 12, 2026",
+    "title": "TITLE",
+    "image": "images/2026/2026-01-12.JPEG",
+    "tags": [ "", "", "" ],
+    "intro": "DESCRIPTION"
+  },
+  {
+    "date": "January 11, 2026",
+    "title": "TITLE",
+    "image": "images/2026/2026-01-11.PNG",
+    "tags": [ "", "", "" ],
+    "intro": "DESCRIPTION"
+  },
+  {
+    "date": "January 10, 2026",
+    "title": "TITLE",
+    "image": "images/2026/2026-01-10.JPEG",
+    "tags": [ "", "", "" ],
+    "intro": "DESCRIPTION"
+  },
+  {
+    "date": "January 09, 2026",
+    "title": "TITLE",
+    "image": "images/2026/2026-01-09.JPEG",
+    "tags": [ "", "", "" ],
+    "intro": "DESCRIPTION"
+  },
+  {
+    "date": "January 08, 2026",
+    "title": "TITLE",
+    "image": "images/2026/2026-01-08.JPEG",
+    "tags": [ "", "", "" ],
+    "intro": "DESCRIPTION"
+  },
+  {
+    "date": "January 07, 2026",
+    "title": "TITLE",
+    "image": "images/2026/2026-01-07.JPEG",
+    "tags": [ "", "", "" ],
+    "intro": "DESCRIPTION"
+  },
+  {
+    "date": "January 06, 2026",
+    "title": "TITLE",
+    "image": "images/2026/2026-01-06.JPEG",
+    "tags": [ "", "", "" ],
+    "intro": "DESCRIPTION"
+  },
+  {
+    "date": "January 05, 2026",
+    "title": "TITLE",
+    "image": "images/2026/2026-01-05.JPEG",
+    "tags": [ "", "", "" ],
+    "intro": "DESCRIPTION"
+  },
+  {
+    "date": "January 04, 2026",
+    "title": "TITLE",
+    "image": "images/2026/2026-01-04.JPEG",
+    "tags": [ "", "", "" ],
+    "intro": "DESCRIPTION"
+  },
+  {
+    "date": "January 03, 2026",
+    "title": "TITLE",
+    "image": "images/2026/2026-01-03.JPEG",
+    "tags": [ "", "", "" ],
+    "intro": "DESCRIPTION"
+  },
+  {
+    "date": "January 02, 2026",
+    "title": "TITLE",
+    "image": "images/2026/2026-01-02.JPEG",
+    "tags": [ "", "", "" ],
+    "intro": "DESCRIPTION"
+  },
+  {
+    "date": "January 01, 2026",
+    "title": "TITLE",
+    "image": "images/2026/2026-01-01.JPEG",
+    "tags": [ "", "", "" ],
+    "intro": "DESCRIPTION"
+  },
+  {
     "date": "December 31, 2025",
     "title": "🐾 Home Alone 🐾",
-    "image": "images/2025-12-31.JPEG",
+    "image": "images/2025/2025/2025-12-31.JPEG",
     "tags": [ "holiday", "solo", "chaos" ],
     "intro": "With Mom and Dad headed out to celebrate, Honey Bear is absolutely convinced this is her moment to shine, but she has been watching Kevin McCallister way too much! From hallway victory laps to ice-cream-powered poor decisions, the girls take one tiny checklist mistake and turn it into a full-scale New Year’s adventure, complete with consequences! 🎊😴"
   },
   {
     "date": "December 30, 2025",
     "title": "✨ Midnight Challenge ✨",
-    "image": "images/2025-12-30.JPEG",
+    "image": "images/2025/2025/2025-12-30.JPEG",
     "tags": [ "midnight", "snacks", "rivalry" ],
     "intro": "🕰️ December 30th brings big plans and even bigger bravado as Honey Bear and Bootsie Belle challenge each other to stay up till midnight as practice for New Year’s Eve. Confidence is high, eyelids are heavy, and the struggle is real. So who will win the Midnight Challenge? 🐾😴"
   },
   {
     "date": "December 29, 2025",
     "title": "🐾 Fireworks 💙",
-    "image": "images/2025-12-29.JPEG",
+    "image": "images/2025/2025/2025-12-29.JPEG",
     "tags": [ "fireworks", "fear", "teamwork" ],
     "intro": "For Honey Bear, fireworks aren’t fun or festive. When the explosions start, fear takes over with shaking paws, racing heart, memories she can’t escape. And she’s not alone. Many dogs and many veterans living with PTSD experience the very same thing. Those booming “wonders in the sky” can reopen painful memories and make nights (and sometimes entire days while they are going off) incredibly hard. This episode is a reminder to lead with compassion. If you’re celebrating, please remember families, pets, and people nearby who are struggling. Limiting fireworks to a few hours and being mindful of others truly makes a difference. 🐶 💛 🐱"
   },
   {
     "date": "December 28, 2025",
     "title": "✨ Mom’s Night Off 🍕",
-    "image": "images/2025-12-28.JPEG",
+    "image": "images/2025/2025-12-28.JPEG",
     "tags": [ "a", "b", "c" ],
     "intro": "🐶🐱 Mom needed a well-earned night off after all that cooking. Honey Bear proudly orders pizza delivery, only to discover her trusty plastic Princess Phone isn’t exactly connected to the real world. But when Dad calls out, “Who wants treats?”…does he mean dog treats? Cat treats? Or pizza? One thing’s certain… chaos is always on the menu in Summerville.📞🍕"
   },
   {
     "date": "December 27, 2025",
     "title": "🧡🐾 The Princess Honey Bear 🐾🧡",
-    "image": "images/2025-12-27.JPEG",
+    "image": "images/2025/2025-12-27.JPEG",
     "tags": [ "a", "b", "c" ],
     "intro": "🏰⚔️👑 Honey Bear and Bootsie Belle go full cosplay in a playful homage to director Rob Reiner’s classic tale “The Princess Bride.” They’re just two sisters enjoying their Christmas gifts until the “duel” gets a little too convincing and the sass level hits INCONCEIVABLE proportions with the kind of hijinx only these two can deliver. 😹🐶💥"
   },
   {
     "date": "December 26, 2025",
     "title": "🎄 Bring Back Christmas 🎄,",
-    "image": "images/2025-12-26.JPEG",
+    "image": "images/2025/2025-12-26.JPEG",
     "tags": [ "a", "b", "c" ],
     "intro": "It’s the day after Christmas and Bootsie Belle’s gears start turning as she decides the only logical solution is to build a Babbage-style Time Machine to rewind the calendar back to Christmas Day. Tiny problem…apparently all Christmas Magic requires Santa approval…and Santa is on VACATION! 🏖️🎅😂"
   },
   {
     "date": "December 25, 2025",
     "title": "🎄 Christmas Morning Chaos 🎄",
-    "image": "images/2025-12-25.JPEG",
+    "image": "images/2025/2025-12-25.JPEG",
     "tags": [ "a", "b", "c" ],
     "intro": "🎁 It’s Christmas morning in Summerville and calm was never an option for Honey Bear and Bootsie Belle! From enthusiastic unwrapping to ribbon-related incidents and towering mountains of wrapping paper, Summerville’s Sisters discover that the true magic of Christmas Morning is chaos, laughter, and sticking together. Follow along as the girls remind us that the best holiday moments aren’t perfect — they’re shared. 💕🐾"
   },
   {
     "date": "December 24, 2025",
     "title": "TITLE",
-    "image": "images/2025-12-24.JPEG",
+    "image": "images/2025/2025-12-24.JPEG",
     "tags": [ "a", "b", "c" ],
     "intro": ""
   },
   {
     "date": "December 23, 2025",
     "title": "TITLE",
-    "image": "images/2025-12-23.JPEG",
+    "image": "images/2025/2025-12-23.JPEG",
     "tags": [ "a", "b", "c" ],
     "intro": ""
   },
   {
     "date": "December 22, 2025",
     "title": "TITLE",
-    "image": "images/2025-12-22.JPEG",
+    "image": "images/2025/2025-12-22.JPEG",
     "tags": [ "a", "b", "c" ],
     "intro": ""
   },
   {
     "date": "December 21, 2025",
     "title": "TITLE",
-    "image": "images/2025-12-21.JPEG",
+    "image": "images/2025/2025-12-21.JPEG",
     "tags": [ "a", "b", "c" ],
     "intro": ""
   },
   {
     "date": "December 20, 2025",
     "title": "TITLE",
-    "image": "images/2025-12-20.JPEG",
+    "image": "images/2025/2025-12-20.JPEG",
     "tags": [ "a", "b", "c" ],
     "intro": ""
   },
   {
     "date": "December 19, 2025",
     "title": "TITLE",
-    "image": "images/2025-12-19.JPEG",
+    "image": "images/2025/2025-12-19.JPEG",
     "tags": [ "a", "b", "c" ],
     "intro": ""
   },
   {
     "date": "December 18, 2025",
     "title": "TITLE",
-    "image": "images/2025-12-18.JPEG",
+    "image": "images/2025/2025-12-18.JPEG",
     "tags": [ "a", "b", "c" ],
     "intro": ""
   },
   {
     "date": "December 17, 2025",
     "title": "TITLE",
-    "image": "images/2025-12-17.JPEG",
+    "image": "images/2025/2025-12-17.JPEG",
     "tags": [ "a", "b", "c" ],
     "intro": ""
   },
   {
     "date": "December 16, 2025",
     "title": "TITLE",
-    "image": "images/2025-12-16.JPEG",
+    "image": "images/2025/2025-12-16.JPEG",
     "tags": [ "a", "b", "c" ],
     "intro": ""
   },
   {
     "date": "December 15, 2025",
     "title": "TITLE",
-    "image": "images/2025-12-15.JPEG",
+    "image": "images/2025/2025-12-15.JPEG",
     "tags": [ "a", "b", "c" ],
     "intro": ""
   },
   {
     "date": "December 14, 2025",
     "title": "TITLE",
-    "image": "images/2025-12-14.JPEG",
+    "image": "images/2025/2025-12-14.JPEG",
     "tags": [ "a", "b", "c" ],
     "intro": ""
   },
   {
     "date": "December 13, 2025",
     "title": "TITLE",
-    "image": "images/2025-12-13.JPEG",
+    "image": "images/2025/2025-12-13.JPEG",
     "tags": [ "a", "b", "c" ],
     "intro": ""
   },
   {
     "date": "December 12, 2025",
     "title": "TITLE",
-    "image": "images/2025-12-12.JPEG",
+    "image": "images/2025/2025-12-12.JPEG",
     "tags": [ "a", "b", "c" ],
     "intro": ""
   },
   {
     "date": "December 11, 2025",
     "title": "TITLE",
-    "image": "images/2025-12-11.JPEG",
+    "image": "images/2025/2025-12-11.JPEG",
     "tags": [ "a", "b", "c" ],
     "intro": ""
   },
   {
     "date": "December 10, 2025",
     "title": "TITLE",
-    "image": "images/2025-12-10.JPEG",
+    "image": "images/2025/2025-12-10.JPEG",
     "tags": [ "a", "b", "c" ],
     "intro": ""
   },
   {
     "date": "December 09, 2025",
     "title": "TITLE",
-    "image": "images/2025-12-09.JPEG",
+    "image": "images/2025/2025-12-09.JPEG",
     "tags": [ "a", "b", "c" ],
     "intro": ""
   },
   {
     "date": "December 08, 2025",
     "title": "TITLE",
-    "image": "images/2025-12-08.JPEG",
+    "image": "images/2025/2025-12-08.JPEG",
     "tags": [ "a", "b", "c" ],
     "intro": ""
   },
   {
     "date": "December 07, 2025",
     "title": "TITLE",
-    "image": "images/2025-12-07.JPEG",
+    "image": "images/2025/2025-12-07.JPEG",
     "tags": [ "a", "b", "c" ],
     "intro": ""
   },
   {
     "date": "December 06, 2025",
     "title": "TITLE",
-    "image": "images/2025-12-06.JPEG",
+    "image": "images/2025/2025-12-06.JPEG",
     "tags": [ "a", "b", "c" ],
     "intro": ""
   },
   {
     "date": "December 05, 2025",
     "title": "TITLE",
-    "image": "images/2025-12-05.JPEG",
+    "image": "images/2025/2025-12-05.JPEG",
     "tags": [ "a", "b", "c" ],
     "intro": ""
   },
   {
     "date": "December 04, 2025",
     "title": "TITLE",
-    "image": "images/2025-12-04.JPEG",
+    "image": "images/2025/2025-12-04.JPEG",
     "tags": [ "a", "b", "c" ],
     "intro": ""
   },
   {
     "date": "December 03, 2025",
     "title": "TITLE",
-    "image": "images/2025-12-03.JPEG",
+    "image": "images/2025/2025-12-03.JPEG",
     "tags": [ "a", "b", "c" ],
     "intro": ""
   },
   {
     "date": "December 02, 2025",
     "title": "TITLE",
-    "image": "images/2025-12-02.JPEG",
+    "image": "images/2025/2025-12-02.JPEG",
     "tags": [ "a", "b", "c" ],
     "intro": ""
   },
   {
     "date": "December 01, 2025",
     "title": "TITLE",
-    "image": "images/2025-12-01.JPEG",
+    "image": "images/2025/2025-12-01.JPEG",
     "tags": [ "a", "b", "c" ],
     "intro": ""
   },
   {
     "date": "November 30, 2025",
     "title": "TITLE",
-    "image": "images/2025-11-30.JPEG",
+    "image": "images/2025/2025-11-30.JPEG",
     "tags": [ "a", "b", "c" ],
     "intro": ""
   },
   {
     "date": "November 29, 2025",
     "title": "TITLE",
-    "image": "images/2025-11-29.JPEG",
+    "image": "images/2025/2025-11-29.JPEG",
     "tags": [ "a", "b", "c" ],
     "intro": ""
   },
   {
     "date": "November 28, 2025",
     "title": "TITLE",
-    "image": "images/2025-11-28.JPEG",
+    "image": "images/2025/2025-11-28.JPEG",
     "tags": [ "a", "b", "c" ],
     "intro": ""
   },
   {
     "date": "November 27, 2025",
     "title": "TITLE",
-    "image": "images/2025-11-27.JPEG",
+    "image": "images/2025/2025-11-27.JPEG",
     "tags": [ "a", "b", "c" ],
     "intro": ""
   },
   {
     "date": "November 26, 2025",
     "title": "TITLE",
-    "image": "images/2025-11-26.PNG",
+    "image": "images/2025/2025-11-26.PNG",
     "tags": [ "a", "b", "c" ],
     "intro": ""
   },
   {
     "date": "November 25, 2025",
     "title": "TITLE",
-    "image": "images/2025-11-25.JPEG",
+    "image": "images/2025/2025-11-25.JPEG",
     "tags": [ "a", "b", "c" ],
     "intro": ""
   },
   {
     "date": "November 24, 2025",
     "title": "TITLE",
-    "image": "images/2025-11-24.JPEG",
+    "image": "images/2025/2025-11-24.JPEG",
     "tags": [ "a", "b", "c" ],
     "intro": ""
   },
   {
     "date": "November 23, 2025",
     "title": "TITLE",
-    "image": "images/2025-11-23.PNG",
+    "image": "images/2025/2025-11-23.PNG",
     "tags": [ "a", "b", "c" ],
     "intro": ""
   },
   {
     "date": "November 22, 2025",
     "title": "TITLE",
-    "image": "images/2025-11-22.PNG",
+    "image": "images/2025/2025-11-22.PNG",
     "tags": [ "a", "b", "c" ],
     "intro": ""
   },
   {
     "date": "November 21, 2025",
     "title": "TITLE",
-    "image": "images/2025-11-21.JPEG",
+    "image": "images/2025/2025-11-21.JPEG",
     "tags": [ "a", "b", "c" ],
     "intro": ""
   },
   {
     "date": "November 20, 2025",
     "title": "TITLE",
-    "image": "images/2025-11-20.JPEG",
+    "image": "images/2025/2025-11-20.JPEG",
     "tags": [ "a", "b", "c" ],
     "intro": ""
   },
   {
     "date": "November 19, 2025",
     "title": "TITLE",
-    "image": "images/2025-11-19.JPEG",
+    "image": "images/2025/2025-11-19.JPEG",
     "tags": [ "a", "b", "c" ],
     "intro": ""
   },
   {
     "date": "November 18, 2025",
     "title": "TITLE",
-    "image": "images/2025-11-18.JPEG",
+    "image": "images/2025/2025-11-18.JPEG",
     "tags": [ "a", "b", "c" ],
     "intro": ""
   },
   {
     "date": "November 17, 2025",
     "title": "TITLE",
-    "image": "images/2025-11-17.JPEG",
+    "image": "images/2025/2025-11-17.JPEG",
     "tags": [ "a", "b", "c" ],
     "intro": ""
   },
   {
     "date": "November 16, 2025",
     "title": "TITLE",
-    "image": "images/2025-11-16.JPEG",
+    "image": "images/2025/2025-11-16.JPEG",
     "tags": [ "a", "b", "c" ],
     "intro": ""
   },
   {
     "date": "November 15, 2025",
     "title": "TITLE",
-    "image": "images/2025-11-15.JPEG",
+    "image": "images/2025/2025-11-15.JPEG",
     "tags": [ "a", "b", "c" ],
     "intro": ""
   },
   {
     "date": "November 14, 2025",
     "title": "TITLE",
-    "image": "images/2025-11-14.JPEG",
+    "image": "images/2025/2025-11-14.JPEG",
     "tags": [ "a", "b", "c" ],
     "intro": ""
   },
   {
     "date": "November 13, 2025",
     "title": "TITLE",
-    "image": "images/2025-11-13.PNG",
+    "image": "images/2025/2025-11-13.PNG",
     "tags": [ "a", "b", "c" ],
     "intro": ""
   },
   {
     "date": "November 12, 2025",
     "title": "TITLE",
-    "image": "images/2025-11-12.JPEG",
+    "image": "images/2025/2025-11-12.JPEG",
     "tags": [ "a", "b", "c" ],
     "intro": ""
   },
   {
     "date": "November 11, 2025",
     "title": "TITLE",
-    "image": "images/2025-11-11.JPEG",
+    "image": "images/2025/2025-11-11.JPEG",
     "tags": [ "a", "b", "c" ],
     "intro": ""
   },
   {
     "date": "November 10, 2025",
     "title": "TITLE",
-    "image": "images/2025-11-10.JPEG",
+    "image": "images/2025/2025-11-10.JPEG",
     "tags": [ "a", "b", "c" ],
     "intro": ""
   },
   {
     "date": "November 09, 2025",
     "title": "TITLE",
-    "image": "images/2025-11-09.PNG",
+    "image": "images/2025/2025-11-09.PNG",
     "tags": [ "a", "b", "c" ],
     "intro": ""
   },
   {
     "date": "November 08, 2025",
     "title": "TITLE",
-    "image": "images/2025-11-08.JPEG",
+    "image": "images/2025/2025-11-08.JPEG",
     "tags": [ "a", "b", "c" ],
     "intro": ""
   },
   {
     "date": "November 07, 2025",
     "title": "TITLE",
-    "image": "images/2025-11-07.PNG",
+    "image": "images/2025/2025-11-07.PNG",
     "tags": [ "a", "b", "c" ],
     "intro": ""
   },
   {
     "date": "November 06, 2025",
     "title": "TITLE",
-    "image": "images/2025-11-06.PNG",
+    "image": "images/2025/2025-11-06.PNG",
     "tags": [ "a", "b", "c" ],
     "intro": ""
   },
   {
     "date": "November 05, 2025",
     "title": "TITLE",
-    "image": "images/2025-11-05.PNG",
+    "image": "images/2025/2025-11-05.PNG",
     "tags": [ "a", "b", "c" ],
     "intro": ""
   },
   {
     "date": "November 04, 2025",
     "title": "TITLE",
-    "image": "images/2025-11-04.PNG",
+    "image": "images/2025/2025-11-04.PNG",
     "tags": [ "a", "b", "c" ],
     "intro": ""
   },
   {
     "date": "November 03, 2025",
     "title": "TITLE",
-    "image": "images/2025-11-03.JPEG",
+    "image": "images/2025/2025-11-03.JPEG",
     "tags": [ "a", "b", "c" ],
     "intro": ""
   },
   {
     "date": "November 02, 2025",
     "title": "TITLE",
-    "image": "images/2025-11-02.PNG",
+    "image": "images/2025/2025-11-02.PNG",
     "tags": [ "a", "b", "c" ],
     "intro": ""
   },
   {
     "date": "November 01, 2025",
     "title": "TITLE",
-    "image": "images/2025-11-01.JPEG",
+    "image": "images/2025/2025-11-01.JPEG",
     "tags": [ "a", "b", "c" ],
     "intro": ""
   },
   {
     "date": "October 31, 2025",
     "title": "🎃 The Treat Patrol: A Halloween Special 🎃",
-    "image": "images/2025-10-31.PNG",
+    "image": "images/2025/2025-10-31.PNG",
     "tags": [ "a", "b", "c" ],
     "intro": "As twilight settled over Summerville, Honey Bear and Bootsie Belle took up their official Halloween duty: guarding the candy bowl. With fangs polished and witch hat tilted just right, they swore to hand out treats “fairly”…but fairness is a fuzzy concept when one of you’s a cat with a sweet tooth. Soon, superheroes, zombies, and mini creepers overran the porch in search of sugar…and by the end of the night, the Sisters learned an important Halloween truth: it’s not about how much candy you give, but how much mischief you make in the process!"
   },
   {
     "date": "October 30, 2025",
     "title": "PAW WARS: Episode Treat",
-    "image": "images/2025-10-30.PNG",
+    "image": "images/2025/2025-10-30.PNG",
     "tags": [ "a", "b", "c" ],
     "intro": "The Sisters are blasting off in their cheesiest adventure yet: “The Paw Wars!” Episode Treat takes you to a galaxy where Princess Pawmé Amewdala faces off against her whiskered nemesis, Darth Bootsie Belle, and the lactose-loaded Death Swiss Star. This Cat ’n Dog show is a little cheesy, a lot punny, and entirely out of this world. May the paws be with you!"
   },
   {
     "date": "October 29, 2025",
     "title": "🚀 Sisters: The Final Fur-tier 🐾",
-    "image": "images/2025-10-29.PNG",
+    "image": "images/2025/2025-10-29.PNG",
     "tags": [ "a", "b", "c" ],
     "intro": "When Honey Bear and Bootsie Belle accidentally beam aboard the U.S.S. Enterpaws, chaos is only logical! With Romousean ships closing in, the fearless Captain Honey Bear orders the crew to “Fire the biscuit blasters!” while Engineer Bootsie Belle struggles to keep her whiskers straight. But even across the galaxy, dinner waits for no one. Join the Sisters as they boldly go where no pet has gone before… and make it home just in time for kibble!"
   },
   {
     "date": "October 28, 2025",
     "title": "🎃 Bootsie’s 1st Ride 🎃",
-    "image": "images/2025-10-28.PNG",
+    "image": "images/2025/2025-10-28.PNG",
     "tags": [ "a", "b", "c" ],
     "intro": "It’s spooky season in Pine Forest Country Club, and Honey Bear and Bootsie Belle are braving the neighborhood—one paw at a time! This week marked Bootsie’s first-ever stroller adventure, and let’s just say… she picked quite a night for it. 😹👻 From skeleton riders to cauldron-bubbling witches, every Halloween display you see in this comic is actually real—straight from the streets we walk. By the end of the trip, one thing was clear: Honey Bear’s courage only goes so far, and Bootsie’s next “walk” might just stay on four wheels!"
   },
   {
     "date": "October 27, 2025",
     "title": "✨ Magic Gone Haywire! ✨",
-    "image": "images/2025-10-27.JPEG",
+    "image": "images/2025/2025-10-27.JPEG",
     "tags": [ "a", "b", "c" ],
     "intro": "🎩 When Honey Bear the Magician decides to make her assistant Bootsie Belle “disappear,” things don’t quite go according to plan… resulting in one wildly unexpected twist that longtime cartoon fans might recognize as a nostalgic nod to a certain half-cat, half-dog duo from TV history. 🐾 Their fur might have merged, but the laughs are fully separated!"
   },
   {
     "date": "October 26, 2025",
     "title": "🤠 Shootout @ High Noon 🤠",
-    "image": "images/2025-10-26.PNG",
+    "image": "images/2025/2025-10-26.PNG",
     "tags": [ "a", "b", "c" ],
     "intro": "The tension’s thicker than peanut butter at the Sisters’ Saloon! Sheriff Honey Bear is fixin’ to bring the notorious milk thief, Black Belle, to justice. But when these two cowgirls face off at high noon, their “weapons” aren’t exactly deadly… unless you count a squeaky bunny and a cat teaser! Looks like in this town, the only thing more dangerous than a duel… is sibling rivalry. 🐾💥"
   },
   {
     "date": "October 25, 2025",
     "title": "Going Back in Time!",
-    "image": "images/2025-10-25.JPEG",
+    "image": "images/2025/2025-10-25.JPEG",
     "tags": [ "a", "b", "c" ],
     "intro": "⏳🐾 Today’s Sisters comicstrip proves that when imagination meets cardboard, anything can happen! Honey Bear and Bootsie Belle set out to visit ancient Rome…but let’s just say their “time machine” had a recipe twist. 🥗"
   },
   {
     "date": "October 24, 2025",
     "title": "Dance Off!",
-    "image": "images/2025-10-24.JPEG",
+    "image": "images/2025/2025-10-24.JPEG",
     "tags": [ "a", "b", "c" ],
     "intro": "🕺 The Sisters are taking it to the dance floor! 🐾 Honey Bear might be off-beat, but she’s got heart, style, and pure tornado energy! Meanwhile, Bootsie Belle is all smooth grooves and feline finesse with that Freestyle Fusionist of funk! ✨ Who do YOU think should win this Dance Off? Vote for your favorite Sister in the comments below!"
   },
   {
     "date": "October 23, 2025",
     "title": "Sisters Park Adventure",
-    "image": "images/2025-10-23.PNG",
+    "image": "images/2025/2025-10-23.PNG",
     "tags": [ "a", "b", "c" ],
     "intro": "QUESTION: Where do you love to take your cats and dogs for some fun? I’m on the lookout for new places to take the real-life Honey Bear and Bootsie Belle for a few hours of adventure! 🐕🐈 😸 In today’s episode of “Sisters,” the girls are living it up at Ashley River Park…splashing in the water, zooming down slides, and making new little friends along the way. 🦋"
   },
   {
     "date": "October 22, 2025",
     "title": "😼 AI NIGHT SCHOOL 😼",
-    "image": "images/2025-10-22.PNG",
+    "image": "images/2025/2025-10-22.PNG",
     "tags": [ "a", "b", "c" ],
     "intro": "Dad is going back to school to learn A.I. from Purdue University online. Only the Yorkie dog Honey Bear and tuxedo cat Bootsie Belle have their own ideas about what that means…🐾"
   },
   {
     "date": "October 21, 2025",
     "title": "😼 BLANKETS! 😼",
-    "image": "images/2025-10-21.PNG",
+    "image": "images/2025/2025-10-21.PNG",
     "tags": [ "a", "b", "c" ],
     "intro": "They’re more than cozy covers in a cat’s world — they’re fortresses, secret lairs, and five-star hideouts. Bootsie Belle just wants some quiet “me time” in her blanket tent… until Honey Bear hears the magic word: “PLAY!” 🐾"
   },
   {
     "date": "October 20, 2025",
     "title": "FETCH!",
-    "image": "images/2025-10-20.PNG",
+    "image": "images/2025/2025-10-20.PNG",
     "tags": [ "a", "b", "c" ],
     "intro": "It isn’t just a game in our house—it’s a lifestyle. 🎾 From the moment Dad wakes up, Honey Bear is geared up for an all-day marathon of squeaky toy mayhem… while Bootsie Belle? Well, she’s got her own version of playtime. 😼🐾"
   },
   {
     "date": "October 19, 2025",
     "title": "🐾 Angels & Demons 🐾",
-    "image": "images/2025-10-19.PNG",
+    "image": "images/2025/2025-10-19.PNG",
     "tags": [ "a", "b", "c" ],
     "intro": "Today’s “Sisters” comic feels perfectly timed for a Sunday. Honey Bear and Bootsie Belle have always taken turns playing the angel and the demon, but this time, they discover those roles can come in all shapes and sizes…even round robotic ones!"
   },
   {
     "date": "October 18, 2025",
     "title": "Happy Birthday, Brother!",
-    "image": "images/2025-10-18.JPEG",
+    "image": "images/2025/2025-10-18.JPEG",
     "tags": [ "a", "b", "c" ],
     "intro": "🐾 This “Sisters” comic is for my son Scott’s birthday!"
   },
   {
     "date": "October 17, 2025",
     "title": "🎣 Gone Fishing! 🎣",
-    "image": "images/2025-10-17.PNG",
+    "image": "images/2025/2025-10-17.PNG",
     "tags": [ "a", "b", "c" ],
     "intro": "This Saturday morning, I’ll be out kayak fishing at Murrells Inlet, South Carolina…so I’m dedicating this episode of the “Sisters” comic strip to Heroes on the on the Water, an amazing group that helps Veterans, First Responders, and their families find peace and connection through fishing. Let’s hope my little Yorkie, Honey Bear, and her partner-in-crime, Bootsie Belle the tuxedo cat, do a good job grilling up the day’s catch afterwards! 🐾🔥🐟"
   },
   {
     "date": "October 16, 2025",
     "title": "🐾🎮 Sisters Survival Ascended 🎮🐾",
-    "image": "images/2025-10-16.PNG",
+    "image": "images/2025/2025-10-16.PNG",
     "tags": [ "a", "b", "c" ],
     "intro": "When Dad steps away from his ARK: Survival Ascended game, Honey Bear accidentally gets sucked into the world of ARK! Now it’s up to Bootsie Belle to figure out how to bring her sister back before the dinosaurs get her! 🦖"
   },
   {
     "date": "October 15, 2025",
     "title": "Rainy Days",
-    "image": "images/2025-10-15.JPEG",
+    "image": "images/2025/2025-10-15.JPEG",
     "tags": [ "a", "b", "c" ],
     "intro": "🐾 Many of you may have pets affected by weather. Our yorkie Honey Bear starts shaking as soon as the barometric pressure changes. Meanwhile our tuxedo cat Bootsie Belle isn’t phased by a little water! We’ve tried all kinds of things from Thunder Shirts to Melatonin, but honestly the greatest cure is Time. 😅"
   },
   {
     "date": "October 14, 2025",
     "title": "Operation Clean Teeth",
-    "image": "images/2025-10-14.PNG",
+    "image": "images/2025/2025-10-14.PNG",
     "tags": [ "a", "b", "c" ],
     "intro": "When Dad mentioned he was headed to the dentist, Honey Bear and Bootsie Belle decided it was their turn for a cleaning! Let’s just say things got a little… foamy. 😅 And no worries, the “Sisters” author’s visit was just a routine cleaning at Solomon Family Dentistry in Summerville, SC!"
   },
   {
     "date": "October 13, 2025",
     "title": "Midnight Snack",
-    "image": "images/2025-10-13.PNG",
+    "image": "images/2025/2025-10-13.PNG",
     "tags": [ "a", "b", "c" ],
     "intro": "Some nights, the Sisters sneak out of bed after Mom and Dad fall asleep for a little “midnight snack.” 🍗 But with Honey Bear the Yorkie and Bootsie Belle the tuxedo cat, snack time usually turns into chaos — and someone always drops the ball… literally! 😹🐾"
   },
   {
     "date": "October 12, 2025",
     "title": "Finders Keepers Loosers Weepers!",
-    "image": "images/2025-10-12.PNG",
+    "image": "images/2025/2025-10-12.PNG",
     "tags": [ "a", "b", "c" ],
     "intro": "Even the best of “Sisters” have their playful moments of payback! While Honey Bear and Bootsie Belle truly adore each other, every now and then one just can’t resist getting the upper paw… as you’ll see in today’s comic strip!"
   },
   {
     "date": "October 11, 2025",
     "title": "🎃 Sisters Halloween at Pine Forest! 🎃",
-    "image": "images/2025-10-11.JPEG",
+    "image": "images/2025/2025-10-11.JPEG",
     "tags": [ "a", "b", "c" ],
     "intro": "Happy haunting, everyone…and keep an eye out for that headless horseman. It neighs when you least expect it! While out trick-or-treating at the Pine Forest Country Club, our brave little witch yorkie “Honey Bear” and vampire tuxedo cat “Bootsie Belle” ran into the one that nobody wants to surprise after dark…the Headless Horseman! 🐴"
   },
   {
     "date": "October 10, 2025",
     "title": "🐾 Laser Tag! 🎯",
-    "image": "images/2025-10-10.PNG",
+    "image": "images/2025/2025-10-10.PNG",
     "tags": [ "a", "b", "c" ],
     "intro": "When Yorkie Honey Bear found a shiny red laser pointer, she knew exactly what to do… have a little fun teasing her femme feline sister, Bootsie Belle! The tuxedo cat didn’t stand a chance once that mysterious red dot started dancing across the living room — and let’s just say, one sister enjoyed this game a little more than the other! 😸 ⚠️ Kid Tip: Laser pointers are for play, but never point them at anyone’s eyes…human or furry! 👀"
   },
   {
     "date": "October 09, 2025",
     "title": "Spa Day for Sisters",
-    "image": "images/2025-10-09.PNG",
+    "image": "images/2025/2025-10-09.PNG",
     "tags": [ "a", "b", "c" ],
     "intro": "Honey Bear’s big plan for today is to treat her feline sister Bootsie Belle to a luxurious bubble bath! But Bootsie Belle’s reaction is pure disbelief. Cats don’t do bubbles. One sister ends up soaked, while the other ends up smugly grooming herself like a queen…as both prove that self-care isn’t one size fits all."
   },
   {
     "date": "October 08, 2025",
     "title": "Too Much of a Good Thing!",
-    "image": "images/2025-10-08.PNG",
+    "image": "images/2025/2025-10-08.PNG",
     "tags": [ "a", "b", "c" ],
     "intro": "Our tuxedo cat Bootsie Belle got into the catnip while our dog Honey Bear is fixated on her bone. I guess you can get too much of a good thing!"
   },
   {
     "date": "October 07, 2025",
     "title": "First Walk",
-    "image": "images/2025-10-07.PNG",
+    "image": "images/2025/2025-10-07.PNG",
     "tags": [ "a", "b", "c" ],
     "intro": "🐾 TRUE STORY: Our tuxedo cat Bootsie Belle whimpered when our yorkie dog Honey Bear took her first walk. But once she realized they both get treats after walks, Bootsie was ready to push her sister out the door!"
   },
   {
     "date": "October 06, 2025",
     "title": "Stow-A-Ways Kayak Fishing",
-    "image": "images/2025-10-06.PNG",
+    "image": "images/2025/2025-10-06.PNG",
     "tags": [ "a", "b", "c" ],
     "intro": "🎣 We paddle into a kayak fishing adventure as my wife and I have always joked about what it would be like if our yorkie Honey Bear and tuxedo cat Bootsie Belle came along when I hit the water. This time, I imagined them stowed away in my Calcutta fishing bag for a kayak fishing trip in my Bonafide kayak at Murrells Inlet, South Carolina — right where I’ll be fishing with Heroes On The Water - Lowcountry, SC Chapter."
   },
   {
     "date": "October 05, 2025",
     "title": "Fetch",
-    "image": "images/2025-10-05.PNG",
+    "image": "images/2025/2025-10-05.PNG",
     "tags": [ "a", "b", "c" ],
     "intro": "🐾 The game of “Fetch” is a daily tradition in our home… one that our dog Honey Bear would happily play from sunrise to sunset if she could! 🎾 Every morning starts the same…a wagging tail, a squeaky toy, and a very hopeful Yorkie ready to get Dad moving. Meanwhile, our cat Bootsie Belle just watches, clearly wondering why anyone would work that hard before breakfast."
   },
   {
     "date": "October 04, 2025",
     "title": "Need a Little More Sleep!",
-    "image": "images/2025-10-04.PNG",
+    "image": "images/2025/2025-10-04.PNG",
     "tags": [ "a", "b", "c" ],
     "intro": "Here is a morning ritual our cat goes thru to get Mom to wake up early and spend some Mommy-Kitty time. Only her internal kitty clock wakes up way too early!"
   },
   {
     "date": "October 03, 2025",
     "title": "Treats for One?",
-    "image": "images/2025-10-03.PNG",
+    "image": "images/2025/2025-10-03.PNG",
     "tags": [ "a", "b", "c" ],
     "intro": "When Dad asks Who are my good little girls and only Honey Bear shows up, then Bootsie Belle is left without any treats. If you snooze, you lose!"
   },
   {
     "date": "October 02, 2025",
     "title": "Indy 500",
-    "image": "images/2025-10-02.png",
+    "image": "images/2025/2025-10-02.png",
     "tags": [ "a", "b", "c" ],
     "intro": "We swear these two practiced on the Indy 500 race track before coming to us!  Well, Honey Bear is from Indiana after all."
   },
   {
     "date": "October 01, 2025",
     "title": "I got first!",
-    "image": "images/2025-10-01.png",
+    "image": "images/2025/2025-10-01.png",
     "tags": [ "a", "b", "c" ],
     "intro": "Honey Bear insists that she goes first since she is the older, bigger sister.  Bootsie Belle should remind her, she's only one day older, but acts more like a kid!"
   }
