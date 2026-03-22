@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sisters of Summerville</title>
+    <link>https://sisters-of-summerville.github.io/Sisters-of-Summerville/</link>
+    <description>Daily AI comic strip featuring Honey Bear the Yorkie and Bootsie Belle the tuxedo cat getting into fresh trouble every day in Summerville, SC.</description>
+    <language>en-us</language>
+    <atom:link href="https://sisters-of-summerville.github.io/Sisters-of-Summerville/rss.xml" rel="self" type="application/rss+xml"/>
+
+    <!-- ═══════════════════════════════════════════════════
+         ADD NEW EPISODES AT THE TOP, NEWEST FIRST
+         Copy one <item> block and fill in your details.
+         date format: Day, DD Mon YYYY 00:00:00 +0000
+    ════════════════════════════════════════════════════ -->
+
+    <item>
+      <title>Home Alone</title>
+      <link>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2025-12-31</link>
+      <description>With Mom and Dad headed out to celebrate, Honey Bear is absolutely convinced this is her moment to shine. Bootsie Belle has other plans. Chaos, ice cream, and zero regrets ensue.</description>
+      <pubDate>Wed, 31 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2025-12-31</guid>
+    </item>
+
+    <item>
+      <title>Midnight Challenge</title>
+      <link>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2025-12-30</link>
+      <description>December 30th brings big plans and even bigger bravado as Honey Bear and Bootsie Belle attempt to stay awake until midnight. Spoiler: they do not succeed.</description>
+      <pubDate>Tue, 30 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2025-12-30</guid>
+    </item>
+
+    <item>
+      <title>Fireworks</title>
+      <link>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2025-12-29</link>
+      <description>For Honey Bear, fireworks aren't fun or festive. When the explosions start, fear takes over — and Bootsie Belle provides moral support in her own very Bootsie way.</description>
+      <pubDate>Mon, 29 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2025-12-29</guid>
+    </item>
+
+  </channel>
+</rss>

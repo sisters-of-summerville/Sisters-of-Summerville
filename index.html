@@ -221,8 +221,8 @@
   .site-footer a:hover { text-decoration: underline; }
   .footer-tags { font-size: 0.68rem; opacity: 0.4; margin-top: 0.2rem; }
 
-  /* ── ABOUT / NEWSLETTER ── */
-  #section-about, #section-newsletter { display: none; }
+  /* ── ABOUT / SUBSCRIBE ── */
+  #section-about, #section-subscribe { display: none; }
 
   .about-box { background: var(--bg-card); border: 1px solid var(--border-lit); border-radius: var(--radius); padding: 1.8rem; max-width: 680px; margin: 0 auto; }
   .about-grid { display: grid; grid-template-columns: auto 1fr; gap: 1.4rem; align-items: start; }
@@ -295,7 +295,7 @@
   <nav>
     <button class="nav-link active" onclick="showTab('comics',this)">📖 Comics</button>
     <button class="nav-link" onclick="showTab('about',this)">🎨 About</button>
-    <button class="nav-link" onclick="showTab('newsletter',this)">📬 Newsletter</button>
+    <button class="nav-link" onclick="showTab('subscribe',this)">📬 Subscribe</button>
     <a class="nav-link" href="https://facebook.com/profile.php?id=61581673621814" target="_blank">👍 Facebook</a>
   </nav>
 
@@ -344,17 +344,17 @@
       </div>
     </section>
 
-    <!-- NEWSLETTER TAB -->
-    <section id="section-newsletter">
-      <div class="section-head"><h2>📬 Newsletter</h2><div class="accent-line"></div></div>
+    <!-- SUBSCRIBE TAB -->
+    <section id="section-subscribe">
+      <div class="section-head"><h2>📬 Subscribe</h2><div class="accent-line"></div></div>
       <div class="newsletter-box">
-        <div class="newsletter-title">Get New Episodes!</div>
-        <p class="newsletter-sub">New comic every day. Be the first to see Honey Bear's latest disaster and Bootsie Belle's inevitable scheme.</p>
-        <div class="newsletter-form">
-          <input class="newsletter-input" type="email" placeholder="your@email.com" id="newsletterEmail">
-          <button class="newsletter-btn" onclick="handleNewsletter()">SUBSCRIBE</button>
-        </div>
-        <p class="newsletter-note">No spam. Just chaos. Unsubscribe anytime. 🐾</p>
+        <div class="newsletter-title">Never Miss an Episode!</div>
+        <p class="newsletter-sub">Get Honey Bear and Bootsie Belle delivered to your inbox automatically every time a new comic is posted. No spam — just chaos. 🐾</p>
+        <a class="newsletter-btn" style="display:inline-block; text-decoration:none; padding:0.75rem 2rem; font-size:1.1rem;"
+           href="https://follow.it/sisters-of-summerville" target="_blank">
+          ✉️ SUBSCRIBE FOR FREE
+        </a>
+        <p class="newsletter-note">Powered by Follow.it · Unsubscribe anytime</p>
       </div>
     </section>
 
@@ -567,24 +567,12 @@ function copyLink() {
 //  TAB SWITCHER
 // ══════════════════════════════════════════
 function showTab(name, btn) {
-  ['comics','about','newsletter'].forEach(s => {
+  ['comics','about','subscribe'].forEach(s => {
     document.getElementById(`section-${s}`).style.display = (s === name) ? 'block' : 'none';
   });
   document.querySelectorAll('#view-gallery .nav-link').forEach(l => l.classList.remove('active'));
   if (btn) btn.classList.add('active');
   window.scrollTo({ top: 0, behavior: 'smooth' });
-}
-
-// ══════════════════════════════════════════
-//  NEWSLETTER
-// ══════════════════════════════════════════
-function handleNewsletter() {
-  const email = document.getElementById('newsletterEmail').value.trim();
-  if (!email || !email.includes('@')) { showToast('Please enter a valid email!'); return; }
-  // Send to Beehiiv hosted subscribe page with email pre-filled
-  window.open(`https://summerville.beehiiv.com/subscribe?email=${encodeURIComponent(email)}`, '_blank');
-  showToast("🐾 Taking you to subscribe now!");
-  document.getElementById('newsletterEmail').value = '';
 }
 
 // ══════════════════════════════════════════
@@ -604,10 +592,5 @@ document.addEventListener('keydown', e => {
     if (e.key === 'Escape')     backToGallery();
   }
 });
-// ── INIT
-loadComics();
-showTab('comics', null);
-document.querySelector('#view-gallery .nav-link').classList.add('active');
-</script>
-</body>
-</html>
+
+// ─�
