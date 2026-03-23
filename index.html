@@ -225,8 +225,9 @@
   #section-about, #section-subscribe { display: none; }
 
   .about-box { background: var(--bg-card); border: 1px solid var(--border-lit); border-radius: var(--radius); padding: 1.8rem; max-width: 680px; margin: 0 auto; }
-  .about-grid { display: grid; grid-template-columns: auto 1fr; gap: 1.4rem; align-items: start; }
-  .about-avatar { width: 76px; height: 76px; border-radius: 50%; border: 2px solid var(--amber); background: var(--bg-mid); display: flex; align-items: center; justify-content: center; font-size: 2.3rem; box-shadow: 0 0 18px rgba(245,166,35,0.18); }
+  .about-grid { display: grid; grid-template-columns: 200px 1fr; gap: 1.8rem; align-items: start; }
+  .about-avatar { width: 200px; height: 200px; border-radius: 12px; border: 3px solid var(--amber); overflow: hidden; box-shadow: 0 0 24px rgba(245,166,35,0.25); flex-shrink: 0; }
+  .about-avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
   .about-name { font-family: 'Bangers', cursive; font-size: 1.6rem; letter-spacing: 0.05em; }
   .about-role { font-family: 'Caveat', cursive; font-size: 0.92rem; color: #3ab5ff; margin-bottom: 0.7rem; }
   .about-bio  { font-size: 0.9rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 0.9rem; }
@@ -320,11 +321,14 @@
       <div class="section-head"><h2>🎨 About</h2><div class="accent-line"></div></div>
       <div class="about-box">
         <div class="about-grid">
-          <div class="about-avatar">🎨</div>
+          <div class="about-avatar">
+            <img src="David_Fliesen_with_the_Sisters_of_Summerville.JPEG" alt="David Fliesen with Honey Bear and Bootsie Belle"
+                 onerror="this.parentElement.innerHTML='🎨'">
+          </div>
           <div>
             <div class="about-name">Sisters of Summerville</div>
-            <div class="about-role">Daily AI Comic Strip · Summerville, SC</div>
-            <p class="about-bio">Honey Bear (a sassy Yorkie) and Bootsie Belle (a scheming tuxedo cat) get into fresh trouble powered by AI image generation and an artist's whole lot of love for pet chaos. This "Sisters of Summerville" blends a passion for AI, multimedia storytelling, and the very real personalities of two furry sisters.</p>
+            <div class="about-role">Daily Comic Strip · Summerville, SC</div>
+            <p class="about-bio">Artist David Fliesen has been partnering with multiple AI to make these daily comics about his real life dog and cat who live in Summerville, SC. He uses this to tell their story while also expressing his creative side and forcing himself to work with multiple Artificial Intelligence (AI) applications every day.<br><br>Honey Bear (a sassy Yorkie) and Bootsie Belle (a scheming tuxedo cat) get into fresh trouble powered by AI image generation and an artist's whole lot of love for pet chaos. This "Sisters of Summerville" blends a passion for AI, multimedia storytelling, and the very real personalities of two furry sisters.</p>
             <div class="about-tags">
               <span class="tag tag-amber">AI Art</span>
               <span class="tag tag-amber">Generative AI</span>
@@ -335,9 +339,9 @@
               <span class="tag">Daily Comic</span>
             </div>
             <div class="about-links">
+              <a class="about-link" href="https://www.linkedin.com/in/fliesen/" target="_blank">💼 LinkedIn</a>
               <a class="about-link" href="https://facebook.com/profile.php?id=61581673621814" target="_blank">👍 Facebook</a>
               <a class="about-link" href="https://github.com" target="_blank">🐙 GitHub</a>
-
             </div>
           </div>
         </div>
@@ -394,8 +398,9 @@
   </main>
 
   <footer class="site-footer">
-    <div>🐾 <strong>Sisters of Summerville</strong> · Daily AI Comic Strip · Summerville, SC</div>
-    <div>Created with AI · <a href="https://facebook.com/profile.php?id=61581673621814" target="_blank">Facebook</a> · <a href="https://github.com" target="_blank">GitHub</a></div>
+    <div>🐾 <strong>Sisters of Summerville</strong> · Daily Comic Strip · Summerville, SC</div>
+    <div>Creative partnership between Artist + AI</div>
+    <div>Created with · ChatGPT · Gemini · Claude · Adobe Photoshop · Adobe Firefly · <a href="https://github.com" target="_blank">GitHub</a></div>
     <div class="footer-tags">#SistersOfSummerville #YorkieLife #TuxedoCat #PetComedy #AIChaos</div>
   </footer>
 
@@ -449,8 +454,9 @@
 
   <!-- ROW 4: Footer -->
   <footer class="site-footer">
-    <div>🐾 <strong>Sisters of Summerville</strong> · Daily AI Comic Strip · Summerville, SC</div>
-    <div>Created with AI · <a href="https://facebook.com/profile.php?id=61581673621814" target="_blank">Facebook</a> · <a href="https://github.com" target="_blank">GitHub</a></div>
+    <div>🐾 <strong>Sisters of Summerville</strong> · Daily Comic Strip · Summerville, SC</div>
+    <div>Creative partnership between Artist + AI</div>
+    <div>Created with · ChatGPT · Gemini · Claude · Adobe Photoshop · Adobe Firefly · <a href="https://github.com" target="_blank">GitHub</a></div>
     <div class="footer-tags">#SistersOfSummerville #YorkieLife #TuxedoCat #PetComedy #AIChaos</div>
   </footer>
 
@@ -625,10 +631,5 @@ document.addEventListener('keydown', e => {
     if (e.key === 'Escape')     backToGallery();
   }
 });
-// ── INIT
-loadComics();
-showTab('comics', null);
-document.querySelector('#view-gallery .nav-link').classList.add('active');
-</script>
-</body>
-</html>
+
+// ─�
