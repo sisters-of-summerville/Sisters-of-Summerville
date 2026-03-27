@@ -633,19 +633,23 @@ document.addEventListener('keydown', e => {
 });
 
 // ── INIT
-async function init() {
-  await loadComics();
-  showTab('comics', null);
-  document.querySelector('#view-gallery .nav-link').classList.add('active');
-
-  // Check URL hash on load — open specific comic if date hash present
-  // e.g. #2026-03-27 will auto-open that episode
+function openComicByHash() {
   const hash = decodeURIComponent(window.location.hash.replace('#',''));
   if (hash && hash.match(/\d{4}-\d{2}-\d{2}/)) {
     const idx = COMICS.findIndex(c => c.date === hash || c.image.includes(hash));
     if (idx !== -1) openComic(idx);
   }
 }
+
+async function init() {
+  await loadComics();
+  showTab('comics', null);
+  document.querySelector('#view-gallery .nav-link').classList.add('active');
+  openComicByHash();
+}
+
+// Re-run whenever the hash changes (e.g. clicking a different follow.it link)
+window.addEventListener('hashchange', openComicByHash);
 
 init();
 </script>
