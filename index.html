@@ -631,10 +631,23 @@ document.addEventListener('keydown', e => {
     if (e.key === 'Escape')     backToGallery();
   }
 });
+
 // ── INIT
-loadComics();
-showTab('comics', null);
-document.querySelector('#view-gallery .nav-link').classList.add('active');
+async function init() {
+  await loadComics();
+  showTab('comics', null);
+  document.querySelector('#view-gallery .nav-link').classList.add('active');
+
+  // Check URL hash on load — open specific comic if date hash present
+  // e.g. #2026-03-27 will auto-open that episode
+  const hash = decodeURIComponent(window.location.hash.replace('#',''));
+  if (hash && hash.match(/\d{4}-\d{2}-\d{2}/)) {
+    const idx = COMICS.findIndex(c => c.date === hash || c.image.includes(hash));
+    if (idx !== -1) openComic(idx);
+  }
+}
+
+init();
 </script>
 </body>
 </html>
