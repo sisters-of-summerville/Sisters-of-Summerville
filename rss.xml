@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<!-- Comment: check https://follow.it/delivery-settings to update schedule for RSS feed -->  
   <channel>
     <title>Sisters of Summerville</title>
     <link>https://sisters-of-summerville.github.io/Sisters-of-Summerville/</link>
@@ -12,6 +13,16 @@
          Copy one <item> block and fill in your details.
          date format: Day, DD Mon YYYY 00:00:00 +0000
     ════════════════════════════════════════════════════ -->
+   
+    <item>
+       <title>🐿️ The Great Squirrel Chase 🐿️</title>
+       <link>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-04-14</link>
+       <description>When a sneaky backyard bandit makes a move on the bird feeder, Honey Bear springs into action as the neighborhood Protector of the Seeds! 🚨🌻
+
+Meanwhile, Bootsie Belle takes the high ground like the queen she is, overseeing the chaos with wide-eyed excitement as the skies fill with returning birds. From daring fence-top backyard chase to full-speed pursuit, this“little snack” turns into an epic showdown! 🐕😆</description>
+       <pubDate>Thu, 14 Apr 2026 08:30:00 +0000</pubDate>
+       <guid>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-04-14</guid>
+    </item>
    
     <item>
        <title>🎪🐾 Big Top Pet Circus! 🐾🎪</title>
