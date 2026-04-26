@@ -292,38 +292,49 @@
   .char-tags { display: flex; flex-wrap: wrap; gap: 0.3rem; }
   .char-tag { font-size: 0.65rem; padding: 0.1rem 0.5rem; border-radius: 20px; border: 1px solid var(--border-lit); color: var(--text-muted); font-weight: 700; }
 
-  /* Character modal */
-  .char-modal {
-    background: var(--bg-card);
-    border: 1px solid var(--border-lit);
-    border-radius: var(--radius);
-    max-width: 600px;
-    width: 100%;
-    max-height: 90vh;
-    overflow-y: auto;
-    box-shadow: 0 24px 80px rgba(0,0,0,0.8);
-    animation: modalPop 0.25s ease;
+  /* ── CHARACTER SINGLE VIEW ── */
+  #view-character { display: none; }
+
+  .char-viewer { max-width: 1060px; margin: 0.9rem auto 0; padding: 0 1rem 0.5rem; }
+
+  .char-viewer-row {
+    display: grid;
+    grid-template-columns: 52px 1fr 1fr 52px;
+    gap: 0.9rem;
+    align-items: center;
+    margin-bottom: 1rem;
   }
-  @keyframes modalPop {
-    from { opacity:0; transform:scale(0.95) translateY(12px); }
-    to   { opacity:1; transform:scale(1) translateY(0); }
+
+  .char-info-box {
+    background: var(--bg-card); border: 1px solid var(--border-lit);
+    border-radius: var(--radius); padding: 1.1rem 1.3rem;
+    aspect-ratio: 1/1; overflow-y: auto;
+    display: flex; flex-direction: column; gap: 0.55rem;
   }
-  .char-modal-header {
-    display: flex; align-items: flex-start; justify-content: space-between;
-    padding: 1.2rem 1.4rem 0.8rem; border-bottom: 1px solid var(--border); gap: 1rem;
+  .char-info-name {
+    font-family: 'Bangers', cursive; font-size: 1.7rem; letter-spacing: 0.04em;
+    background: linear-gradient(135deg, #ffe0a0, var(--amber));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    line-height: 1.15;
   }
-  .char-modal-name { font-family: 'Bangers', cursive; font-size: 2rem; letter-spacing: 0.04em; line-height: 1.1; }
-  .char-modal-img { width:100%; aspect-ratio:1/1; object-fit:cover; display:block; background: var(--bg-mid); }
-  .char-modal-body { padding: 1.2rem 1.4rem 1.5rem; }
-  .char-modal-desc { font-size: 0.92rem; color: var(--text-muted); line-height: 1.7; }
-  .char-modal-tags { display:flex; flex-wrap:wrap; gap:0.4rem; margin-top:1rem; }
-  .char-modal-close {
-    background: none; border: 1px solid var(--border); border-radius: 8px;
-    width: 34px; height: 34px; color: var(--text-muted); font-size: 1.1rem;
-    cursor: pointer; flex-shrink: 0; transition: all 0.2s;
-    display: flex; align-items: center; justify-content: center;
+  .char-info-divider { height: 1px; background: var(--border-lit); }
+  .char-info-desc { font-size: 0.88rem; color: var(--text-muted); line-height: 1.7; white-space: pre-line; flex: 1; }
+  .char-info-tags { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: auto; padding-top: 0.4rem; }
+
+  .char-full-img-wrap { aspect-ratio: 1/1; border-radius: var(--radius); overflow: hidden; background: var(--bg-mid); border: 1px solid var(--border-lit); }
+  .char-full-img-wrap img { width:100%; height:100%; object-fit: contain; display:block; background: var(--bg-mid); }
+
+  @media (max-width: 680px) {
+    .char-viewer-row {
+      grid-template-columns: 40px 1fr 40px;
+      grid-template-rows: auto auto;
+      gap: 0.6rem;
+    }
+    .char-full-img-wrap { grid-column: 2; grid-row: 1; }
+    .char-info-box      { grid-column: 1/-1; grid-row: 2; aspect-ratio: auto; min-height: 160px; }
+    .char-nav-left      { grid-column: 1; grid-row: 1; }
+    .char-nav-right     { grid-column: 3; grid-row: 1; }
   }
-  .char-modal-close:hover { border-color: var(--amber); color: var(--amber); }
 
   .about-box { background: var(--bg-card); border: 1px solid var(--border-lit); border-radius: var(--radius); padding: 1.8rem; max-width: 680px; margin: 0 auto; }
   .about-grid { display: grid; grid-template-columns: 200px 1fr; gap: 1.8rem; align-items: start; }
@@ -579,20 +590,51 @@
 
 </div><!-- /view-single -->
 
-<!-- CHARACTER MODAL -->
-<div class="modal-backdrop" id="charModalBackdrop" onclick="closeCharModalOnBackdrop(event)">
-  <div class="char-modal" id="charModal">
-    <div class="char-modal-header">
-      <div class="char-modal-name" id="charModalName"></div>
-      <button class="char-modal-close" onclick="closeCharModal()">✕</button>
-    </div>
-    <img class="char-modal-img" id="charModalImg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="">
-    <div class="char-modal-body">
-      <p class="char-modal-desc" id="charModalDesc"></p>
-      <div class="char-modal-tags" id="charModalTags"></div>
-    </div>
+<!-- CHARACTER SINGLE VIEW -->
+<div id="view-character">
+
+  <div class="single-banner">
+    <a href="index.html">
+      <img src="sos-banner.png" alt="Sisters of Summerville"
+           onerror="this.style.display='none'; document.getElementById('char-banner-fallback').style.display='block'">
+    </a>
+    <div id="char-banner-fallback" style="display:none; font-family:'Bangers',cursive; font-size:2.6rem; letter-spacing:0.05em; color:#f5a623; padding:1rem 0 0.5rem; text-shadow:0 0 30px rgba(245,166,35,0.4);"><a href="index.html" style="color:inherit;text-decoration:none;">Sisters of Summerville</a></div>
   </div>
-</div>
+
+  <div class="char-viewer">
+
+    <!-- text left | image right | arrows either side -->
+    <div class="char-viewer-row">
+      <button class="nav-arrow char-nav-left"  id="charArrowPrev" onclick="navigateChar(-1)" title="Previous character">◀</button>
+
+      <div class="char-info-box">
+        <div class="char-info-name"  id="charViewName"></div>
+        <div class="char-info-divider"></div>
+        <p   class="char-info-desc"  id="charViewDesc"></p>
+        <div class="char-info-tags"  id="charViewTags"></div>
+      </div>
+
+      <div class="char-full-img-wrap">
+        <img id="charViewImg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="">
+      </div>
+
+      <button class="nav-arrow char-nav-right" id="charArrowNext" onclick="navigateChar(1)"  title="Next character">▶</button>
+    </div>
+
+    <!-- Back button -->
+    <div class="share-row">
+      <button class="share-btn share-back" onclick="backToCharacters()">◀ All Characters</button>
+    </div>
+
+  </div>
+
+  <footer class="site-footer">
+    <div>🐾 <strong>Sisters of Summerville</strong> · Daily Comic Strip · Summerville, SC</div>
+    <div>Created with · ChatGPT · Gemini · Claude · Adobe Photoshop · Adobe Firefly · <a href="https://github.com" target="_blank">GitHub</a></div>
+    <div class="footer-tags">#SistersOfSummerville #YorkieLife #TuxedoCat #PetComedy #AIChaos</div>
+  </footer>
+
+</div><!-- /view-character -->
 
 <div class="toast" id="toast"></div>
 
@@ -776,9 +818,10 @@ function copyLink() {
 //  CHARACTERS
 // ══════════════════════════════════════════
 let CHARACTERS = [];
+let currentCharIndex = 0;
 
 async function loadCharacters() {
-  if (CHARACTERS.length) return; // already loaded
+  if (CHARACTERS.length) return;
   try {
     const res = await fetch('characters.json');
     if (!res.ok) throw new Error('HTTP ' + res.status);
@@ -792,9 +835,9 @@ async function loadCharacters() {
 
 function renderCharacters() {
   document.getElementById('charGrid').innerHTML = CHARACTERS.map((c, i) => `
-    <div class="char-card" onclick="openCharModal(${i})" style="animation-delay:${i*0.04}s">
+    <div class="char-card" onclick="openCharView(${i})" style="animation-delay:${i*0.04}s">
       <div class="char-img-wrap">
-        <img src="${c.image}" alt="${c.name}"
+        <img src="${c.image}" alt="${c.name}" loading="lazy"
              onerror="this.src='https://placehold.co/400x400/1c1818/f5a623?text=${encodeURIComponent(c.name)}'">
       </div>
       <div class="char-card-body">
@@ -804,26 +847,48 @@ function renderCharacters() {
     </div>`).join('');
 }
 
-function openCharModal(idx) {
-  const c = CHARACTERS[idx];
-  document.getElementById('charModalName').textContent = c.name;
-  document.getElementById('charModalDesc').textContent = c.description;
-  const img = document.getElementById('charModalImg');
+function openCharView(idx) {
+  currentCharIndex = idx;
+  renderCharView();
+  document.getElementById('view-gallery').style.display   = 'none';
+  document.getElementById('view-single').style.display    = 'none';
+  document.getElementById('view-character').style.display = 'block';
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function renderCharView() {
+  const c = CHARACTERS[currentCharIndex];
+  document.getElementById('charViewName').textContent = c.name;
+  document.getElementById('charViewDesc').textContent = c.description;
+
+  const img = document.getElementById('charViewImg');
   img.src = c.image; img.alt = c.name;
-  img.onerror = () => { img.src = `https://placehold.co/600x600/1c1818/f5a623?text=${encodeURIComponent(c.name)}`; };
-  document.getElementById('charModalTags').innerHTML =
+  img.onerror = () => { img.src = `https://placehold.co/800x800/1c1818/f5a623?text=${encodeURIComponent(c.name)}`; };
+
+  document.getElementById('charViewTags').innerHTML =
     (c.tags||[]).map(t=>`<span class="caption-tag">#${t}</span>`).join('');
-  document.getElementById('charModalBackdrop').classList.add('open');
-  document.body.style.overflow = 'hidden';
+
+  document.getElementById('charArrowPrev').classList.toggle('disabled', currentCharIndex <= 0);
+  document.getElementById('charArrowNext').classList.toggle('disabled', currentCharIndex >= CHARACTERS.length - 1);
 }
 
-function closeCharModal() {
-  document.getElementById('charModalBackdrop').classList.remove('open');
-  document.body.style.overflow = '';
+function navigateChar(dir) {
+  const next = currentCharIndex + dir;
+  if (next < 0 || next >= CHARACTERS.length) return;
+  currentCharIndex = next;
+  renderCharView();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-function closeCharModalOnBackdrop(e) {
-  if (e.target === document.getElementById('charModalBackdrop')) closeCharModal();
+function backToCharacters() {
+  document.getElementById('view-character').style.display = 'none';
+  document.getElementById('view-gallery').style.display   = 'block';
+  showTab('characters', null);
+  // Re-highlight the Characters nav button
+  document.querySelectorAll('#view-gallery .nav-link').forEach(l => {
+    l.classList.toggle('active', l.textContent.includes('Characters'));
+  });
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 // ══════════════════════════════════════════
@@ -855,8 +920,10 @@ document.addEventListener('keydown', e => {
     if (e.key === 'ArrowRight') navigateComic(1);
     if (e.key === 'Escape')     backToGallery();
   }
-  if (document.getElementById('charModalBackdrop').classList.contains('open')) {
-    if (e.key === 'Escape') closeCharModal();
+  if (document.getElementById('view-character').style.display === 'block') {
+    if (e.key === 'ArrowLeft')  navigateChar(-1);
+    if (e.key === 'ArrowRight') navigateChar(1);
+    if (e.key === 'Escape')     backToCharacters();
   }
 });
 
