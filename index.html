@@ -224,6 +224,19 @@
   /* ── ABOUT / SUBSCRIBE ── */
   #section-about, #section-subscribe, #section-characters { display: none; }
 
+  /* ── MODAL BACKDROP ── */
+  .modal-backdrop {
+    display: none;
+    position: fixed; inset: 0;
+    background: rgba(8,7,12,0.92);
+    z-index: 200;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    backdrop-filter: blur(6px);
+  }
+  .modal-backdrop.open { display: flex; }
+
   /* ── LOAD MORE ── */
   #loadMoreBar { display: none; }
   #loadMoreBar.visible { display: flex !important; }
@@ -573,7 +586,7 @@
       <div class="char-modal-name" id="charModalName"></div>
       <button class="char-modal-close" onclick="closeCharModal()">✕</button>
     </div>
-    <img class="char-modal-img" id="charModalImg" src="" alt="">
+    <img class="char-modal-img" id="charModalImg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="">
     <div class="char-modal-body">
       <p class="char-modal-desc" id="charModalDesc"></p>
       <div class="char-modal-tags" id="charModalTags"></div>
