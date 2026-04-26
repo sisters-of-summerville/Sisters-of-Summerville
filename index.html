@@ -850,6 +850,9 @@ function renderCharacters() {
 function openCharView(idx) {
   currentCharIndex = idx;
   renderCharView();
+  // Set URL hash for shareable link
+  const slug = toSlug(CHARACTERS[idx].name);
+  history.pushState(null, '', '#character/' + slug);
   document.getElementById('view-gallery').style.display   = 'none';
   document.getElementById('view-single').style.display    = 'none';
   document.getElementById('view-character').style.display = 'block';
@@ -877,14 +880,16 @@ function navigateChar(dir) {
   if (next < 0 || next >= CHARACTERS.length) return;
   currentCharIndex = next;
   renderCharView();
+  const slug = toSlug(CHARACTERS[currentCharIndex].name);
+  history.pushState(null, '', '#character/' + slug);
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 function backToCharacters() {
   document.getElementById('view-character').style.display = 'none';
   document.getElementById('view-gallery').style.display   = 'block';
+  history.pushState(null, '', '#characters');
   showTab('characters', null);
-  // Re-highlight the Characters nav button
   document.querySelectorAll('#view-gallery .nav-link').forEach(l => {
     l.classList.toggle('active', l.textContent.includes('Characters'));
   });
@@ -930,10 +935,43 @@ document.addEventListener('keydown', e => {
 // ── INIT
 function openComicByHash() {
   const hash = decodeURIComponent(window.location.hash.replace('#',''));
-  if (hash && hash.match(/\d{4}-\d{2}-\d{2}/)) {
+  if (!hash) return;
+
+  // Character grid: #characters
+  if (hash === 'characters') {
+    showTab('characters', null);
+    document.querySelectorAll('#view-gallery .nav-link').forEach(l => {
+      l.classList.toggle('active', l.textContent.includes('Characters'));
+    });
+    return;
+  }
+
+  // Individual character: #character/honey-bear
+  if (hash.startsWith('character/')) {
+    const slug = hash.replace('character/','');
+    // Characters may not be loaded yet — load then open
+    const tryOpen = () => {
+      const idx = CHARACTERS.findIndex(c => toSlug(c.name) === slug);
+      if (idx !== -1) openCharView(idx);
+    };
+    if (CHARACTERS.length) { tryOpen(); }
+    else { loadCharacters().then(tryOpen); }
+    return;
+  }
+
+  // Comic by date: #2026-03-27
+  if (hash.match(/\d{4}-\d{2}-\d{2}/)) {
     const idx = COMICS.findIndex(c => c.date === hash || c.image.includes(hash));
     if (idx !== -1) openComic(idx);
   }
+}
+
+// Slugify a character name for use in URLs
+function toSlug(name) {
+  return name.toLowerCase()
+    .replace(/['']/g, '')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-|-$/g, '');
 }
 
 async function init() {
