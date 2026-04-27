@@ -10,7 +10,18 @@
 
     <!-- ═══════════════════════════════════════════════════
          ADD NEW EPISODES AT THE TOP, NEWEST FIRST
-         Copy one <item> block and fill in your details.
+         Copy one 
+    <item>
+      <title>🐾🚚 Sisters of Summerville: Potholes &amp; Postal Heroes 🚚🐾</title>
+      <link>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-04-27</link>
+      <description>In Summerville, the road to delivery isn’t always smooth. Sometimes it’s a full-on obstacle course of craters, bumps, and suspension-testing surprises! But nothing slows down Eileen, the neighborhood’s unstoppable USPS postal warrior. 📦 
+As Dad walks Honey Bear and Bootsie Belle to the community mailboxes, the payoff rolls in right on time complete with bones for Honey Bear and spider toys for Bootsie…and a whole lot of gratitude for the one who made it happen! Because around here, it’s not just about the mail…it’s about grit, heart, and showing up no matter what the road throws at you. Neither potholes…nor chaos…nor craters in the street…stay this courier from delivering appointed treats! 😄 
+Got potholes like these in your neighborhood? Time to call in some backup! Report them on seeclickfix.com and help smooth the ride for everyone! 🛠️</description>
+      <pubDate>Mon, 27 Apr 2026 12:00:00 +0000</pubDate>
+      <guid>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-04-27</guid>
+    </item>
+
+    <item> block and fill in your details.
          date format: Day, DD Mon YYYY 00:00:00 +0000
     ════════════════════════════════════════════════════ -->
    
