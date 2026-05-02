@@ -937,6 +937,24 @@ function openComicByHash() {
   const hash = decodeURIComponent(window.location.hash.replace('#',''));
   if (!hash) return;
 
+  // Subscribe page: #subscribe
+  if (hash === 'subscribe') {
+    showTab('subscribe', null);
+    document.querySelectorAll('#view-gallery .nav-link').forEach(l => {
+      l.classList.toggle('active', l.textContent.includes('Subscribe'));
+    });
+    return;
+  }
+
+  // About page: #about
+  if (hash === 'about') {
+    showTab('about', null);
+    document.querySelectorAll('#view-gallery .nav-link').forEach(l => {
+      l.classList.toggle('active', l.textContent.includes('About'));
+    });
+    return;
+  }
+
   // Character grid: #characters
   if (hash === 'characters') {
     showTab('characters', null);
