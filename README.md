@@ -1,133 +1,172 @@
 # 🐶🐱 Sisters of Summerville — Comic Strip Website
 
-A dark-mode, searchable comic strip website. Built for GitHub Pages — free to host, easy to update.
+A dark-mode, searchable daily comic strip website featuring Honey Bear the Yorkie and Bootsie Belle the tuxedo cat. Built for GitHub Pages — free to host, easy to update daily.
+
+🌐 **Live site:** [sisters-of-summerville.github.io/Sisters-of-Summerville](https://sisters-of-summerville.github.io/Sisters-of-Summerville/)
 
 ---
 
-## 📁 Folder Structure
+## 📁 Repository Structure
 
 ```
-sisters-of-summerville/
-├── index.html          ← The entire site (single file)
-├── images/
-│   ├── ep001.png       ← Episode 1 image
-│   ├── ep002.png       ← Episode 2 image
-│   ├── ep007.png       ← etc.
+Sisters-of-Summerville/
+├── index.html                          ← Entire website (single file)
+├── captions.json                       ← All comic episode data (newest first)
+├── characters.json                     ← All character profile data
+├── rss.xml                             ← RSS feed for follow.it email subscribers
+├── sos-banner.png                      ← Site header logo
+├── David_Fliesen_with_the_Sisters_of_Summerville.JPEG  ← About page photo
+├── characters/                         ← Character portrait images
+│   ├── honey-bear.jpeg
+│   ├── bootsie-belle.jpeg
 │   └── ...
+├── images/                             ← Comic strip images organized by year
+│   ├── 2025/
+│   │   ├── 2025-10-01.png
+│   │   └── ...
+│   └── 2026/
+│       ├── 2026-01-01.jpeg
+│       └── ...
 └── README.md
 ```
 
 ---
 
-## 🚀 Deploying to GitHub Pages (Free!)
+## 🚀 Site Features
 
-### First time setup:
-1. Create a free account at [github.com](https://github.com) if you don't have one
-2. Click **New Repository** → name it `sisters-of-summerville` (or `yourusername.github.io` for a root portfolio site)
-3. Upload all your files (drag & drop works in the GitHub web UI)
-4. Go to **Settings → Pages → Source → Deploy from branch → main → / (root)**
-5. Your site will be live at: `https://yourusername.github.io/sisters-of-summerville`
-
-### After first setup — adding a new episode:
-1. Open `index.html` in any text editor (VS Code recommended)
-2. Find the `const COMICS = [` section near the bottom
-3. Add your new episode as the FIRST item in the array (newest first):
-
-```javascript
-{
-  ep: "Ep. 8",
-  date: "March 21, 2025",
-  title: "Your Episode Title",
-  image: "images/ep008.png",
-  tags: ["tag1", "tag2", "tag3"],
-  intro: `Your episode description here.
-
-You can use blank lines for paragraphs.
-Multi-line text is supported naturally.`
-},
-```
-
-4. Drop your new `ep008.png` into the `images/` folder
-5. Commit and push — site updates automatically!
+- **Comics** — Searchable grid of all episodes, newest first, loads 40 at a time with Load More / Load All
+- **Characters** — Full character profiles with navigable detail pages
+- **About** — Creator bio with photo and portfolio link
+- **Subscribe** — Embedded follow.it subscription form for daily email delivery
+- **Hash-based deep linking** — Every comic, character, and tab has a unique shareable URL
+- **RSS feed** — `rss.xml` powers follow.it email notifications to subscribers
+- **Responsive** — Works on desktop, tablet, and mobile
 
 ---
 
-## 🖼️ Image Tips
+## 📅 Daily Workflow — Adding a New Episode
 
-- **Format**: PNG or JPG both work fine
-- **Size**: Square images (1:1 ratio) look best — e.g. 1000×1000px
-- **File size**: Compress images before uploading (use [squoosh.app](https://squoosh.app) — free, drag & drop)
-- **Naming convention**: `ep001.png`, `ep002.png`, etc. keeps things tidy
+There are two ways to publish a new episode:
+
+### Option A — Admin Tool (Recommended)
+Use `sos-admin.html` (stored locally on your computer — never upload this to GitHub).
+1. Open `sos-admin.html` in Chrome
+2. Date auto-fills to today
+3. Enter title, tags, and description
+4. Drag and drop the comic image
+5. Click **🚀 PUBLISH EPISODE**
+6. The tool automatically pushes the image, updates `captions.json`, and updates `rss.xml`
+7. Site goes live within ~2 minutes
+
+### Option B — Manual Update
+Update three files in GitHub:
+
+**1. Upload the image** to the correct year folder:
+```
+images/2026/2026-05-01.jpeg
+```
+
+**2. Add entry to `captions.json`** (at the very top, newest first):
+```json
+{
+  "date": "2026-05-01",
+  "title": "Your Episode Title",
+  "image": "images/2026/2026-05-01.jpeg",
+  "tags": ["tag1", "tag2", "tag3"],
+  "intro": "Your episode description here."
+}
+```
+
+**3. Add entry to `rss.xml`** (just after the comment block, newest first):
+```xml
+<item>
+  <title>Your Episode Title</title>
+  <link>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-05-01</link>
+  <description>Your episode description here.</description>
+  <pubDate>Fri, 01 May 2026 12:00:00 +0000</pubDate>
+  <guid>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-05-01</guid>
+</item>
+```
+
+---
+
+## 🔗 Shareable URLs
+
+| Page | URL |
+|------|-----|
+| Homepage | `.../#` |
+| Subscribe | `.../#subscribe` |
+| About | `.../#about` |
+| Characters grid | `.../#characters` |
+| Individual character | `.../#character/honey-bear` |
+| Individual comic | `.../#2026-05-01` |
+
+Direct subscribe link: **[sisters-of-summerville.github.io/Sisters-of-Summerville/#subscribe](https://sisters-of-summerville.github.io/Sisters-of-Summerville/#subscribe)**
+
+---
+
+## 🖼️ Image Guidelines
+
+- **Format**: PNG or JPEG both work
+- **Size**: Square (1:1 ratio) — 1000×1000px recommended
+- **Naming**: Always use the date format `YYYY-MM-DD.ext` (e.g. `2026-05-01.jpeg`)
+- **Location**: Place in the correct year subfolder under `images/`
+- **File size**: Compress before uploading using [squoosh.app](https://squoosh.app) — free and fast
+
+---
+
+## 🐾 Adding / Updating Characters
+
+Edit `characters.json` directly in GitHub. Each entry:
+```json
+{
+  "name": "Character Name",
+  "image": "characters/character-slug.jpeg",
+  "tags": ["Main Character", "Species"],
+  "description": "Character bio text here."
+}
+```
+
+Upload portrait images to the `characters/` folder. The URL slug is generated automatically from the name — for example `Honey Bear` becomes `#character/honey-bear`.
+
+---
+
+## 📡 RSS & Email Subscriptions
+
+The site uses **follow.it** to deliver new episodes to email subscribers.
+
+- RSS feed URL: `https://sisters-of-summerville.github.io/Sisters-of-Summerville/rss.xml`
+- follow.it checks the feed periodically and emails subscribers when new items appear
+- Always add new episodes to `rss.xml` as well as `captions.json` (the admin tool does both automatically)
+- Never delete old items from `rss.xml` — only ever add to the top
 
 ---
 
 ## 🔍 Search
 
-Search works automatically across:
-- Episode titles
-- Episode intro text
-- Tags
-- Episode numbers
+Search works automatically across episode titles, descriptions, dates, and tags. Searching always shows all matching results regardless of the current load-more pagination state.
 
 ---
 
-## 📬 Newsletter Integration
+## ⚠️ Important Notes
 
-The newsletter signup is currently a placeholder. To wire it up:
-
-### Option A — Mailchimp (free up to 500 subscribers)
-1. Create a Mailchimp account → Audience → Signup forms → Embedded forms
-2. Copy your form action URL
-3. In `index.html`, find `handleNewsletterSubmit()` and replace with a real POST to your Mailchimp URL
-
-### Option B — ConvertKit / Beehiiv
-Similar process — both have free tiers and good embed options.
+- **Never edit `index.html` by downloading from the live site URL** — Cloudflare can inject scripts into downloaded files. Always use GitHub's built-in web editor (click the pencil ✏️ icon on any file) to make edits.
+- **File names are case-sensitive** on GitHub Pages — `2026-05-01.JPEG` and `2026-05-01.jpeg` are different files. Make sure the extension in `captions.json` exactly matches the uploaded file.
+- **`sos-admin.html` is a local-only tool** — keep it on your computer and never upload it to this repository.
 
 ---
 
-## 📱 Social Share
-
-Each episode has:
-- Facebook share button
-- X (Twitter) share button  
-- Copy link button
-- Native share on mobile (uses device share sheet)
-
----
-
-## 🎨 Customizing
+## 🎨 Site Colors
 
 All colors are CSS variables at the top of `index.html`:
 
 ```css
---amber:      #f5a623;   /* Main accent color */
---blue-glow:  #3ab5ff;   /* Secondary accent */
---pink:       #e85fa0;   /* Tertiary accent */
---bg-deep:    #0e0c10;   /* Darkest background */
---bg-card:    #1e1a26;   /* Card background */
+--amber:    #f5a623;   /* Main accent — gold/amber */
+--blue:     #3ab5ff;   /* Secondary accent */
+--bg-deep:  #0a0808;   /* Darkest background */
+--bg-card:  #1c1818;   /* Card background */
 ```
 
-Change `--amber` to change the whole site's accent color instantly.
-
 ---
 
-## 🔗 Linking from Facebook
-
-Your Facebook bio/posts can link directly to:
-- `https://yourusername.github.io/sisters-of-summerville` — homepage
-- Add `#Ep7` to deep-link to specific episodes (optional enhancement)
-
----
-
-## 📂 Back-filling 6 Months of Episodes
-
-To add all your back issues at once:
-1. Collect all your comic images — name them `ep001.png` through `ep180.png` (or however many)
-2. Build out the COMICS array in `index.html` with all entries
-3. Push everything at once
-
-A good workflow: keep a spreadsheet of episode #, date, title, intro text → paste into the JS array in one session.
-
----
-
-*Made with ❤️ for Honey Bear & Bootsie Belle · Summerville, SC*
+*Creative partnership between Artist + AI · Made with ❤️ for Honey Bear & Bootsie Belle · Summerville, SC*
