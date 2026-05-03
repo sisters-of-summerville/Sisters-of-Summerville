@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SoS Admin — Daily Upload</title>
+<link href="https://fonts.googleapis.com/css2?family=Bangers&family=Nunito:wght@400;600;700&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:       #0a0808;
+    --bg-mid:   #131010;
+    --bg-card:  #1c1818;
+    --amber:    #f5a623;
+    --amber2:   #ff9900;
+    --blue:     #3ab5ff;
+    --green:    #4caf81;
+    --red:      #e05252;
+    --text:     #f0eaf8;
+    --muted:    #8a7f7f;
+    --border:   #2a2020;
+    --border-l: #3d2f20;
+    --radius:   12px;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Nunito', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* ── HEADER ── */
+  .app-header {
+    width: 100%;
+    background: var(--bg-mid);
+    border-bottom: 1px solid var(--border-l);
+    padding: 0.8rem 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .app-title {
+    font-family: 'Bangers', cursive;
+    font-size: 1.6rem;
+    letter-spacing: 0.06em;
+    background: linear-gradient(135deg, #ffe0a0, var(--amber));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .app-subtitle {
+    font-family: 'Caveat', cursive;
+    font-size: 0.9rem;
+    color: var(--blue);
+  }
+
+  /* ── SCREENS ── */
+  .screen { display: none; width: 100%; max-width: 560px; padding: 2rem 1.5rem; }
+  .screen.active { display: block; }
+
+  /* ── CARD ── */
+  .card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-l);
+    border-radius: var(--radius);
+    padding: 2rem;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.5);
+  }
+  .card-title {
+    font-family: 'Bangers', cursive;
+    font-size: 1.8rem;
+    letter-spacing: 0.06em;
+    margin-bottom: 0.3rem;
+  }
+  .card-sub {
+    font-size: 0.85rem;
+    color: var(--muted);
+    margin-bottom: 1.6rem;
+    line-height: 1.5;
+  }
+
+  /* ── FIELDS ── */
+  .field { margin-bottom: 1.2rem; }
+
+  label {
+    display: block;
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--muted);
+    margin-bottom: 0.4rem;
+  }
+  label .req { color: var(--amber); }
+
+  input[type="text"],
+  input[type="date"],
+  textarea {
+    width: 100%;
+    background: var(--bg-mid);
+    border: 1px solid var(--border-l);
+    border-radius: 9px;
+    padding: 0.65rem 1rem;
+    color: var(--text);
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    resize: vertical;
+  }
+  input:focus, textarea:focus {
+    border-color: var(--amber);
+    box-shadow: 0 0 0 3px rgba(245,166,35,0.1);
+  }
+  textarea { min-height: 130px; line-height: 1.6; }
+
+  /* ── DROP ZONE ── */
+  .drop-zone {
+    border: 2px dashed var(--border-l);
+    border-radius: var(--radius);
+    padding: 1.8rem;
+    text-align: center;
+    cursor: pointer;
+    transition: border-color 0.2s, background 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+  .drop-zone:hover, .drop-zone.dragover {
+    border-color: var(--amber);
+    background: rgba(245,166,35,0.04);
+  }
+  .drop-zone input[type="file"] {
+    position: absolute; inset: 0;
+    opacity: 0; cursor: pointer; width: 100%; height: 100%;
+  }
+  .drop-icon { font-size: 2.5rem; margin-bottom: 0.5rem; display: block; }
+  .drop-text { font-size: 0.88rem; color: var(--muted); }
+  .drop-text strong { color: var(--amber); }
+
+  .preview-wrap { margin-top: 1rem; display: none; }
+  .preview-wrap img {
+    width: 100%; border-radius: 8px;
+    border: 1px solid var(--border-l); display: block;
+  }
+  .preview-filename {
+    font-size: 0.78rem; color: var(--blue);
+    margin-top: 0.4rem; font-family: 'Caveat', cursive;
+  }
+
+  /* ── BUTTONS ── */
+  .btn {
+    width: 100%; padding: 0.75rem; border: none;
+    border-radius: 10px; font-family: 'Bangers', cursive;
+    font-size: 1.2rem; letter-spacing: 0.08em;
+    cursor: pointer; transition: filter 0.2s, transform 0.2s;
+  }
+  .btn:hover:not(:disabled) { filter: brightness(1.1); transform: translateY(-1px); }
+  .btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+  .btn-primary { background: linear-gradient(135deg, var(--amber2), var(--amber)); color: #0a0808; }
+  .btn-secondary {
+    background: var(--bg-mid); border: 1px solid var(--border-l);
+    color: var(--text); font-size: 1rem;
+  }
+
+  /* ── PROGRESS ── */
+  .progress-wrap {
+    display: none; flex-direction: column;
+    gap: 0.75rem; margin: 1.2rem 0;
+  }
+  .progress-step {
+    display: flex; align-items: center; gap: 0.75rem;
+    font-size: 0.88rem; color: var(--muted);
+    padding: 0.65rem 1rem; border-radius: 8px;
+    border: 1px solid var(--border); background: var(--bg-mid);
+    transition: all 0.3s;
+  }
+  .progress-step.active { color: var(--amber); border-color: rgba(245,166,35,0.3); }
+  .progress-step.done   { color: var(--green); border-color: rgba(76,175,129,0.3); }
+  .progress-step.error  { color: var(--red);   border-color: rgba(224,82,82,0.3); }
+  .step-icon { font-size: 1.1rem; flex-shrink: 0; width: 22px; text-align: center; }
+  .step-spin { animation: spin 0.8s linear infinite; display: inline-block; }
+  @keyframes spin { from{transform:rotate(0deg);} to{transform:rotate(360deg);} }
+
+  /* ── SUCCESS ── */
+  .success-box {
+    display: none; text-align: center; padding: 1.5rem;
+    border: 1px solid rgba(76,175,129,0.35); border-radius: var(--radius);
+    background: rgba(76,175,129,0.06); margin-top: 1rem;
+  }
+  .success-box .big-check { font-size: 3rem; display: block; margin-bottom: 0.5rem; }
+  .success-box h3 {
+    font-family: 'Bangers', cursive; font-size: 1.6rem;
+    letter-spacing: 0.06em; color: var(--green); margin-bottom: 0.4rem;
+  }
+  .success-box p { font-size: 0.85rem; color: var(--muted); margin-bottom: 1rem; }
+  .view-link {
+    display: inline-block; padding: 0.5rem 1.2rem; border-radius: 8px;
+    background: rgba(245,166,35,0.1); border: 1px solid rgba(245,166,35,0.35);
+    color: var(--amber); text-decoration: none; font-weight: 700;
+    font-size: 0.85rem; transition: all 0.2s;
+  }
+  .view-link:hover { background: rgba(245,166,35,0.18); }
+
+  /* ── PAT SETUP ── */
+  input[type="password"] {
+    width: 100%; background: var(--bg-mid); border: 1px solid var(--border-l);
+    border-radius: 9px; padding: 0.65rem 1rem; color: var(--text);
+    font-family: 'Nunito', sans-serif; font-size: 0.95rem; outline: none;
+    transition: border-color 0.2s;
+  }
+  input[type="password"]:focus { border-color: var(--amber); }
+
+  .pat-hint { font-size: 0.78rem; color: var(--muted); line-height: 1.6; margin-top: 0.4rem; }
+  .pat-hint a { color: var(--blue); }
+  .pat-status {
+    font-size: 0.78rem; font-weight: 700; margin-top: 0.5rem;
+    padding: 0.4rem 0.8rem; border-radius: 6px; display: none;
+  }
+  .pat-status.ok  { background: rgba(76,175,129,0.12); color: var(--green); border: 1px solid rgba(76,175,129,0.3); }
+  .pat-status.err { background: rgba(224,82,82,0.12);  color: var(--red);   border: 1px solid rgba(224,82,82,0.3); }
+
+  /* ── MISC ── */
+  .divider { height: 1px; background: var(--border-l); margin: 1.2rem 0; }
+  .alert { padding: 0.65rem 1rem; border-radius: 8px; font-size: 0.83rem; margin-bottom: 1rem; display: none; }
+  .alert.err  { background: rgba(224,82,82,0.12); border: 1px solid rgba(224,82,82,0.3); color: var(--red); }
+  .app-footer { margin-top: auto; padding: 1.5rem; font-size: 0.72rem; color: var(--muted); text-align: center; opacity: 0.5; }
+
+  .settings-row { display: flex; justify-content: flex-end; margin-bottom: 1rem; }
+  .settings-btn {
+    background: none; border: 1px solid var(--border-l); border-radius: 7px;
+    padding: 0.3rem 0.8rem; color: var(--muted); font-size: 0.75rem;
+    font-family: 'Nunito', sans-serif; font-weight: 700; cursor: pointer; transition: all 0.2s;
+  }
+  .settings-btn:hover { color: var(--amber); border-color: var(--amber); }
+</style>
+</head>
+<body>
+
+<div class="app-header">
+  <div>
+    <div class="app-title">🐾 SoS Admin</div>
+    <div class="app-subtitle">Sisters of Summerville · Daily Upload Tool</div>
+  </div>
+  <button class="settings-btn" id="lockBtn" style="display:none; color:var(--red); border-color:rgba(224,82,82,0.4);" onclick="lockApp()">🔒 Lock</button>
+</div>
+
+<!-- ══════════════════════════════════
+     SCREEN: PASSWORD
+══════════════════════════════════ -->
+<div class="screen active" id="screen-password">
+  <div style="text-align:center; padding:2rem 0 1.5rem;">
+    <div style="font-size:3rem; margin-bottom:0.5rem;">🐾</div>
+    <div style="font-family:'Bangers',cursive; font-size:2.4rem; letter-spacing:0.05em; background:linear-gradient(135deg,#ffe0a0,#f5a623); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;">Sisters of Summerville</div>
+    <div style="font-family:'Caveat',cursive; color:#3ab5ff; margin-top:0.2rem;">Admin · Daily Upload Tool</div>
+  </div>
+  <div class="card">
+    <div class="card-title">🔒 Enter Password</div>
+    <p class="card-sub">This tool is for authorized use only.</p>
+    <div class="alert err" id="pw-error" style="display:none;">Incorrect password. Please try again.</div>
+    <div class="field">
+      <label>Password <span class="req">*</span></label>
+      <input type="password" id="pwInput" placeholder="Enter your password"
+             onkeydown="if(event.key==='Enter') checkPassword()" autofocus>
+    </div>
+    <button class="btn btn-primary" onclick="checkPassword()">UNLOCK →</button>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════
+     SCREEN: GITHUB PAT SETUP
+══════════════════════════════════ -->
+<div class="screen" id="screen-setup">
+  <div class="card">
+    <div class="card-title">⚙️ First-Time Setup</div>
+    <p class="card-sub">I need your GitHub Personal Access Token to push files to your repo. This is stored only in your browser's localStorage — never uploaded anywhere.</p>
+
+    <div class="field">
+      <label>GitHub Personal Access Token <span class="req">*</span></label>
+      <input type="password" id="patInput" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx"
+             onkeydown="if(event.key==='Enter') savePAT()">
+      <p class="pat-hint">
+        To create one: go to
+        <a href="https://github.com/settings/tokens/new" target="_blank">github.com/settings/tokens/new</a>
+        → Note: "SoS Admin" → Expiration: No expiration → check <strong>repo</strong> scope → Generate token → paste it here.
+      </p>
+      <div class="pat-status" id="patStatus"></div>
+    </div>
+
+    <button class="btn btn-primary" onclick="savePAT()">SAVE & CONTINUE →</button>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════
+     SCREEN: UPLOAD FORM
+══════════════════════════════════ -->
+<div class="screen" id="screen-upload">
+  <div class="settings-row">
+    <button class="settings-btn" onclick="showSetup()">⚙️ GitHub Token</button>
+  </div>
+
+  <div class="card">
+    <div class="card-title">📸 New Episode</div>
+    <p class="card-sub">Fill in the details below — I'll push the image, update captions.json, and update rss.xml automatically.</p>
+
+    <div class="alert err" id="upload-error"></div>
+
+    <!-- DATE -->
+    <div class="field">
+      <label>Date <span class="req">*</span></label>
+      <input type="date" id="epDate">
+    </div>
+
+    <!-- TITLE -->
+    <div class="field">
+      <label>Episode Title <span class="req">*</span></label>
+      <input type="text" id="epTitle" placeholder="e.g. ✨🐾 Well Bless Your Heart 🐾✨">
+    </div>
+
+    <!-- TAGS -->
+    <div class="field">
+      <label>Tags <span style="color:var(--muted);font-weight:400;text-transform:none;letter-spacing:0;">(comma separated)</span></label>
+      <input type="text" id="epTags" placeholder="Southern, Honey Bear, Bootsie Belle, chaos">
+    </div>
+
+    <!-- DESCRIPTION -->
+    <div class="field">
+      <label>Description / Intro <span class="req">*</span></label>
+      <textarea id="epIntro" placeholder="Write the episode introduction here…"></textarea>
+    </div>
+
+    <!-- IMAGE -->
+    <div class="field">
+      <label>Comic Strip Image <span class="req">*</span></label>
+      <div class="drop-zone" id="dropZone">
+        <input type="file" id="imageInput" accept="image/*" onchange="handleImageSelect(this)">
+        <span class="drop-icon">🖼️</span>
+        <div class="drop-text">Drag & drop or <strong>click to browse</strong></div>
+        <div class="drop-text" style="margin-top:0.3rem;font-size:0.75rem;">PNG, JPEG, JPG supported</div>
+      </div>
+      <div class="preview-wrap" id="previewWrap">
+        <img id="imagePreview" src="" alt="Preview">
+        <div class="preview-filename" id="previewFilename"></div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- PROGRESS -->
+    <div class="progress-wrap" id="progressWrap">
+      <div class="progress-step" id="step-image">
+        <span class="step-icon" id="icon-image">⬆️</span>
+        <span>Uploading image to GitHub…</span>
+      </div>
+      <div class="progress-step" id="step-captions">
+        <span class="step-icon" id="icon-captions">📄</span>
+        <span>Updating captions.json…</span>
+      </div>
+      <div class="progress-step" id="step-rss">
+        <span class="step-icon" id="icon-rss">📡</span>
+        <span>Updating rss.xml…</span>
+      </div>
+    </div>
+
+    <!-- SUCCESS -->
+    <div class="success-box" id="successBox">
+      <span class="big-check">✅</span>
+      <h3>Episode Published!</h3>
+      <p id="successMsg"></p>
+      <a href="https://sisters-of-summerville.github.io/Sisters-of-Summerville/" target="_blank" class="view-link">View Live Site →</a>
+      <div style="margin-top:1rem;">
+        <button class="btn btn-secondary" style="width:auto;padding:0.4rem 1.2rem;" onclick="resetForm()">+ New Episode</button>
+      </div>
+    </div>
+
+    <!-- SUBMIT -->
+    <button class="btn btn-primary" id="submitBtn" onclick="submitEpisode()">🚀 PUBLISH EPISODE</button>
+  </div>
+</div>
+
+<div class="app-footer">Sisters of Summerville Admin Tool · Local use only</div>
+
+<script>
+// ══════════════════════════════════════════════════════
+//  CONFIGURATION
+// ══════════════════════════════════════════════════════
+const CONFIG = {
+  password:  'P@ss4sos!',           // ← CHANGE THIS to your preferred password
+  repoOwner: 'sisters-of-summerville',
+  repoName:  'Sisters-of-Summerville',
+  branch:    'main',
+  siteUrl:   'https://sisters-of-summerville.github.io/Sisters-of-Summerville'
+};
+
+// ══════════════════════════════════════════════════════
+//  STATE
+// ══════════════════════════════════════════════════════
+let imageFile   = null;
+let imageBase64 = null;
+let isSubmitting = false;
+
+// ══════════════════════════════════════════════════════
+//  INIT
+// ══════════════════════════════════════════════════════
+window.addEventListener('load', () => {
+  // Set today's date
+  const today = new Date();
+  const yyyy  = today.getFullYear();
+  const mm    = String(today.getMonth()+1).padStart(2,'0');
+  const dd    = String(today.getDate()).padStart(2,'0');
+  document.getElementById('epDate').value = `${yyyy}-${mm}-${dd}`;
+
+  // Drag & drop
+  const dz = document.getElementById('dropZone');
+  dz.addEventListener('dragover',  e => { e.preventDefault(); dz.classList.add('dragover'); });
+  dz.addEventListener('dragleave', () => dz.classList.remove('dragover'));
+  dz.addEventListener('drop', e => {
+    e.preventDefault(); dz.classList.remove('dragover');
+    const f = e.dataTransfer.files[0];
+    if (f && f.type.startsWith('image/')) processImageFile(f);
+  });
+
+  // Check session — if already unlocked this session, skip password screen
+  if (sessionStorage.getItem('sos_unlocked') === 'yes') {
+    unlockApp();
+  }
+});
+
+// ══════════════════════════════════════════════════════
+//  PASSWORD
+// ══════════════════════════════════════════════════════
+function checkPassword() {
+  const val = document.getElementById('pwInput').value;
+  if (val === CONFIG.password) {
+    sessionStorage.setItem('sos_unlocked', 'yes');
+    unlockApp();
+  } else {
+    const err = document.getElementById('pw-error');
+    err.style.display = 'block';
+    document.getElementById('pwInput').value = '';
+    document.getElementById('pwInput').focus();
+    setTimeout(() => { err.style.display = 'none'; }, 3000);
+  }
+}
+
+function unlockApp() {
+  document.getElementById('screen-password').classList.remove('active');
+  document.getElementById('lockBtn').style.display = 'block';
+  // Show correct screen based on PAT
+  const storedPat = localStorage.getItem('sos_pat');
+  if (storedPat) {
+    document.getElementById('screen-upload').classList.add('active');
+  } else {
+    document.getElementById('screen-setup').classList.add('active');
+  }
+}
+
+function lockApp() {
+  sessionStorage.removeItem('sos_unlocked');
+  document.getElementById('screen-upload').classList.remove('active');
+  document.getElementById('screen-setup').classList.remove('active');
+  document.getElementById('screen-password').classList.add('active');
+  document.getElementById('lockBtn').style.display = 'none';
+  document.getElementById('pwInput').value = '';
+}
+
+// ══════════════════════════════════════════════════════
+//  PAT SETUP
+// ══════════════════════════════════════════════════════
+async function savePAT() {
+  const pat = document.getElementById('patInput').value.trim();
+  if (!pat) return;
+  const status = document.getElementById('patStatus');
+  status.className = 'pat-status ok';
+  status.style.display = 'block';
+  status.textContent = 'Verifying…';
+
+  try {
+    const res = await fetch(`https://api.github.com/repos/${CONFIG.repoOwner}/${CONFIG.repoName}`, {
+      headers: { 'Authorization': `Bearer ${pat}`, 'Accept': 'application/vnd.github+json' }
+    });
+    if (res.ok) {
+      localStorage.setItem('sos_pat', pat);
+      status.textContent = '✅ Token verified and saved!';
+      setTimeout(() => {
+        document.getElementById('screen-setup').classList.remove('active');
+        document.getElementById('screen-upload').classList.add('active');
+      }, 800);
+    } else {
+      status.className = 'pat-status err';
+      status.style.display = 'block';
+      status.textContent = '❌ Token invalid or lacks repo access. Check and try again.';
+    }
+  } catch(e) {
+    status.className = 'pat-status err';
+    status.style.display = 'block';
+    status.textContent = '❌ Network error. Make sure you are online.';
+  }
+}
+
+function showSetup() {
+  document.getElementById('screen-upload').classList.remove('active');
+  document.getElementById('screen-setup').classList.add('active');
+  document.getElementById('patInput').value = '';
+  document.getElementById('patStatus').style.display = 'none';
+}
+
+// ══════════════════════════════════════════════════════
+//  IMAGE HANDLING
+// ══════════════════════════════════════════════════════
+function handleImageSelect(input) {
+  if (input.files && input.files[0]) processImageFile(input.files[0]);
+}
+
+function processImageFile(file) {
+  imageFile = file;
+  const reader = new FileReader();
+  reader.onload = e => {
+    imageBase64 = e.target.result.split(',')[1];
+    document.getElementById('imagePreview').src = e.target.result;
+    document.getElementById('previewFilename').textContent = '📎 ' + file.name;
+    document.getElementById('previewWrap').style.display = 'block';
+  };
+  reader.readAsDataURL(file);
+}
+
+// ══════════════════════════════════════════════════════
+//  GITHUB API HELPERS
+// ══════════════════════════════════════════════════════
+const getPAT    = () => localStorage.getItem('sos_pat');
+const apiBase   = () => `https://api.github.com/repos/${CONFIG.repoOwner}/${CONFIG.repoName}/contents`;
+
+async function getFile(path) {
+  const res = await fetch(`${apiBase()}/${path}`, {
+    headers: { 'Authorization': `Bearer ${getPAT()}`, 'Accept': 'application/vnd.github+json' }
+  });
+  if (!res.ok) return null;
+  return res.json();
+}
+
+async function putFile(path, base64Content, commitMsg, sha = null) {
+  const body = { message: commitMsg, content: base64Content, branch: CONFIG.branch };
+  if (sha) body.sha = sha;
+  const res = await fetch(`${apiBase()}/${path}`, {
+    method: 'PUT',
+    headers: {
+      'Authorization': `Bearer ${getPAT()}`,
+      'Accept':        'application/vnd.github+json',
+      'Content-Type':  'application/json'
+    },
+    body: JSON.stringify(body)
+  });
+  if (!res.ok) {
+    const err = await res.json().catch(() => ({}));
+    throw new Error(err.message || `HTTP ${res.status}`);
+  }
+  return res.json();
+}
+
+function decodeB64(str) {
+  return decodeURIComponent(escape(atob(str.replace(/\n/g,''))));
+}
+
+function encodeB64(str) {
+  return btoa(unescape(encodeURIComponent(str)));
+}
+
+// ══════════════════════════════════════════════════════
+//  HELPERS
+// ══════════════════════════════════════════════════════
+function formatPubDate(dateStr) {
+  const d    = new Date(dateStr + 'T12:00:00Z');
+  const days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+  const mons = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  const dd   = String(d.getUTCDate()).padStart(2,'0');
+  return `${days[d.getUTCDay()]}, ${dd} ${mons[d.getUTCMonth()]} ${d.getUTCFullYear()} 12:00:00 +0000`;
+}
+
+function getImagePath(dateStr, filename) {
+  const year = dateStr.slice(0,4);
+  const ext  = filename.split('.').pop();
+  return `images/${year}/${dateStr}.${ext}`;
+}
+
+function escapeXml(str) {
+  return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
+            .replace(/"/g,'&quot;').replace(/'/g,'&apos;');
+}
+
+// ══════════════════════════════════════════════════════
+//  STEP UI
+// ══════════════════════════════════════════════════════
+function stepActive(id) {
+  document.getElementById(`step-${id}`).classList.add('active');
+  document.getElementById(`icon-${id}`).innerHTML = '<span class="step-spin">⏳</span>';
+}
+function stepDone(id) {
+  const s = document.getElementById(`step-${id}`);
+  s.classList.remove('active'); s.classList.add('done');
+  document.getElementById(`icon-${id}`).textContent = '✅';
+}
+function stepError(id) {
+  const s = document.getElementById(`step-${id}`);
+  s.classList.remove('active'); s.classList.add('error');
+  document.getElementById(`icon-${id}`).textContent = '❌';
+}
+
+function showError(msg) {
+  const el = document.getElementById('upload-error');
+  el.textContent = msg; el.style.display = 'block';
+  setTimeout(() => { el.style.display = 'none'; }, 8000);
+}
+
+// ══════════════════════════════════════════════════════
+//  SUBMIT
+// ══════════════════════════════════════════════════════
+async function submitEpisode() {
+  if (isSubmitting) return;
+
+  const dateVal = document.getElementById('epDate').value.trim();
+  const title   = document.getElementById('epTitle').value.trim();
+  const intro   = document.getElementById('epIntro').value.trim();
+  const tagsRaw = document.getElementById('epTags').value.trim();
+
+  if (!dateVal)              { showError('⚠️ Please enter a date.');        return; }
+  if (!title)                { showError('⚠️ Please enter a title.');       return; }
+  if (!intro)                { showError('⚠️ Please enter a description.'); return; }
+  if (!imageFile || !imageBase64) { showError('⚠️ Please select an image.'); return; }
+
+  const tags       = tagsRaw ? tagsRaw.split(',').map(t=>t.trim()).filter(Boolean) : [];
+  const imagePath  = getImagePath(dateVal, imageFile.name);
+  const episodeUrl = `${CONFIG.siteUrl}/#${dateVal}`;
+
+  isSubmitting = true;
+  document.getElementById('submitBtn').disabled = true;
+  document.getElementById('progressWrap').style.display = 'flex';
+  document.getElementById('successBox').style.display   = 'none';
+
+  // Reset steps
+  ['image','captions','rss'].forEach(id => {
+    const s = document.getElementById(`step-${id}`);
+    s.className = 'progress-step';
+    document.getElementById(`icon-${id}`).textContent = id==='image'?'⬆️':id==='captions'?'📄':'📡';
+  });
+
+  try {
+    // STEP 1 — Upload image
+    stepActive('image');
+    await putFile(imagePath, imageBase64, `Add comic image for ${dateVal}`);
+    stepDone('image');
+
+    // STEP 2 — Update captions.json
+    stepActive('captions');
+    const captionsFile = await getFile('captions.json');
+    if (!captionsFile) throw new Error('Could not read captions.json');
+    const captionsArr = JSON.parse(decodeB64(captionsFile.content));
+    captionsArr.unshift({ date: dateVal, title, image: imagePath, tags, intro });
+    await putFile('captions.json', encodeB64(JSON.stringify(captionsArr, null, 2)),
+                  `Add "${title}" to captions.json`, captionsFile.sha);
+    stepDone('captions');
+
+    // STEP 3 — Update rss.xml
+    stepActive('rss');
+    const rssFile = await getFile('rss.xml');
+    if (!rssFile) throw new Error('Could not read rss.xml');
+    let rssXml = decodeB64(rssFile.content);
+    const newItem = `\n    <item>\n      <title>${escapeXml(title)}</title>\n      <link>${episodeUrl}</link>\n      <description>${escapeXml(intro)}</description>\n      <pubDate>${formatPubDate(dateVal)}</pubDate>\n      <guid>${episodeUrl}</guid>\n    </item>`;
+    const insertAt = rssXml.includes('<item>') ? rssXml.indexOf('<item>') : rssXml.indexOf('</channel>');
+    rssXml = rssXml.slice(0, insertAt) + newItem + '\n\n    ' + rssXml.slice(insertAt);
+    await putFile('rss.xml', encodeB64(rssXml), `Add "${title}" to rss.xml`, rssFile.sha);
+    stepDone('rss');
+
+    // SUCCESS
+    document.getElementById('successMsg').textContent =
+      `"${title}" published for ${dateVal}. Site updates in ~2 minutes.`;
+    document.getElementById('successBox').style.display = 'block';
+    document.getElementById('submitBtn').style.display  = 'none';
+
+  } catch(err) {
+    ['image','captions','rss'].forEach(id => {
+      if (document.getElementById(`step-${id}`).classList.contains('active')) stepError(id);
+    });
+    showError(`❌ ${err.message}`);
+    document.getElementById('submitBtn').disabled = false;
+  }
+
+  isSubmitting = false;
+}
+
+// ══════════════════════════════════════════════════════
+//  RESET
+// ══════════════════════════════════════════════════════
+function resetForm() {
+  document.getElementById('epTitle').value = '';
+  document.getElementById('epIntro').value = '';
+  document.getElementById('epTags').value  = '';
+  document.getElementById('previewWrap').style.display  = 'none';
+  document.getElementById('progressWrap').style.display = 'none';
+  document.getElementById('successBox').style.display   = 'none';
+  document.getElementById('submitBtn').style.display    = 'block';
+  document.getElementById('submitBtn').disabled         = false;
+  document.getElementById('imageInput').value           = '';
+  imageFile = null; imageBase64 = null;
+
+  const today = new Date();
+  const yyyy = today.getFullYear(), mm = String(today.getMonth()+1).padStart(2,'0'), dd = String(today.getDate()).padStart(2,'0');
+  document.getElementById('epDate').value = `${yyyy}-${mm}-${dd}`;
+}
+</script>
+</body>
+</html>
