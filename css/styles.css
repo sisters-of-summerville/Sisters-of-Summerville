@@ -1,5 +1,5 @@
 :root {
-    --bg-deep:    #000000;
+    --bg-deep:    #0b0b13;
     --bg-mid:     #131010;
     --bg-card:    #1c1818;
     --amber:      #f5a623;
@@ -14,8 +14,8 @@
   html { zoom: 1.25; }
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   body { font-family: 'Nunito', sans-serif; background: var(--bg-deep); color: var(--text-main); min-height: 100vh; overflow-x: hidden; }
-  .site-banner { display: block; width: 100%; background: var(--bg-deep); text-align: center; padding: 1rem 0 0.25rem; line-height: 0; }
-  .site-banner img { max-width: 500px; width: 70%; height: auto; display: inline-block; }
+  .site-banner { display: block; width: 100%; background: var(--bg-deep); text-align: center; padding: 1.2rem 1rem 0.25rem; line-height: 0; overflow: visible; }
+  .site-banner img { max-width: 720px; width: 75%; height: auto; display: inline-block; }
   .site-banner a, .single-banner a { display: inline-block; cursor: pointer; }
   nav { display: flex; justify-content: center; gap: 0.4rem; padding: 0.55rem 1rem; background: var(--bg-mid); border-bottom: 1px solid var(--border-lit); flex-wrap: wrap; position: sticky; top: 0; z-index: 100; backdrop-filter: blur(12px); }
   .nav-link { font-family: 'Nunito', sans-serif; font-weight: 700; font-size: 0.78rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-muted); text-decoration: none; padding: 0.3rem 0.85rem; border-radius: 20px; border: 1px solid transparent; transition: all 0.2s; cursor: pointer; background: none; }
