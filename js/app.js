@@ -229,9 +229,24 @@ function openBlogPost(slug) {
   document.getElementById('blogPostBody').innerHTML = p.body.split(/\n\n+/).map(para => `<p>${para.replace(/\n/g,'<br>')}</p>`).join('');
   const ytWrap = document.getElementById('blogYoutubeWrap');
   const imgEl  = document.getElementById('blogPostImage');
+  const multiWrap = document.getElementById('blogMultiImages');
+
+  // Clear multi-image container
+  if (multiWrap) multiWrap.remove();
+
   if (p.youtube) {
     document.getElementById('blogYoutubeFrame').src = `https://www.youtube.com/embed/${p.youtube}?rel=0`;
     ytWrap.style.display = 'block'; imgEl.style.display = 'none';
+  } else if (p.images && p.images.length > 1) {
+    // Multiple images — render a grid
+    ytWrap.style.display = 'none'; imgEl.style.display = 'none';
+    const grid = document.createElement('div');
+    grid.id = 'blogMultiImages';
+    grid.style.cssText = 'display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:1rem; margin-bottom:1.5rem;';
+    grid.innerHTML = p.images.map(src =>
+      `<img src="${src}" alt="${p.title}" style="width:100%; border-radius:var(--radius,12px); border:1px solid var(--border-lit,#3d2f20); display:block;" loading="lazy">`
+    ).join('');
+    document.getElementById('blogPostBody').before(grid);
   } else if (p.image) {
     imgEl.src = p.image; imgEl.alt = p.title;
     imgEl.style.display = 'block'; ytWrap.style.display = 'none';
