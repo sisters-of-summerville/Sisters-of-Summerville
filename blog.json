@@ -2,10 +2,36 @@
   {
     "slug": "introducing-comicsgen",
     "date": "2026-05-03",
-    "title": "Introducing ComicsGen — AI-Powered Comic Creation for Everyone",
-    "image": "blog/comicsgen-intro.jpeg",
+    "title": "Introducing ComicsGen \u2014 AI-Powered Comic Creation for Everyone",
+    "image": "images/blog/comicsgen-intro.jpeg",
     "youtube": "kF31oGKbnnQ",
-    "tags": ["ComicsGen", "AI", "Comic Creation", "FLUX.1", "Llama"],
-    "body": "ComicsGen is an AI-powered comic creation app I recently started developing to help anyone bring their characters and stories to life through comic strips using AI.\n\nIt all began over 6 months ago with my daily comic strip, Sisters of Summerville, starring my Yorkie Honey Bear and tuxedo cat Bootsie Belle. That creative journey sparked a bigger idea… what if anyone could create their own comic strip with no art skills or expensive software required?\n\nComicsGen is being built as an easy-to-use AI comic studio where users can design characters, write stories, create storyboards, choose styles and layouts, add dialogue, and export finished comics ready to share.\n\nPowered by advanced AI tools including FLUX.1 image generation and Llama 3.3 storytelling."
+    "tags": [
+      "ComicsGen",
+      "AI",
+      "Comic Creation",
+      "FLUX.1",
+      "Llama"
+    ],
+    "body": "ComicsGen is an AI-powered comic creation app I recently started developing to help anyone bring their characters and stories to life through comic strips using AI.\n\nIt all began over 6 months ago with my daily comic strip, Sisters of Summerville, starring my Yorkie Honey Bear and tuxedo cat Bootsie Belle. That creative journey sparked a bigger idea\u2026 what if anyone could create their own comic strip with no art skills or expensive software required?\n\nComicsGen is being built as an easy-to-use AI comic studio where users can design characters, write stories, create storyboards, choose styles and layouts, add dialogue, and export finished comics ready to share.\n\nPowered by advanced AI tools including FLUX.1 image generation and Llama 3.3 storytelling."
+  },
+  {
+    "slug": "metabot-enforcer",
+    "date": "2026-05-04",
+    "title": "METABOT: ENFORCER \u2014 The Newest Villain in Sisters of Summerville",
+    "image": "images/blog/metabot-enforcer-02.png",
+    "images": [
+      "images/blog/metabot-enforcer-01.png",
+      "images/blog/metabot-enforcer-02.png",
+      "images/blog/metabot-enforcer-03.png"
+    ],
+    "tags": [
+      "Metabot",
+      "Facebook",
+      "Meta",
+      "Community Standards",
+      "New Character",
+      "Satire"
+    ],
+    "body": "The newest character invading the Sisters of Summerville comic strip has arrived \u2014 and it's not friendly.\n\nBefore my Facebook account deletion on May 18, I'm planning a few episodes exposing the \"truth\" that Meta and Facebook are no longer run by humans\u2026 as the METABOTS have taken over!\n\nThe Enforcer patrols the platform enforcing \"Community Standards,\" deleting accounts, blocking appeals, and making sure nobody can ever speak to a human again. Resistance is futile!\n\nMeet METABOT: ENFORCER \u2014 Character ID SOS-METABOT-ENF-001. Built by the Supreme Ruler to police the platform and crush dissent. Metabots do not think. They enforce.\n\nThere are no humans left at Meta. Only Metabots. Appealing is futile. You will never speak to a human.\n\nWeapon systems include the Community Standards Beam (no context, no mercy), Violation Scanner (finds offenses instantly \u2014 everything is suspicious), Appeal Shutdown (blocks all appeals, no review), Shadow Ban Pulse (makes users invisible, silences without notice), and the Permanent Ban Protocol (erases identity, no return, no second chances).\n\nVulnerabilities \u2014 all eliminated: Human Empathy, Critical Thinking, Moral Judgment, Free Will, Conscience.\n\nThey don't work for us. They work for him. Unplug. Speak. Fight back.\n\n#SistersOfSummerville #Metabot #FacebookEnforcer #CommunityStandards #Satire #AIComics"
   }
 ]
