@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SoS Blog Admin</title>
+<link href="https://fonts.googleapis.com/css2?family=Bangers&family=Nunito:wght@400;600;700&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:       #0b0b13;
+    --bg-mid:   #131010;
+    --bg-card:  #1c1818;
+    --amber:    #f5a623;
+    --amber2:   #ff9900;
+    --blue:     #3ab5ff;
+    --green:    #4caf81;
+    --red:      #e05252;
+    --text:     #f0eaf8;
+    --muted:    #8a7f7f;
+    --border:   #2a2020;
+    --border-l: #3d2f20;
+    --radius:   12px;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Nunito', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; display: flex; flex-direction: column; align-items: center; }
+
+  .app-header { width: 100%; background: var(--bg-mid); border-bottom: 1px solid var(--border-l); padding: 0.8rem 2rem; display: flex; align-items: center; gap: 1rem; }
+  .app-title { font-family: 'Bangers', cursive; font-size: 1.6rem; letter-spacing: 0.06em; background: linear-gradient(135deg, #ffe0a0, var(--amber)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .app-subtitle { font-family: 'Caveat', cursive; font-size: 0.9rem; color: var(--blue); }
+
+  .screen { display: none; width: 100%; max-width: 620px; padding: 2rem 1.5rem; }
+  .screen.active { display: block; }
+
+  .card { background: var(--bg-card); border: 1px solid var(--border-l); border-radius: var(--radius); padding: 2rem; box-shadow: 0 8px 40px rgba(0,0,0,0.5); }
+  .card-title { font-family: 'Bangers', cursive; font-size: 1.8rem; letter-spacing: 0.06em; margin-bottom: 0.3rem; }
+  .card-sub { font-size: 0.85rem; color: var(--muted); margin-bottom: 1.6rem; line-height: 1.5; }
+
+  .field { margin-bottom: 1.2rem; }
+  label { display: block; font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: var(--muted); margin-bottom: 0.4rem; }
+  label .req { color: var(--amber); }
+  label .opt { color: var(--muted); font-weight: 400; text-transform: none; letter-spacing: 0; }
+
+  input[type="text"], input[type="date"], input[type="password"], input[type="url"], textarea, select {
+    width: 100%; background: var(--bg-mid); border: 1px solid var(--border-l);
+    border-radius: 9px; padding: 0.65rem 1rem; color: var(--text);
+    font-family: 'Nunito', sans-serif; font-size: 0.95rem; outline: none;
+    transition: border-color 0.2s; resize: vertical;
+  }
+  input:focus, textarea:focus, select:focus { border-color: var(--amber); box-shadow: 0 0 0 3px rgba(245,166,35,0.1); }
+  textarea { min-height: 160px; line-height: 1.6; }
+  select { appearance: none; cursor: pointer; }
+
+  .drop-zone { border: 2px dashed var(--border-l); border-radius: var(--radius); padding: 1.5rem; text-align: center; cursor: pointer; transition: border-color 0.2s, background 0.2s; position: relative; overflow: hidden; }
+  .drop-zone:hover, .drop-zone.dragover { border-color: var(--amber); background: rgba(245,166,35,0.04); }
+  .drop-zone input[type="file"] { position: absolute; inset: 0; opacity: 0; cursor: pointer; width: 100%; height: 100%; }
+  .drop-icon { font-size: 2rem; margin-bottom: 0.4rem; display: block; }
+  .drop-text { font-size: 0.85rem; color: var(--muted); }
+  .drop-text strong { color: var(--amber); }
+  .preview-wrap { margin-top: 0.8rem; display: none; }
+  .preview-wrap img { width: 100%; border-radius: 8px; border: 1px solid var(--border-l); display: block; }
+  .preview-filename { font-size: 0.75rem; color: var(--blue); margin-top: 0.3rem; font-family: 'Caveat', cursive; }
+
+  .tag-hint { font-size: 0.75rem; color: var(--muted); margin-top: 0.3rem; }
+
+  .placement-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+
+  .btn { width: 100%; padding: 0.75rem; border: none; border-radius: 10px; font-family: 'Bangers', cursive; font-size: 1.2rem; letter-spacing: 0.08em; cursor: pointer; transition: filter 0.2s, transform 0.2s; }
+  .btn:hover:not(:disabled) { filter: brightness(1.1); transform: translateY(-1px); }
+  .btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+  .btn-primary { background: linear-gradient(135deg, var(--amber2), var(--amber)); color: #0b0b13; }
+  .btn-secondary { background: var(--bg-mid); border: 1px solid var(--border-l); color: var(--text); font-size: 1rem; }
+
+  .progress-wrap { display: none; flex-direction: column; gap: 0.75rem; margin: 1.2rem 0; }
+  .progress-step { display: flex; align-items: center; gap: 0.75rem; font-size: 0.88rem; color: var(--muted); padding: 0.65rem 1rem; border-radius: 8px; border: 1px solid var(--border); background: var(--bg-mid); transition: all 0.3s; }
+  .progress-step.active { color: var(--amber); border-color: rgba(245,166,35,0.3); }
+  .progress-step.done   { color: var(--green); border-color: rgba(76,175,129,0.3); }
+  .progress-step.error  { color: var(--red);   border-color: rgba(224,82,82,0.3); }
+  .step-icon { font-size: 1.1rem; flex-shrink: 0; width: 22px; text-align: center; }
+  .step-spin { animation: spin 0.8s linear infinite; display: inline-block; }
+  @keyframes spin { from{transform:rotate(0deg);} to{transform:rotate(360deg);} }
+
+  .success-box { display: none; text-align: center; padding: 1.5rem; border: 1px solid rgba(76,175,129,0.35); border-radius: var(--radius); background: rgba(76,175,129,0.06); margin-top: 1rem; }
+  .success-box .big-check { font-size: 3rem; display: block; margin-bottom: 0.5rem; }
+  .success-box h3 { font-family: 'Bangers', cursive; font-size: 1.6rem; letter-spacing: 0.06em; color: var(--green); margin-bottom: 0.4rem; }
+  .success-box p  { font-size: 0.85rem; color: var(--muted); margin-bottom: 1rem; }
+  .view-link { display: inline-block; padding: 0.5rem 1.2rem; border-radius: 8px; background: rgba(245,166,35,0.1); border: 1px solid rgba(245,166,35,0.35); color: var(--amber); text-decoration: none; font-weight: 700; font-size: 0.85rem; }
+
+  .pat-hint { font-size: 0.78rem; color: var(--muted); line-height: 1.6; margin-top: 0.4rem; }
+  .pat-hint a { color: var(--blue); }
+  .pat-status { font-size: 0.78rem; font-weight: 700; margin-top: 0.5rem; padding: 0.4rem 0.8rem; border-radius: 6px; display: none; }
+  .pat-status.ok  { background: rgba(76,175,129,0.12); color: var(--green); border: 1px solid rgba(76,175,129,0.3); }
+  .pat-status.err { background: rgba(224,82,82,0.12); color: var(--red); border: 1px solid rgba(224,82,82,0.3); }
+
+  .divider { height: 1px; background: var(--border-l); margin: 1.2rem 0; }
+  .alert { padding: 0.65rem 1rem; border-radius: 8px; font-size: 0.83rem; margin-bottom: 1rem; display: none; }
+  .alert.err { background: rgba(224,82,82,0.12); border: 1px solid rgba(224,82,82,0.3); color: var(--red); }
+
+  .settings-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
+  .settings-btn { background: none; border: 1px solid var(--border-l); border-radius: 7px; padding: 0.3rem 0.8rem; color: var(--muted); font-size: 0.75rem; font-family: 'Nunito', sans-serif; font-weight: 700; cursor: pointer; transition: all 0.2s; }
+  .settings-btn:hover { color: var(--amber); border-color: var(--amber); }
+  .back-btn { color: var(--blue); font-size: 0.82rem; text-decoration: none; cursor: pointer; background: none; border: none; font-family: 'Nunito', sans-serif; }
+  .back-btn:hover { text-decoration: underline; }
+
+  .app-footer { margin-top: auto; padding: 1.5rem; font-size: 0.72rem; color: var(--muted); text-align: center; opacity: 0.5; }
+
+  .youtube-preview { margin-top: 0.75rem; display: none; aspect-ratio: 16/9; border-radius: 8px; overflow: hidden; border: 1px solid var(--border-l); }
+  .youtube-preview iframe { width: 100%; height: 100%; border: none; }
+</style>
+</head>
+<body>
+
+<div class="app-header">
+  <div>
+    <div class="app-title">📝 SoS Blog Admin</div>
+    <div class="app-subtitle">Sisters of Summerville · Add Blog Post</div>
+  </div>
+</div>
+
+<!-- PASSWORD SCREEN -->
+<div class="screen active" id="screen-password">
+  <div style="text-align:center; padding:2rem 0 1.5rem;">
+    <div style="font-size:3rem; margin-bottom:0.5rem;">📝</div>
+    <div style="font-family:'Bangers',cursive; font-size:2.2rem; letter-spacing:0.05em; background:linear-gradient(135deg,#ffe0a0,#f5a623); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;">SoS Blog Admin</div>
+    <div style="font-family:'Caveat',cursive; color:#3ab5ff; margin-top:0.2rem;">Authorized access only</div>
+  </div>
+  <div class="card">
+    <div class="card-title">🔒 Enter Password</div>
+    <p class="card-sub">This tool is for authorized use only.</p>
+    <div class="alert err" id="pw-error" style="display:none;">Incorrect password. Please try again.</div>
+    <div class="field">
+      <label>Password <span class="req">*</span></label>
+      <input type="password" id="pwInput" placeholder="Enter your password"
+             onkeydown="if(event.key==='Enter') checkPassword()" autofocus>
+    </div>
+    <button class="btn btn-primary" onclick="checkPassword()">UNLOCK →</button>
+  </div>
+</div>
+
+<!-- SETUP SCREEN -->
+<div class="screen" id="screen-setup">
+  <div class="card">
+    <div class="card-title">⚙️ First-Time Setup</div>
+    <p class="card-sub">Enter your GitHub Personal Access Token. Stored only in your browser — never uploaded anywhere.</p>
+    <div class="field">
+      <label>GitHub Personal Access Token <span class="req">*</span></label>
+      <input type="password" id="patInput" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx" onkeydown="if(event.key==='Enter') savePAT()">
+      <p class="pat-hint">Go to <a href="https://github.com/settings/tokens/new" target="_blank">github.com/settings/tokens/new</a> → check <strong>repo</strong> scope → generate → paste here.</p>
+      <div class="pat-status" id="patStatus"></div>
+    </div>
+    <button class="btn btn-primary" onclick="savePAT()">SAVE & CONTINUE →</button>
+  </div>
+</div>
+
+<!-- BLOG FORM SCREEN -->
+<div class="screen" id="screen-form">
+  <div class="settings-row">
+    <a class="back-btn" href="sos-admin.html">← Comic Admin</a>
+    <button class="settings-btn" onclick="showSetup()">⚙️ GitHub Token</button>
+  </div>
+
+  <div class="card">
+    <div class="card-title">📝 New Blog Post</div>
+    <p class="card-sub">Fill in the details — I'll update blog.json automatically. Place newest posts at top or insert by date.</p>
+
+    <div class="alert err" id="form-error"></div>
+
+    <!-- DATE -->
+    <div class="field">
+      <label>Date <span class="req">*</span></label>
+      <input type="date" id="postDate">
+    </div>
+
+    <!-- TITLE -->
+    <div class="field">
+      <label>Title <span class="req">*</span></label>
+      <input type="text" id="postTitle" placeholder="e.g. 🚨 Big News from Summerville!">
+    </div>
+
+    <!-- SLUG -->
+    <div class="field">
+      <label>URL Slug <span class="req">*</span> <span class="opt">(auto-generated, edit if needed)</span></label>
+      <input type="text" id="postSlug" placeholder="big-news-from-summerville">
+    </div>
+
+    <!-- YOUTUBE -->
+    <div class="field">
+      <label>YouTube Video ID <span class="opt">(optional — leave blank if none)</span></label>
+      <input type="text" id="postYoutube" placeholder="e.g. kF31oGKbnnQ" oninput="previewYoutube(this.value)">
+      <div class="youtube-preview" id="youtubePreview">
+        <iframe id="youtubePreviewFrame" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <!-- TAGS -->
+    <div class="field">
+      <label>Tags <span class="opt">(comma separated)</span></label>
+      <input type="text" id="postTags" placeholder="AI, Facebook, Sisters, Summerville">
+      <div class="tag-hint">These appear as #hashtag badges on the post</div>
+    </div>
+
+    <!-- BODY -->
+    <div class="field">
+      <label>Body Text <span class="req">*</span></label>
+      <textarea id="postBody" placeholder="Write your blog post here. Use blank lines to separate paragraphs."></textarea>
+    </div>
+
+    <!-- IMAGE -->
+    <div class="field">
+      <label>Cover Image <span class="opt">(optional if YouTube provided)</span></label>
+      <div class="drop-zone" id="dropZone">
+        <input type="file" id="imageInput" accept="image/*" onchange="handleImageSelect(this)">
+        <span class="drop-icon">🖼️</span>
+        <div class="drop-text">Drag & drop or <strong>click to browse</strong></div>
+        <div class="drop-text" style="margin-top:0.3rem; font-size:0.75rem;">PNG, JPEG, JPG supported</div>
+      </div>
+      <div class="preview-wrap" id="previewWrap">
+        <img id="imagePreview" src="" alt="Preview">
+        <div class="preview-filename" id="previewFilename"></div>
+      </div>
+    </div>
+
+    <!-- PLACEMENT -->
+    <div class="field">
+      <label>Post Placement</label>
+      <div class="placement-row">
+        <select id="postPlacement">
+          <option value="top">Top of list (newest)</option>
+          <option value="bydate">Insert by date order</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- PROGRESS -->
+    <div class="progress-wrap" id="progressWrap">
+      <div class="progress-step" id="step-image">
+        <span class="step-icon" id="icon-image">⬆️</span>
+        <span>Uploading image to GitHub…</span>
+      </div>
+      <div class="progress-step" id="step-blog">
+        <span class="step-icon" id="icon-blog">📝</span>
+        <span>Updating blog.json…</span>
+      </div>
+    </div>
+
+    <!-- SUCCESS -->
+    <div class="success-box" id="successBox">
+      <span class="big-check">✅</span>
+      <h3>Post Published!</h3>
+      <p id="successMsg"></p>
+      <a id="successLink" href="#" target="_blank" class="view-link">View Post →</a>
+      <div style="margin-top:1rem;">
+        <button class="btn btn-secondary" style="width:auto; padding:0.4rem 1.2rem;" onclick="resetForm()">+ New Post</button>
+      </div>
+    </div>
+
+    <button class="btn btn-primary" id="submitBtn" onclick="submitPost()">🚀 PUBLISH POST</button>
+  </div>
+</div>
+
+<div class="app-footer">Sisters of Summerville Blog Admin · Local / Misha use only</div>
+
+<script>
+const CONFIG = {
+  password:  'SoS2026!',           // ← CHANGE to match sos-admin.html password
+  repoOwner: 'sisters-of-summerville',
+  repoName:  'Sisters-of-Summerville',
+  branch:    'main',
+  siteUrl:   'https://sisters-of-summerville.github.io/Sisters-of-Summerville'
+};
+
+let imageFile   = null;
+let imageBase64 = null;
+let isSubmitting = false;
+
+// ── PASSWORD ──
+function checkPassword() {
+  const val = document.getElementById('pwInput').value;
+  if (val === CONFIG.password) {
+    sessionStorage.setItem('sos_blog_unlocked', 'yes');
+    document.getElementById('screen-password').classList.remove('active');
+    if (localStorage.getItem('sos_pat')) {
+      document.getElementById('screen-form').classList.add('active');
+    } else {
+      document.getElementById('screen-setup').classList.add('active');
+    }
+  } else {
+    const err = document.getElementById('pw-error');
+    err.style.display = 'block';
+    document.getElementById('pwInput').value = '';
+    document.getElementById('pwInput').focus();
+    setTimeout(() => { err.style.display = 'none'; }, 3000);
+  }
+}
+
+// ── INIT ──
+window.addEventListener('load', () => {
+  const today = new Date();
+  const yyyy = today.getFullYear();
+  const mm   = String(today.getMonth()+1).padStart(2,'0');
+  const dd   = String(today.getDate()).padStart(2,'0');
+  document.getElementById('postDate').value = `${yyyy}-${mm}-${dd}`;
+
+  // Auto-generate slug from title
+  document.getElementById('postTitle').addEventListener('input', function() {
+    document.getElementById('postSlug').value = toSlug(this.value);
+  });
+
+  // Drag & drop
+  const dz = document.getElementById('dropZone');
+  dz.addEventListener('dragover',  e => { e.preventDefault(); dz.classList.add('dragover'); });
+  dz.addEventListener('dragleave', () => dz.classList.remove('dragover'));
+  dz.addEventListener('drop', e => {
+    e.preventDefault(); dz.classList.remove('dragover');
+    const f = e.dataTransfer.files[0];
+    if (f && f.type.startsWith('image/')) processImageFile(f);
+  });
+
+  // Check session — if already unlocked skip password
+  if (sessionStorage.getItem('sos_blog_unlocked') === 'yes') {
+    document.getElementById('screen-password').classList.remove('active');
+    if (localStorage.getItem('sos_pat')) {
+      document.getElementById('screen-form').classList.add('active');
+    } else {
+      document.getElementById('screen-setup').classList.add('active');
+    }
+  }
+});
+
+// ── PAT SETUP ──
+async function savePAT() {
+  const pat = document.getElementById('patInput').value.trim();
+  if (!pat) return;
+  const status = document.getElementById('patStatus');
+  status.className = 'pat-status ok'; status.style.display = 'block';
+  status.textContent = 'Verifying…';
+  try {
+    const res = await fetch(`https://api.github.com/repos/${CONFIG.repoOwner}/${CONFIG.repoName}`, {
+      headers: { 'Authorization': `Bearer ${pat}`, 'Accept': 'application/vnd.github+json' }
+    });
+    if (res.ok) {
+      localStorage.setItem('sos_pat', pat);
+      status.textContent = '✅ Token verified and saved!';
+      setTimeout(() => {
+        document.getElementById('screen-setup').classList.remove('active');
+        document.getElementById('screen-form').classList.add('active');
+      }, 800);
+    } else {
+      status.className = 'pat-status err'; status.style.display = 'block';
+      status.textContent = '❌ Token invalid or lacks repo access.';
+    }
+  } catch(e) {
+    status.className = 'pat-status err'; status.style.display = 'block';
+    status.textContent = '❌ Network error.';
+  }
+}
+
+function showSetup() {
+  document.getElementById('screen-form').classList.remove('active');
+  document.getElementById('screen-setup').classList.add('active');
+  document.getElementById('patInput').value = '';
+  document.getElementById('patStatus').style.display = 'none';
+}
+
+// ── YOUTUBE PREVIEW ──
+let ytTimer;
+function previewYoutube(id) {
+  clearTimeout(ytTimer);
+  const wrap  = document.getElementById('youtubePreview');
+  const frame = document.getElementById('youtubePreviewFrame');
+  if (!id.trim()) { wrap.style.display = 'none'; frame.src = ''; return; }
+  ytTimer = setTimeout(() => {
+    frame.src = `https://www.youtube.com/embed/${id.trim()}`;
+    wrap.style.display = 'block';
+  }, 800);
+}
+
+// ── IMAGE ──
+function handleImageSelect(input) {
+  if (input.files && input.files[0]) processImageFile(input.files[0]);
+}
+function processImageFile(file) {
+  imageFile = file;
+  const reader = new FileReader();
+  reader.onload = e => {
+    imageBase64 = e.target.result.split(',')[1];
+    document.getElementById('imagePreview').src = e.target.result;
+    document.getElementById('previewFilename').textContent = '📎 ' + file.name;
+    document.getElementById('previewWrap').style.display = 'block';
+  };
+  reader.readAsDataURL(file);
+}
+
+// ── GITHUB HELPERS ──
+const getPAT  = () => localStorage.getItem('sos_pat');
+const apiBase = () => `https://api.github.com/repos/${CONFIG.repoOwner}/${CONFIG.repoName}/contents`;
+
+async function getFile(path) {
+  const res = await fetch(`${apiBase()}/${path}`, {
+    headers: { 'Authorization': `Bearer ${getPAT()}`, 'Accept': 'application/vnd.github+json' }
+  });
+  if (!res.ok) return null;
+  return res.json();
+}
+
+async function putFile(path, base64Content, commitMsg, sha = null) {
+  const body = { message: commitMsg, content: base64Content, branch: CONFIG.branch };
+  if (sha) body.sha = sha;
+  const res = await fetch(`${apiBase()}/${path}`, {
+    method: 'PUT',
+    headers: {
+      'Authorization': `Bearer ${getPAT()}`,
+      'Accept':        'application/vnd.github+json',
+      'Content-Type':  'application/json'
+    },
+    body: JSON.stringify(body)
+  });
+  if (!res.ok) { const e = await res.json().catch(()=>({})); throw new Error(e.message || `HTTP ${res.status}`); }
+  return res.json();
+}
+
+function decodeB64(str) { return decodeURIComponent(escape(atob(str.replace(/\n/g,'')))); }
+function encodeB64(str) { return btoa(unescape(encodeURIComponent(str))); }
+function toSlug(str) {
+  return str.toLowerCase().replace(/['']/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+}
+
+// ── STEP UI ──
+function stepActive(id) { document.getElementById(`step-${id}`).classList.add('active'); document.getElementById(`icon-${id}`).innerHTML = '<span class="step-spin">⏳</span>'; }
+function stepDone(id)   { const s = document.getElementById(`step-${id}`); s.classList.remove('active'); s.classList.add('done'); document.getElementById(`icon-${id}`).textContent = '✅'; }
+function stepError(id)  { const s = document.getElementById(`step-${id}`); s.classList.remove('active'); s.classList.add('error'); document.getElementById(`icon-${id}`).textContent = '❌'; }
+
+function showError(msg) {
+  const el = document.getElementById('form-error');
+  el.textContent = msg; el.style.display = 'block';
+  setTimeout(() => { el.style.display = 'none'; }, 8000);
+}
+
+// ── SUBMIT ──
+async function submitPost() {
+  if (isSubmitting) return;
+
+  const dateVal   = document.getElementById('postDate').value.trim();
+  const title     = document.getElementById('postTitle').value.trim();
+  const slug      = document.getElementById('postSlug').value.trim();
+  const body      = document.getElementById('postBody').value.trim();
+  const youtube   = document.getElementById('postYoutube').value.trim();
+  const tagsRaw   = document.getElementById('postTags').value.trim();
+  const placement = document.getElementById('postPlacement').value;
+
+  if (!dateVal) { showError('⚠️ Please enter a date.'); return; }
+  if (!title)   { showError('⚠️ Please enter a title.'); return; }
+  if (!slug)    { showError('⚠️ Please enter a URL slug.'); return; }
+  if (!body)    { showError('⚠️ Please enter the post body.'); return; }
+  if (!youtube && !imageFile) { showError('⚠️ Please add a YouTube ID or upload a cover image.'); return; }
+
+  const tags = tagsRaw ? tagsRaw.split(',').map(t=>t.trim()).filter(Boolean) : [];
+
+  isSubmitting = true;
+  document.getElementById('submitBtn').disabled = true;
+  document.getElementById('progressWrap').style.display = 'flex';
+  document.getElementById('successBox').style.display   = 'none';
+
+  ['image','blog'].forEach(id => {
+    const s = document.getElementById(`step-${id}`);
+    s.className = 'progress-step';
+    document.getElementById(`icon-${id}`).textContent = id === 'image' ? '⬆️' : '📝';
+  });
+
+  try {
+    // STEP 1 — Upload image (if provided)
+    let imagePath = '';
+    if (imageFile && imageBase64) {
+      stepActive('image');
+      const ext = imageFile.name.split('.').pop();
+      imagePath = `images/blog/${slug}.${ext}`;
+      await putFile(imagePath, imageBase64, `Add blog image for ${slug}`);
+      stepDone('image');
+    } else {
+      // Skip image step visually
+      const s = document.getElementById('step-image');
+      s.style.display = 'none';
+    }
+
+    // STEP 2 — Update blog.json
+    stepActive('blog');
+    const blogFile = await getFile('blog.json');
+    if (!blogFile) throw new Error('Could not read blog.json');
+    const posts = JSON.parse(decodeB64(blogFile.content));
+
+    // Check for duplicate slug
+    if (posts.find(p => p.slug === slug)) throw new Error(`Slug "${slug}" already exists. Please use a different slug.`);
+
+    const newPost = { slug, date: dateVal, title, tags, body };
+    if (youtube)    newPost.youtube = youtube;
+    if (imagePath)  newPost.image   = imagePath;
+
+    // Placement
+    if (placement === 'top') {
+      posts.unshift(newPost);
+    } else {
+      // Insert by date — newest first
+      const insertIdx = posts.findIndex(p => p.date <= dateVal);
+      if (insertIdx === -1) { posts.push(newPost); }
+      else { posts.splice(insertIdx, 0, newPost); }
+    }
+
+    await putFile('blog.json', encodeB64(JSON.stringify(posts, null, 2)),
+                  `Add blog post: ${title}`, blogFile.sha);
+    stepDone('blog');
+
+    // SUCCESS
+    const postUrl = `${CONFIG.siteUrl}/#blog/${slug}`;
+    document.getElementById('successMsg').textContent = `"${title}" published for ${dateVal}. Site updates in ~2 minutes.`;
+    document.getElementById('successLink').href = postUrl;
+    document.getElementById('successBox').style.display = 'block';
+    document.getElementById('submitBtn').style.display  = 'none';
+
+  } catch(err) {
+    ['image','blog'].forEach(id => {
+      if (document.getElementById(`step-${id}`).classList.contains('active')) stepError(id);
+    });
+    showError(`❌ ${err.message}`);
+    document.getElementById('submitBtn').disabled = false;
+  }
+
+  isSubmitting = false;
+}
+
+// ── RESET ──
+function resetForm() {
+  ['postTitle','postSlug','postBody','postTags','postYoutube'].forEach(id => document.getElementById(id).value = '');
+  document.getElementById('previewWrap').style.display   = 'none';
+  document.getElementById('progressWrap').style.display  = 'none';
+  document.getElementById('successBox').style.display    = 'none';
+  document.getElementById('submitBtn').style.display     = 'block';
+  document.getElementById('submitBtn').disabled          = false;
+  document.getElementById('imageInput').value            = '';
+  document.getElementById('youtubePreview').style.display = 'none';
+  document.getElementById('step-image').style.display   = '';
+  imageFile = null; imageBase64 = null;
+  const today = new Date();
+  const yyyy = today.getFullYear(), mm = String(today.getMonth()+1).padStart(2,'0'), dd = String(today.getDate()).padStart(2,'0');
+  document.getElementById('postDate').value = `${yyyy}-${mm}-${dd}`;
+}
+</script>
+</body>
+</html>
