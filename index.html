@@ -212,10 +212,12 @@
     <img class="blog-post-image" id="blogPostImage" src="" alt="" style="display:none;">
     <div class="blog-post-body" id="blogPostBody"></div>
     <div class="blog-back-row">
+      <button class="nav-arrow" id="blogArrowNewer" onclick="navigateBlog(-1)" title="Newer post">&#9664;</button>
       <button class="share-btn share-fb" onclick="shareBlogFb()">&#128077; Facebook</button>
       <button class="share-btn share-x" onclick="shareBlogX()">&#128038; X / Twitter</button>
       <button class="share-btn share-copy" onclick="copyBlogLink()">&#128279; Copy Link</button>
       <button class="share-btn share-back" onclick="backToBlog()">&#9664; All Posts</button>
+      <button class="nav-arrow" id="blogArrowOlder" onclick="navigateBlog(1)" title="Older post">&#9654;</button>
     </div>
   </div>
   <footer class="site-footer">
