@@ -186,6 +186,7 @@ function backToCharacters() {
 
 let BLOG_POSTS = [];
 let currentBlogSlug = '';
+let currentBlogIndex = 0;
 
 async function loadBlog() {
   if (BLOG_POSTS.length) { renderBlogGrid(); return; }
@@ -220,25 +221,26 @@ function renderBlogGrid() {
 }
 
 function openBlogPost(slug) {
-  const p = BLOG_POSTS.find(p => p.slug === slug);
-  if (!p) return;
-  currentBlogSlug = slug;
+  const idx = BLOG_POSTS.findIndex(p => p.slug === slug);
+  if (idx === -1) return;
+  currentBlogIndex = idx;
+  currentBlogSlug  = slug;
+  const p = BLOG_POSTS[idx];
+
   document.getElementById('blogPostDate').textContent  = p.date;
   document.getElementById('blogPostTitle').textContent = p.title;
   document.getElementById('blogPostTags').innerHTML = (p.tags||[]).map(t=>`<span class="caption-tag">#${t}</span>`).join('');
   document.getElementById('blogPostBody').innerHTML = p.body.split(/\n\n+/).map(para => `<p>${para.replace(/\n/g,'<br>')}</p>`).join('');
-  const ytWrap = document.getElementById('blogYoutubeWrap');
-  const imgEl  = document.getElementById('blogPostImage');
-  const multiWrap = document.getElementById('blogMultiImages');
 
-  // Clear multi-image container
+  const ytWrap    = document.getElementById('blogYoutubeWrap');
+  const imgEl     = document.getElementById('blogPostImage');
+  const multiWrap = document.getElementById('blogMultiImages');
   if (multiWrap) multiWrap.remove();
 
   if (p.youtube) {
     document.getElementById('blogYoutubeFrame').src = `https://www.youtube.com/embed/${p.youtube}?rel=0`;
     ytWrap.style.display = 'block'; imgEl.style.display = 'none';
   } else if (p.images && p.images.length > 1) {
-    // Multiple images — render a grid
     ytWrap.style.display = 'none'; imgEl.style.display = 'none';
     const grid = document.createElement('div');
     grid.id = 'blogMultiImages';
@@ -253,10 +255,21 @@ function openBlogPost(slug) {
   } else {
     ytWrap.style.display = 'none'; imgEl.style.display = 'none';
   }
+
+  // Update arrows — newest = index 0 (left = newer = lower index, right = older = higher index)
+  document.getElementById('blogArrowNewer').classList.toggle('disabled', currentBlogIndex <= 0);
+  document.getElementById('blogArrowOlder').classList.toggle('disabled', currentBlogIndex >= BLOG_POSTS.length - 1);
+
   history.pushState(null, '', '#blog/' + slug);
   document.getElementById('view-gallery').style.display   = 'none';
   document.getElementById('view-blog-post').style.display = 'block';
   window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function navigateBlog(dir) {
+  const next = currentBlogIndex + dir;
+  if (next < 0 || next >= BLOG_POSTS.length) return;
+  openBlogPost(BLOG_POSTS[next].slug);
 }
 
 function backToBlog() {
@@ -315,6 +328,8 @@ document.addEventListener('keydown', e => {
     if (e.key === 'Escape')     backToCharacters();
   }
   if (document.getElementById('view-blog-post').style.display === 'block') {
+    if (e.key === 'ArrowLeft')  navigateBlog(-1);
+    if (e.key === 'ArrowRight') navigateBlog(1);
     if (e.key === 'Escape') backToBlog();
   }
 });
