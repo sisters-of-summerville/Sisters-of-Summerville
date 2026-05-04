@@ -1,32 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-<!-- Comment: check https://follow.it/delivery-settings to update schedule for RSS feed -->  
   <channel>
     <title>Sisters of Summerville</title>
     <link>https://sisters-of-summerville.github.io/Sisters-of-Summerville/</link>
-    <description>Daily comic strip featuring Honey Bear the Yorkie and Bootsie Belle the tuxedo with every day humor and sass in Summerville, South Carolina.</description>
+    <description>Daily comic strip featuring Honey Bear the Yorkie and Bootsie Belle the tuxedo cat with every day humor and sass in Summerville, South Carolina.</description>
     <language>en-us</language>
     <atom:link href="https://sisters-of-summerville.github.io/Sisters-of-Summerville/rss.xml" rel="self" type="application/rss+xml"/>
+    <!-- ADD NEW EPISODES AT THE TOP — NEWEST FIRST
+         date format: Day, DD Mon YYYY HH:MM:SS +0000 -->
 
-    <!-- ═══════════════════════════════════════════════════
-         ADD NEW EPISODES AT THE TOP, NEWEST FIRST
-         Copy one 
-    
-    
-    
-    
-    
-    
-    
     <item>
-      <title>🌍✈️ Imagination’s World Travelers ✈️🌍</title>
+      <title>🌍✈️ Imagination's World Travelers ✈️🌍</title>
       <link>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-05-04</link>
-      <description>Bootsie Belle spins the globe and dreams of elegant European cats sipping tiny coffees in France or roaming wherever they please in Belgium. Meanwhile, Honey Bear (always the food monger) dreams of French Fries and Belgian waffles drowning in syrup and strawberries. 🧇😋
-
-But after all the grand adventures, fancy cafés, and international daydreaming, Mom brings the sisters crashing gently back to Summerville reality with the ultimate Southern truth:
-“Closest thing y’all gettin’ to Belgium tonight is Eggo!” 🤣🐾
-
-NOTE: A special thanks to my friend Muriel for the help with Belgium and her cat Sita for the inspiration for this episode.</description>
+      <description>Bootsie Belle spins the globe and dreams of elegant European cats sipping tiny coffees in France or roaming wherever they please in Belgium. Meanwhile, Honey Bear (always the food monger) dreams of French Fries and Belgian waffles drowning in syrup and strawberries. But after all the grand adventures, fancy cafés, and international daydreaming, Mom brings the sisters crashing gently back to Summerville reality with the ultimate Southern truth: "Closest thing y&apos;all gettin&apos; to Belgium tonight is Eggo!" NOTE: A special thanks to my friend Muriel for the help with Belgium and her cat Sita for the inspiration for this episode.</description>
       <pubDate>Mon, 04 May 2026 12:00:00 +0000</pubDate>
       <guid>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-05-04</guid>
     </item>
@@ -34,9 +20,7 @@ NOTE: A special thanks to my friend Muriel for the help with Belgium and her cat
     <item>
       <title>💃🐾 Sisters of Summerville: Epic Dance Off 🐾🕺</title>
       <link>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-05-03</link>
-      <description>The living room becomes a battlefield of glitter, sass, flying cheese puffs, and dangerously aggressive cardio as Honey Bear channels full-on 80s dance energy with dramatic floor slides and enough enthusiasm to pull three imaginary hamstrings. And Bootsie Belle unveils a secret Broadway-level performance that leaves the whole house speechless. 🎭😹
-
-As the confetti settles with popcorn everywhere￼, both sisters discover the true winner of the dance-off…absolutely nobody. CARDIO WON!🔥🤣</description>
+      <description>The living room becomes a battlefield of glitter, sass, flying cheese puffs, and dangerously aggressive cardio as Honey Bear channels full-on 80s dance energy with dramatic floor slides and enough enthusiasm to pull three imaginary hamstrings. And Bootsie Belle unveils a secret Broadway-level performance that leaves the whole house speechless. As the confetti settles with popcorn everywhere, both sisters discover the true winner of the dance-off…absolutely nobody. CARDIO WON!</description>
       <pubDate>Sun, 03 May 2026 12:00:00 +0000</pubDate>
       <guid>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-05-03</guid>
     </item>
@@ -44,9 +28,7 @@ As the confetti settles with popcorn everywhere￼, both sisters discover the tr
     <item>
       <title>🧰⚡ Mission MacGyver ⚡🐾</title>
       <link>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-05-02</link>
-      <description>After binge-watching classic 80s action TV, Bootsie Belle becomes absolutely convinced that duct tape, barbecue tongs, pool noodles, and random backyard junk are the keys to solving ANY crisis. 😼🔧
-
-So when Honey Bear accidentally gets herself trapped during a backyard toy rescue mission, Bootsie launches into full “MacGyver mode” with maximum confidence and questionable engineering. What follows is a masterpiece of Southern improvisation, tactical nonsense, and sisterly determination! Turns out sometimes saving the day doesn’t require fancy gadgets. Just creativity, courage, and access to the junk drawer! 🛠️🐶💖</description>
+      <description>After binge-watching classic 80s action TV, Bootsie Belle becomes absolutely convinced that duct tape, barbecue tongs, pool noodles, and random backyard junk are the keys to solving ANY crisis. So when Honey Bear accidentally gets herself trapped during a backyard toy rescue mission, Bootsie launches into full "MacGyver mode" with maximum confidence and questionable engineering. Turns out sometimes saving the day doesn&apos;t require fancy gadgets. Just creativity, courage, and access to the junk drawer!</description>
       <pubDate>Sat, 02 May 2026 12:00:00 +0000</pubDate>
       <guid>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-05-02</guid>
     </item>
@@ -54,29 +36,23 @@ So when Honey Bear accidentally gets herself trapped during a backyard toy rescu
     <item>
       <title>🧺🐾 Sisters of Summerville: Laundry Games 🐾🧺</title>
       <link>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-05-01</link>
-      <description>Friday is Laundry Day in the sister’s house triggering Honey Bear &amp; Bootsie Belle to treat it like the championship round of the Southern Pet Olympics! From zoomies around Mom’s feet to sneak attacks from the warm laundry mountain, the sisters turn folding clothes into full-blown fluffy chaos! 😼💨🐶
-
-But after all the chasing, hiding, pouncing, and laundry avalanches, the two sisters finally discover something mighty important: sometimes the best kind of trouble comes in pairs. Curled up together like yin and yang atop freshly folded blankets, Honey Bear and Bootsie Belle prove that even opposites can agree to team up for a good sleep! 🧦❤️🏆</description>
+      <description>Friday is Laundry Day triggering Honey Bear &amp; Bootsie Belle to treat it like the championship round of the Southern Pet Olympics! From zoomies around Mom&apos;s feet to sneak attacks from the warm laundry mountain, the sisters turn folding clothes into full-blown fluffy chaos. But after all the chasing, hiding, pouncing, and laundry avalanches, the two sisters finally discover something mighty important: sometimes the best kind of trouble comes in pairs.</description>
       <pubDate>Fri, 01 May 2026 12:00:00 +0000</pubDate>
       <guid>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-05-01</guid>
     </item>
 
     <item>
-      <title>🐾🍔 Sisters of Summerville: Matt’s Burgers Mayhem 🍟🌭</title>
+      <title>🐾🍔 Sisters of Summerville: Matt&apos;s Burgers Mayhem 🍟🌭</title>
       <link>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-04-30</link>
-      <description>The Sisters rolled into downtown Summerville to investigate one of the town’s most legendary local places to eat…Matt’s Burgers! Honey Bear wasted zero time going “full food goblin” with a chili cheese dog piled higher than her better judgment, as Bootsie Belle nearly fainted at the sight of a DOG eating a hot dog! 🤣🌭
-
-Meanwhile, Bootsie tried to maintain her Southern lady dignity right up until Matt’s famous messy burger absolutely DESTROYED her self-control. From chili-covered paws to diva-level burger judgment, the girls discovered why folks around town keep buzzin’ about this Summerville favorite. One thing’s for certain…around here, good food is SERIOUS business! ❤️🔥</description>
+      <description>The Sisters rolled into downtown Summerville to investigate one of the town&apos;s most legendary local places to eat…Matt&apos;s Burgers! Honey Bear wasted zero time going "full food goblin" with a chili cheese dog piled higher than her better judgment, as Bootsie Belle nearly fainted at the sight of a DOG eating a hot dog! From chili-covered paws to diva-level burger judgment, the girls discovered why folks around town keep buzzin&apos; about this Summerville favorite.</description>
       <pubDate>Thu, 30 Apr 2026 12:00:00 +0000</pubDate>
       <guid>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-04-30</guid>
     </item>
 
     <item>
-      <title>🎶🐾 Sisters of Summerville: Pet Karaoke 🐾 🎶</title>
+      <title>🎶🐾 Sisters of Summerville: Pet Karaoke 🐾🎶</title>
       <link>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-04-29</link>
-      <description>When the mic drops in Summerville, so does the dignity. Honey Bear jumps into karaoke night with full heart, full volume, and absolutely zero regard for the actual lyrics. It’s her “country…kinda: genre somewhere between sweet tea dreams and biscuit-fueled chaos, she’s singing her own version of reality. 🎤
-
-Meanwhile, Bootsie Belle steps up like she’s been headlining since birth: totally smooth, precise, and dripping with attitude. Every word hits. Every beat lands. And just like that, the room belongs to her! 😼</description>
+      <description>When the mic drops in Summerville, so does the dignity. Honey Bear jumps into karaoke night with full heart, full volume, and absolutely zero regard for the actual lyrics. Meanwhile, Bootsie Belle steps up like she&apos;s been headlining since birth: totally smooth, precise, and dripping with attitude. Every word hits. Every beat lands. And just like that, the room belongs to her.</description>
       <pubDate>Wed, 29 Apr 2026 12:00:00 +0000</pubDate>
       <guid>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-04-29</guid>
     </item>
@@ -84,9 +60,7 @@ Meanwhile, Bootsie Belle steps up like she’s been headlining since birth: tota
     <item>
       <title>🐾📺 Paws the TV Remote 📺🐾</title>
       <link>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-04-28</link>
-      <description>What starts as a peaceful afternoon on the couch turns into a full-blown channel-surfing catastrophe when Honey Bear accidentally steps on the TV remote…and just can’t stop! Every panicked step sends the TV spinning from cooking shows to chaos, leaving Mom stunned and the living room in total confusion. 😱🐶
-
-Meanwhile, Bootsie Belle sits back like a queen of calm, delivering razor-sharp commentary with that signature Summerville sass. Because when things spiral out of control, someone has to keep their dignity intact. In the end, Mom restores order, Honey Bear learns a pawful lesson, and Bootsie reminds us all, “Some are born with control… and others step on it!” 😼📡</description>
+      <description>What starts as a peaceful afternoon on the couch turns into a full-blown channel-surfing catastrophe when Honey Bear accidentally steps on the TV remote…and just can&apos;t stop! Every panicked step sends the TV spinning from cooking shows to chaos. Meanwhile, Bootsie Belle sits back like a queen of calm, delivering razor-sharp commentary with that signature Summerville sass.</description>
       <pubDate>Tue, 28 Apr 2026 12:00:00 +0000</pubDate>
       <guid>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-04-28</guid>
     </item>
@@ -94,281 +68,273 @@ Meanwhile, Bootsie Belle sits back like a queen of calm, delivering razor-sharp 
     <item>
       <title>🐾🚚 Sisters of Summerville: Potholes &amp; Postal Heroes 🚚🐾</title>
       <link>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-04-27</link>
-      <description>In Summerville, the road to delivery isn’t always smooth. Sometimes it’s a full-on obstacle course of craters, bumps, and suspension-testing surprises! But nothing slows down Eileen, the neighborhood’s unstoppable USPS postal warrior. 📦 
-As Dad walks Honey Bear and Bootsie Belle to the community mailboxes, the payoff rolls in right on time complete with bones for Honey Bear and spider toys for Bootsie…and a whole lot of gratitude for the one who made it happen! Because around here, it’s not just about the mail…it’s about grit, heart, and showing up no matter what the road throws at you. Neither potholes…nor chaos…nor craters in the street…stay this courier from delivering appointed treats! 😄 
-Got potholes like these in your neighborhood? Time to call in some backup! Report them on seeclickfix.com and help smooth the ride for everyone! 🛠️</description>
+      <description>In Summerville, the road to delivery isn&apos;t always smooth. But nothing slows down Eileen, the neighborhood&apos;s unstoppable USPS postal warrior. As Dad walks Honey Bear and Bootsie Belle to the community mailboxes, the payoff rolls in right on time complete with bones for Honey Bear and spider toys for Bootsie. Got potholes in your neighborhood? Report them on seeclickfix.com!</description>
       <pubDate>Mon, 27 Apr 2026 12:00:00 +0000</pubDate>
       <guid>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-04-27</guid>
     </item>
 
-    <item> block and fill in your details.
-         date format: Day, DD Mon YYYY 00:00:00 +0000
-    ════════════════════════════════════════════════════ -->
-   
     <item>
-       <title>📚 Chautauqua Reading Circle 📚</title>
-       <link>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-04-26</link>
-       <description>What started as a simple book club in 1897 became something far greater. Honey Bear and Bootsie Belle uncover how a group of determined Summerville women turned shared stories into a lasting legacy…building the beloved Timrod Library “one book at a time” during the town’s golden age. From candlelit reading circles to shelves filled with over 50,000 volumes, this is a tale of curiosity, community, and the power of knowledge passed through generations. Learn more by visiting: The Timrod Library.</description>
-       <pubDate>Thu, 26 Apr 2026 08:30:00 +0000</pubDate>
-       <guid>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-04-26</guid>
-    </item>
-   
-    <item>
-       <title>🐾 Welcome Sugar, Miss Tiffany’s Arrived! 🐾</title>
-       <link>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-04-25</link>
-       <description>A velvet cushion, a royal entrance, and just a hint of attitude…Miss Tiffany has officially arrived in Summerville, and she’s bringing a whole new level of fancy to the neighborhood! From the moment she steps out like royalty, it’s clear this Persian princess is used to the finer things in life, but around here, “refined” meets real in a hurry. 💰👑 While Honey Bear rolls out the sweetest Southern welcome and Bootsie Belle delivers that signature slow-burn southern sass, something else is lurking behind the scenes. The “Squirrel Mafia” has spotted that sparkling gem…and let’s just say, they’re not the type to admire from a distance! 👀💎</description>
-       <pubDate>Thu, 25 Apr 2026 08:30:00 +0000</pubDate>
-       <guid>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-04-25</guid>
-    </item>
-   
-    <item>
-       <title>⛳ Ace Golfer (glasses required)! ⛳</title>
-       <link>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-04-24</link>
-       <description>Some folks play the front nine, while others imagine they dominated it. Meet “Ace” today’s most confident golfer with 50/50 vision and 100% belief in his game. From pinecones to his lost pom-pom from his cap, every shot looked perfect to Ace…at least from where he was standing. You see poor Ace couldn’t find his glasses today, but felt the call of the game! 😄 But the Sisters of Summerville know a thing or two about “creative scoring.” Honey Bear celebrates the little wins, while Bootsie Belle delivers her signature clubhouse sass, because sometimes the real sport isn’t golf…it’s the storytelling afterward! 🐾</description>
-       <pubDate>Thu, 24 Apr 2026 08:30:00 +0000</pubDate>
-       <guid>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-04-24</guid>
-    </item>
-   
-    <item>
-       <title>🎉🎂 Happy Birthday Mom! 🎂🎉</title>
-       <link>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-04-23</link>
-       <description>Dad thought he was playing it safe with a simple musical card from Blue Mountain, but in Summerville “simple” has a funny way of turning into a full-blown production. One doorbell ring later, and suddenly there’s a tuxedo-clad whirlwind on the porch delivering not just a tune, but a full-scale, scene-stealing birthday spectacle complete with flair, drama, and just a touch of delightful chaos! 🎤✨ Confetti flies, voices soar, and the whole house turns into a stage. Honey Bear is bouncing with excitement, Bootsie Belle is serving signature sass from her perch, Big Brother is all in for the show, and Dad is wondering how a greeting card turned into all of this. But through all the laughs and over-the-top antics, one thing remains perfectly clear…Mom still gets top billing! 👑🎂</description>
-       <pubDate>Thu, 23 Apr 2026 08:30:00 +0000</pubDate>
-       <guid>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-04-23</guid>
-    </item>
-   
-    <item>
-       <title>🎤🎶 Girls Just Wanna Have Fun 🎶🎤</title>
-       <link>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-04-22</link>
-       <description>When a blast from the 80s hits the living room, Honey Bear and Bootsie Belle discover a Cyndi Lauper classic…and suddenly it’s THEIR moment to shine! 😎✨ From couch-side curiosity to full-blown dance floor chaos, these two sisters turn a simple music video into a neon-soaked, fur-flying, popcorn-popping PARTY! 🕺🎉 But when Mom walks in with that look and Dad starts asking questions about lamps wearing bows, let’s just say the fun might come with a cleanup clause! 😬🧹</description>
-       <pubDate>Thu, 22 Apr 2026 08:30:00 +0000</pubDate>
-       <guid>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-04-22</guid>
-    </item>
-   
-    <item>
-       <title>🎸🔥 Cat Scratch Fever! 🔥🎸</title>
-       <link>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-04-21</link>
-       <description>When Mom and Dad walk in, it suddenly feels like they’ve been transported straight to a wild 1977 Ted Nugent concert! Bootsie Belle is tearing up the house like a full-blown guitar solo with claws flying and furniture shredding from her having that unstoppable Cat Scratch Fever! 🤘🎶 And instead of stopping her, Honey Bear jumps in with her hyped-up air guitar riffs, turning the chaos into a full-on rock performance! From couch carnage to doorframe destruction, this duo proves when the music hits, there’s no stopping this band of sisters show! 🎤💥</description>
-       <pubDate>Thu, 21 Apr 2026 08:30:00 +0000</pubDate>
-       <guid>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-04-21</guid>
-    </item>
-   
-    <item>
-       <title>🐾 No Solicitation 🐾</title>
-       <link>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-04-20</link>
-       <description>While Mom and Dad are out, the front door becomes a battlefield with Honey Bear and Bootsie Belle are on full alert. A smooth-talking solicitor shows up with the usual “Your neighbor just signed up” routine, but this house doesn’t fall for scripted lines. Not on their watch! 🐶🐱 With Honey Bear bringing the heat and Bootsie Belle delivering a cold, calculated takedown…the truth comes out, the pitch falls apart, and another door-to-door legend walks away defeated. In this neighborhood, the signs aren’t just for decoration. 😎</description>
-       <pubDate>Thu, 20 Apr 2026 08:30:00 +0000</pubDate>
-       <guid>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-04-20</guid>
-    </item>
-   
-    <item>
-       <title>🤖🐾 Technology Takeover ⚡📦</title>
-       <link>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-04-19</link>
-       <description>While Mom and Dad sneak off for breakfast, Honey Bear and Bootsie Belle unlock a dangerous new discovery: Alexa and Siri can now understand barks and meows! What starts as a little fun, quickly turns into a full-blown Smart Home Takeover…as Bootsie commands the lights and TV like a tech queen, while Honey Bear goes on an unstoppable Amazon shopping spree! 📺👑📦 But just when they think they’re in control, the real battle begins. Alexa vs. Siri. Black vs. white. Amazon Echo Dot vs. Apple HomePod.
-And suddenly, the whole house goes dark. It turns out maybe some powers aren’t meant to be unleashed. 😱💡</description>
-       <pubDate>Thu, 19 Apr 2026 08:30:00 +0000</pubDate>
-       <guid>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-04-19</guid>
-    </item>
-   
-    <item>
-       <title>🐾🍰 200th Episode Fish Cake 🍰🐾</title>
-       <link>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-04-18</link>
-       <description>The Sisters’ Dad and Big Brother Scott launch out from Taylor’s Landing for a peaceful paddle with Heroes On The Water - Lowcountry, SC Chapter. Meanwhile back at camp, things are anything but calm as Honey Bear kicks off “Operation Cake” with full enthusiasm, while Bootsie Belle supervises with…well healthy skepticism. 🐶🍰😼 What starts as a celebration quickly turns into a frosting-fueled experiment, and by the time the guys return, they’re greeted with a “fish” cake that’s as unforgettable as their 200 straight days of comic adventures! Here’s to 200 episodes of laughs, heart, and just a little bit of chaos…and one very interpretive cake! 🎉🎣😂</description>
-       <pubDate>Thu, 18 Apr 2026 08:30:00 +0000</pubDate>
-       <guid>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-04-18</guid>
-    </item>
-   
-    <item>
-       <title>🐾 Tied in Knots 🐾</title>
-       <link>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-04-17</link>
-       <description>Some chase adventure while others get tangled up in it! When Honey Bear discovers Dad’s “sacred knot book,” she’s convinced it’s the key to unlocking the ultimate prize of a fishing trip with Dad! But while Bootsie Belle delivers pure, calculated catastic precision with a perfect Uni Knot, Honey Bear turns herself into a full-blown pretzel of chaos. 😂🥨 Bootsie’s “Triple Surgeon” jab isn’t just sass…it’s fishing talk! A triple surgeon’s knot is used to tie two fishing lines together, especially when they’re different sizes or materials. In other words, Honey Bear’s mess isn’t just bad…it’s gonna take serious knot surgery to fix! 😼🎣🐾</description>
-       <pubDate>Thu, 17 Apr 2026 08:30:00 +0000</pubDate>
-       <guid>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-04-17</guid>
-    </item>
-   
-    <item>
-       <title>🦢🐾 Tangled Goose Rescue 🐾🦢</title>
-       <link>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-04-16</link>
-       <description>When Radar the Pine Forest Pointer spots trouble on the fairway, it’s a rescue mission. A gentleman goose named Beau is tangled tight up in fishing line. Meemaw Grace walks Radar over to help as she doesn’t hesitate to make the call to Wild Life Rescue. Honey Bear and Bootsie Belle rush in to investigate as Wild Life Rescue arrives just in time to set things right. And just like that…Beau the Gentleman Goose is free! 💝 And then the very next morning, two grateful geese — Belle and Beau — waddle right up to say thank you in their own special way. Grace shares some oats as the sun rises upon a brand new day. And after enjoying the oats, two geese head off into the water together…all because someone stopped, noticed, and cared enough to help! This simple act of kindness remind us that sometimes the smallest moments make the biggest difference. 💛</description>
-       <pubDate>Thu, 16 Apr 2026 08:30:00 +0000</pubDate>
-       <guid>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-04-16</guid>
-    </item>
-   
-    <item>
-       <title>🐾🐿️ Squirrel Mafia 🐿️🐾</title>
-       <link>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-04-15</link>
-       <description>When one disgruntled nut thief comes back, he doesn’t come alone. Nimble Nut returns to the scene of the crime with a full-blown organized squad with suits, attitude, and twigs to snap. What starts as backyard birdwatching quickly turns into a high-stakes standoff worthy of a mob movie complete with offers, enforcers, and a whole lotta swagger. 🎬😎 But Honey Bear isn’t backing down. With one fearless charge and a sky full of feathered reinforcements, the backyard erupts into chaos…and let’s just say Nimble Nut’s family business doesn’t go down as planned. In the end, peace is restored…but at a cost of more birdseed. 🌻😂🐿️</description>
-       <pubDate>Thu, 15 Apr 2026 08:30:00 +0000</pubDate>
-       <guid>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-04-15</guid>
-    </item>
-   
-    <item>
-       <title>🐿️ The Great Squirrel Chase 🐿️</title>
-       <link>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-04-14</link>
-       <description>When a sneaky backyard bandit makes a move on the bird feeder, Honey Bear springs into action as the neighborhood Protector of the Seeds! 🚨🌻 Meanwhile, Bootsie Belle takes the high ground like the queen she is, overseeing the chaos with wide-eyed excitement as the skies fill with returning birds. From daring fence-top backyard chase to full-speed pursuit, this“little snack” turns into an epic showdown! 🐕😆</description>
-       <pubDate>Thu, 14 Apr 2026 08:30:00 +0000</pubDate>
-       <guid>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-04-14</guid>
-    </item>
-   
-    <item>
-       <title>🎪🐾 Big Top Pet Circus! 🐾🎪</title>
-       <link>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-04-13</link>
-       <description>Step right up, folks…because this backyard just transformed into the wildest show in town! From Bootsie Belle’s death-defying trapeze elegance to Cap’n Oh Yeah blasting sky-high like a furry cannonball, the action never lets up. And just when you think it can’t get any better, Honey Bear hits the high wire with snacks on the line! 🎉😳 But the real showstopper? Spot the magician pulling off tricks that send Honey Bear into full chase mode…while Gumbo casually steals the spotlight selling “Sweet Tea Cotton Candy”…now that’s a real Summerville original idea! 🍭🥤</description>
-       <pubDate>Thu, 13 Apr 2026 08:30:00 +0000</pubDate>
-       <guid>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-04-13</guid>
-    </item>
-   
-    <item>
-       <title>🐾 Pampered Pup, Distraught Kitty 🐾</title>
-       <link>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-04-12</link>
-       <description>When Honey Bear gets whisked away to ”All Is Well Pets” for Spa Day, her sister cat Bootsie Belle is having a full-on emotional meltdown. But Honey Bear is living her Best Life complete with scissors snipping, paws pampered, cucumbers cooling, and not a single worry in sight! ❤️🐶 But the real drama is in the reunion, because nothing says “loving” like a bone-crushing hug from a panicked tuxedo cat who thought she’d lost her sister forever! A huge THANK YOU to Bethany for making Honey Bear look absolutely fabulous for her big reveal! 🌟🐾</description>
-       <pubDate>Thu, 12 Apr 2026 08:30:00 +0000</pubDate>
-       <guid>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-04-12</guid>
-    </item>
-   
-    <item>
-       <title>🐾 The Slipper Chase 🐾</title>
-       <link>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-04-11</link>
-       <description>There’s a moment every slipper fears, when a Yorkie locks on target. To Honey Bear, those fluffy house shoes aren’t footwear, they’re prey. One second she’s a fearless hunter, charging in with full “YIP-YIP-YIP!!!” energy and the next she’s negotiating a full tactical retreat. And Yorkies don’t quit…they reset and charge again…and again…and again. Meanwhile Bootsie Belle is quietly engineering chaos behind the scenes. Because in this house, unattended slippers are fair game for everyone. 🐶🎯😼</description>
-       <pubDate>Thu, 11 Apr 2026 08:30:00 +0000</pubDate>
-       <guid>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-04-11</guid>
-    </item>
-   
-    <item>
-       <title>🐾📺 TV Remote Wars! 📺🐾</title>
-       <link>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-04-10</link>
-       <description>Bootsie Belle settled in for a refined evening of watching the “Birds of the World” documentary…as a true Southern lady appreciating fine programming. But Honey Bear couldn’t care less about television, she has a pink elephant to conquer! 🐘 But with one innocent “CLICK” that peace turns into full-blown chaos with channels flipping, aliens invading, tempers flaring…this is WAR! Which proves that you don’t need to watch TV to start a remote control battle…you just need to step on it! 😆</description>
-       <pubDate>Thu, 10 Apr 2026 18:30:00 +0000</pubDate>
-       <guid>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-04-10</guid>
-    </item>
-   
-    <item>
-       <title>🐾🎪 Aerobatic Kitty 🎪🐾</title>
-       <link>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-04-09</link>
-       <description>When the cat wand comes out, it’s Trapeze Showtime with Bootsie Belle literally doing backflips! With every flick of that faux fur boa cat toy, she transforms into the high-flying queen of the living room circus launching into jaw-dropping backflips, twisting through the air like a four-legged trapeze artist with purr-fect form! 💫🎭 Meanwhile, Honey Bear is front row wondering if her sister has lost her mind, silently questioning every life choice that led Bootsie to this moment! But as the dust settles and Bootsie lands like royalty, one thing becomes crystal clear…this wasn’t madness. This was ROYAL CAT ART! 👑 🐱</description>
-       <pubDate>Thu, 09 Apr 2026 14:00:00 +0000</pubDate>
-       <guid>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-04-09</guid>
-    </item>
-   
-    <item>
-       <title>🐾🔥 The ‘Pit Boss’ Mom! 🔥🐾</title>
-       <link>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-04-08</link>
-       <description>When the Kamado Joe fires up on the back porch, Honey Bear and Bootsie Belle are ready to take command…or so they think! From “meat monitoring” to “flavor profiling,” these sisters confidently call the shots while the smoke rolls and the aroma fills the Summerville air. But behind the scenes, Mom is quietly running a masterclass in BBQ…controlling the fire, perfecting the timing, and turning out ribs, brisket, and all the fixin’s like a true backyard legend. As the plates hit the table and the first bites land, the truth becomes crystal clear. The proof is in the meat…and Mom is the ‘Pit Boss’ in this home! 🔥🍖</description>
-       <pubDate>Thu, 08 Apr 2026 07:50:00 +0000</pubDate>
-       <guid>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-04-08</guid>
-    </item>
-   
-    <item>
-       <title>Sprinkler Chess</title>
-       <link>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-04-07</link>
-       <description>What starts as a peaceful sunrise sniff session quickly turns into a full-blown tactical showdown in the backyard as Honey Bear finds herself dodging a surprise sprinkler ambush…weaving, flipping, and plotting her escape like a four-legged action hero. But just when she thinks she’s cracked the pattern, the truth is revealed. Bootsie Belle is pulling the strings, orchestrating chaos with precision, elegance, and just a touch of feline mischief in a game where every move is calculated and every splash is intentional!</description>
-       <pubDate>Thu, 07 Apr 2026 07:50:00 +0000</pubDate>
-       <guid>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-04-07</guid>
+      <title>📚 Chautauqua Reading Circle 📚</title>
+      <link>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-04-26</link>
+      <description>What started as a simple book club in 1897 became something far greater. Honey Bear and Bootsie Belle uncover how a group of determined Summerville women turned shared stories into a lasting legacy…building the beloved Timrod Library "one book at a time" during the town&apos;s golden age.</description>
+      <pubDate>Sun, 26 Apr 2026 08:30:00 +0000</pubDate>
+      <guid>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-04-26</guid>
     </item>
 
     <item>
-       <title>Claws & Paws Tax Pros</title>
-       <link>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-04-06</link>
-       <description>As tax season hits, things get real for the Sisters…real chaotic. Dad’s drowning in receipts, calculators are smoking, and the stress is sky-high. So naturally, Honey Bear and Bootsie Belle have a “brilliant” business idea to help out and earn their way. From a 2x4 booth built on pure confidence (and questionable carpentry), to their first very mysterious client, things escalate faster than a refund check in April. Let’s just say, when you mix paws, claws, and “creative accounting,” you might end up learning a thing or two about audits the hard way!</description>
-       <pubDate>Thu, 06 Apr 2026 07:50:00 +0000</pubDate>
-       <guid>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-04-06</guid>
+      <title>🐾 Welcome Sugar, Miss Tiffany&apos;s Arrived! 🐾</title>
+      <link>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-04-25</link>
+      <description>A velvet cushion, a royal entrance, and just a hint of attitude…Miss Tiffany has officially arrived in Summerville! While Honey Bear rolls out the sweetest Southern welcome and Bootsie Belle delivers that signature slow-burn sass, something else is lurking behind the scenes. The "Squirrel Mafia" has spotted that sparkling gem…and they&apos;re not the type to admire from a distance!</description>
+      <pubDate>Sat, 25 Apr 2026 08:30:00 +0000</pubDate>
+      <guid>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-04-25</guid>
     </item>
 
     <item>
-       <title>🐰🥚 Bunny Hop 🐰🥚</title>
-       <link>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-04-05</link>
-       <description>Easter morning in Summerville starts off sweet with fresh grass, hidden eggs, and Mom and Dad ready for a peaceful backyard hunt. But peace doesn’t last long when Honey Bear decides the best strategy is to become the bunny…and then strike with full Yorkie energy!🥚 Meanwhile, Bootsie Belle isn’t chasing anything…she’s building an empire. Perched atop a mountain of eggs like a queen of commerce, she proves that while some chase dreams, others collect the profits. It’s adorable. It’s chaotic. It’s pure Summerville Easter magic! 🐰 P.S. no bunnies were injured in the making of this episode, she just likes to chase the bunnies rather than catch them! 🐾</description>
-       <pubDate>Thu, 05 Apr 2026 07:50:00 +0000</pubDate>
-       <guid>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-01-05</guid>
+      <title>⛳ Ace Golfer (glasses required)! ⛳</title>
+      <link>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-04-24</link>
+      <description>Some folks play the front nine, while others imagine they dominated it. Meet "Ace" — today&apos;s most confident golfer with 50/50 vision and 100% belief in his game. Because in this house, the real sport isn&apos;t golf…it&apos;s the storytelling afterward!</description>
+      <pubDate>Fri, 24 Apr 2026 08:30:00 +0000</pubDate>
+      <guid>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-04-24</guid>
     </item>
 
     <item>
-       <title>🐾 Sisters of Summerville: Everyday Heroes 🐾</title>
-       <link>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-04-04</link>
-       <description>Honey Bear and Bootsie Belle discover that not all heroes wear capes, some swing golf clubs. At Wescott Golf Course, they witness something truly special as adaptive golf therapy helps lift people up, giving them the chance to stand tall and take their shot. With the help of innovative Vertacats and a whole lot of heart, every swing becomes a victory and every moment a reminder that strength comes in many forms. And in Summerville, it’s not just the golf…it’s the hope in motion! ⛳💛</description>
-       <pubDate>Thu, 04 Apr 2026 07:50:00 +0000</pubDate>
-       <guid>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-01-04</guid>
+      <title>🎉🎂 Happy Birthday Mom! 🎂🎉</title>
+      <link>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-04-23</link>
+      <description>Dad thought he was playing it safe with a simple musical card, but in Summerville "simple" has a funny way of turning into a full-blown production. One doorbell ring later and suddenly there&apos;s a tuxedo-clad whirlwind on the porch delivering a full-scale birthday spectacle. Through all the laughs and over-the-top antics, one thing remains perfectly clear…Mom still gets top billing!</description>
+      <pubDate>Thu, 23 Apr 2026 08:30:00 +0000</pubDate>
+      <guid>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-04-23</guid>
     </item>
 
     <item>
-       <title>Only Murders on the Patio!</title>
-       <link>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-04-03</link>
-       <description>When a mysterious chalk outline appears on the back patio, Honey Bear, Bootsie Belle, and Spot the Hairless Cat dive headfirst into their most dramatic case yet! Clues scatter, theories fly, and Detective Gumbo steps in to keep things official, but this trio is already podcast-ready and closing in fast. 🐱🎙️🐶 But just when the mystery reaches peak suspense, a shocking confession turns everything upside down! Was it strategy? Was it instinct? Or was it simply one wiggle too many? In Summerville, even the smallest mysteries come with the biggest personalities…and this one ends with a twist you won’t see coming!</description>
-       <pubDate>Thu, 03 Apr 2026 10:00:00 +0000</pubDate>
-       <guid>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-01-03</guid>
+      <title>🎤🎶 Girls Just Wanna Have Fun 🎶🎤</title>
+      <link>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-04-22</link>
+      <description>When a blast from the 80s hits the living room, Honey Bear and Bootsie Belle discover a Cyndi Lauper classic…and suddenly it&apos;s THEIR moment to shine! From couch-side curiosity to full-blown dance floor chaos, these two sisters turn a simple music video into a neon-soaked, fur-flying, popcorn-popping PARTY!</description>
+      <pubDate>Wed, 22 Apr 2026 08:30:00 +0000</pubDate>
+      <guid>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-04-22</guid>
     </item>
 
     <item>
-       <title>Egg Coloring!</title>
-       <link>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-04-02</link>
-       <description>Easter in Summerville means it’s time for Mom’s annual egg coloring tradition! But when Bootsie Belle brings full-blown chaos chasing Honey Bear’s creation, things go from pastel perfection to a full-on kitchen masterpiece real fast. A sweet family moment turns into a colorful explosion that somehow ends with memories made, sass delivered, and one very questionable “work of art!” Because around here, it’s not just eggs getting dyed, it’s the whole house!</description>
-       <pubDate>Thu, 02 Apr 2026 10:00:00 +0000</pubDate>
-       <guid>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-01-02</guid>
+      <title>🎸🔥 Cat Scratch Fever! 🔥🎸</title>
+      <link>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-04-21</link>
+      <description>When Mom and Dad walk in, it feels like they&apos;ve been transported straight to a wild 1977 Ted Nugent concert! Bootsie Belle is tearing up the house like a full-blown guitar solo with claws flying and furniture shredding. And instead of stopping her, Honey Bear jumps in with her hyped-up air guitar riffs, turning the chaos into a full-on rock performance!</description>
+      <pubDate>Tue, 21 Apr 2026 08:30:00 +0000</pubDate>
+      <guid>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-04-21</guid>
     </item>
 
     <item>
-       <title>April Fools!</title>
-       <link>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-04-01</link>
-       <description>Honey Bear knows the sound, that glorious rattle of treats calling her name. But today there is nothing but silence. Total betrayal! What starts as confusion quickly turns into full-blown snack panic, until Bootsie Belle casually reveals the truth. A cleverly crafted false bottom, a perfectly muted jar, and one brilliantly executed prank that outplayed Honey Bear. Because in this house, the treats aren’t missing…they’ve just been silenced on April Fools Day!</description>
-       <pubDate>Thu, 01 Apr 2026 10:00:00 +0000</pubDate>
-       <guid>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-01-01</guid>
+      <title>🐾 No Solicitation 🐾</title>
+      <link>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-04-20</link>
+      <description>While Mom and Dad are out, the front door becomes a battlefield with Honey Bear and Bootsie Belle on full alert. A smooth-talking solicitor shows up with the usual "Your neighbor just signed up" routine, but this house doesn&apos;t fall for scripted lines. Not on their watch!</description>
+      <pubDate>Mon, 20 Apr 2026 08:30:00 +0000</pubDate>
+      <guid>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-04-20</guid>
     </item>
 
     <item>
-       <title>No Spider for You</title>
-       <link>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-03-31</link>
-       <description>What happens when a simple line turns into a high-stakes operation? In today’s episode, Honey Bear runs the most intense spider toy counter Summerville has ever seen. Rules are strict, patience is limited, and one wrong move gets you sentenced to No Spider Toys! Bootsie Belle thought she could charm her way through with a little Southern flair. But around here you order fast, you don’t ask questions, and you definitely don’t browse. One slip, and it’s over!</description>
-       <pubDate>Thu, 31 Mar 2026 10:00:00 +0000</pubDate>
-       <guid>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-03-30</guid>
+      <title>🤖🐾 Technology Takeover ⚡📦</title>
+      <link>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-04-19</link>
+      <description>While Mom and Dad sneak off for breakfast, Honey Bear and Bootsie Belle unlock a dangerous new discovery: Alexa and Siri can now understand barks and meows! What starts as a little fun quickly turns into a full-blown Smart Home Takeover. Bootsie commands the lights like a tech queen, while Honey Bear goes on an unstoppable Amazon shopping spree. But when Alexa vs. Siri turns into a battle, the whole house goes dark.</description>
+      <pubDate>Sun, 19 Apr 2026 08:30:00 +0000</pubDate>
+      <guid>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-04-19</guid>
     </item>
 
     <item>
-       <title>Graduation</title>
-       <link>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-03-30</link>
-       <description>When Dad levels up graduating from a Purdue University-powered brain boost in Applied Generative Artificial Intelligence (AI), Honey Bear and Bootsie Belle do what any proper Summerville duo would do…imagine the whole thing as a grand, mysterious ceremony of genius and glory. Robes? Check. Hats? Check. Dignity? Questionable! Bootsie Belle finds herself locked into a fierce battle with the ultimate academic adversary… a rogue tassel stuck behind her head. What follows is part commencement, part chaos, and 100% Summerville sass. Because around here, graduation isn’t just earned…it’s chased!</description>
-       <pubDate>Thu, 30 Mar 2026 10:00:00 +0000</pubDate>
-       <guid>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-03-30</guid>
+      <title>🐾🍰 200th Episode Fish Cake 🍰🐾</title>
+      <link>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-04-18</link>
+      <description>The Sisters&apos; Dad and Big Brother Scott launch out from Taylor&apos;s Landing for a peaceful paddle with Heroes On The Water. Meanwhile back at camp, Honey Bear kicks off "Operation Cake" with full enthusiasm, while Bootsie Belle supervises with healthy skepticism. Here&apos;s to 200 episodes of laughs, heart, and just a little bit of chaos…and one very interpretive cake!</description>
+      <pubDate>Sat, 18 Apr 2026 08:30:00 +0000</pubDate>
+      <guid>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-04-18</guid>
     </item>
-      
+
     <item>
-       <title>The Palms</title>
-       <link>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-03-29</link>
-       <description> When Honey Bear and Bootsie Belle spot a crowd on TV waving palm branches, curiosity takes over. What starts as a simple question turns into a heartfelt journey of imagination, discovery, and meaning. As the girls picture their own joyful parade through Summerville, they realize it’s not just about the palms…it’s about welcoming something truly wonderful into the world. </description>
-       <pubDate>Thu, 29 Mar 2026 11:00:00 +0000</pubDate>
-       <guid>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-03-29</guid>
+      <title>🐾 Tied in Knots 🐾</title>
+      <link>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-04-17</link>
+      <description>When Honey Bear discovers Dad&apos;s "sacred knot book," she&apos;s convinced it&apos;s the key to unlocking the ultimate prize of a fishing trip with Dad! But while Bootsie Belle delivers pure, calculated catastic precision with a perfect Uni Knot, Honey Bear turns herself into a full-blown pretzel of chaos.</description>
+      <pubDate>Fri, 17 Apr 2026 08:30:00 +0000</pubDate>
+      <guid>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-04-17</guid>
     </item>
-   
+
     <item>
-       <title>Flowertown Festival</title>
-       <link>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-03-28</link>
-       <description>Spring has officially arrived in Summerville, and this Southern Sass Duo are diving headfirst into the sights, smells, and fun of the Flowertown Festival. From irresistible vendor booths to royal strolls down Main Street, Honey Bear is on a mission to experience everything while Bootsie Belle prefers to take it all in from a seat of dignity. With crowds, color, and a whole lot of personality, this festival adventure proves that fun comes in many forms…especially when it supports a great cause like the YMCA.</description>
-       <pubDate>Thu, 28 Mar 2026 11:00:00 +0000</pubDate>
-       <guid>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-03-28</guid>
+      <title>🦢🐾 Tangled Goose Rescue 🐾🦢</title>
+      <link>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-04-16</link>
+      <description>When Radar the Pine Forest Pointer spots trouble on the fairway, a gentleman goose named Beau is tangled tight in fishing line. Meemaw Grace makes the call to Wildlife Rescue and Honey Bear and Bootsie Belle rush in to investigate. And just like that…Beau the Gentleman Goose is free! The next morning, two grateful geese waddle right up to say thank you in their own special way.</description>
+      <pubDate>Thu, 16 Apr 2026 08:30:00 +0000</pubDate>
+      <guid>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-04-16</guid>
     </item>
-    
+
     <item>
-       <title>Paws Under the Door</title>
-       <link>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-03-27</link>
-       <description>Our curious duo goes into full investigation mode as they follow their humans from room to room like tiny furry detectives. But when a door shuts, the mission begins. Honey Bear’s and Bootsie Belle’s paws slide under…scratching, reaching, searching for the impossible. It’s both adorable and slightly terrifying…all at the same time. No door is safe! No boundary is respected! Because in this house, a closed door isn’t the end of the story…it’s the beginning of the adventure. 😳
-         Some battles are fought on distant shores, while others happen right on the kitchen counter. Today, Mom locks into full determination mode as she stares down a mysterious bubbling jar with heroic resolve. Meanwhile, Honey Bear and Bootsie Belle watch closely…trying to decide whether this is baking, science, or the beginning of a full-blown kitchen mission. From nervous whispers to golden triumph, this warm and funny episode reminds us that persistence, patience, and a little Southern sass can make anything rise!</description>
-       <pubDate>Thu, 27 Mar 2026 10:45:00 +0000</pubDate>
-       <guid>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-03-27</guid>
+      <title>🐾🐿️ Squirrel Mafia 🐿️🐾</title>
+      <link>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-04-15</link>
+      <description>When one disgruntled nut thief comes back, he doesn&apos;t come alone. Nimble Nut returns with a full-blown organized squad with suits, attitude, and twigs to snap. But Honey Bear isn&apos;t backing down. With one fearless charge and a sky full of feathered reinforcements, the backyard erupts into chaos…and Nimble Nut&apos;s family business doesn&apos;t go down as planned.</description>
+      <pubDate>Wed, 15 Apr 2026 08:30:00 +0000</pubDate>
+      <guid>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-04-15</guid>
     </item>
-    
+
     <item>
-       <title>Sourdough Starter</title>
-       <link>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-03-26</link>
-       <description>Some battles are fought on distant shores, while others happen right on the kitchen counter. Today, Mom locks into full determination mode as she stares down a mysterious bubbling jar with heroic resolve. Meanwhile, Honey Bear and Bootsie Belle watch closely…trying to decide whether this is baking, science, or the beginning of a full-blown kitchen mission. From nervous whispers to golden triumph, this warm and funny episode reminds us that persistence, patience, and a little Southern sass can make anything rise!</description>
-       <pubDate>Thu, 26 Mar 2026 10:45:00 +0000</pubDate>
-       <guid>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-03-26</guid>
+      <title>🐿️ The Great Squirrel Chase 🐿️</title>
+      <link>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-04-14</link>
+      <description>When a sneaky backyard bandit makes a move on the bird feeder, Honey Bear springs into action as the neighborhood Protector of the Seeds! Meanwhile, Bootsie Belle takes the high ground like the queen she is, overseeing the chaos with wide-eyed excitement as the skies fill with returning birds.</description>
+      <pubDate>Tue, 14 Apr 2026 08:30:00 +0000</pubDate>
+      <guid>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-04-14</guid>
     </item>
-    
+
     <item>
-       <title>OctoDad</title>
-       <link>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-03-25</link>
-       <description>Ever feel like life is pulling you in eight different directions at once all at the same time? Today, Honey Bear and Bootsie Belle put Dad through the ultimate multitasking marathon with squeaky toys flying, feather wands swooshing, food bowls filling, and chaos reaching legendary levels as Mom asks Dad to watch over the girls while she goes to the store. In the middle of the whirlwind, Dad can't help but wonder, Is this what it's like for Mom everyday? This is a hilarious, heartfelt reminder that the ones we love most can also turn us into superheroes, even when we feel completely tied up in knots!</description>
-       <pubDate>Wed, 25 Mar 2026 12:20:00 +0000</pubDate>
-       <guid>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-03-25</guid>
+      <title>🎪🐾 Big Top Pet Circus! 🐾🎪</title>
+      <link>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-04-13</link>
+      <description>Step right up, folks…because this backyard just transformed into the wildest show in town! From Bootsie Belle&apos;s death-defying trapeze elegance to Cap&apos;n Oh Yeah blasting sky-high like a furry cannonball, the action never lets up. And Gumbo casually steals the spotlight selling "Sweet Tea Cotton Candy"…now that&apos;s a real Summerville original idea!</description>
+      <pubDate>Mon, 13 Apr 2026 08:30:00 +0000</pubDate>
+      <guid>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-04-13</guid>
+    </item>
+
+    <item>
+      <title>🐾 Pampered Pup, Distraught Kitty 🐾</title>
+      <link>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-04-12</link>
+      <description>When Honey Bear gets whisked away to "All Is Well Pets" for Spa Day, her sister cat Bootsie Belle is having a full-on emotional meltdown. But Honey Bear is living her Best Life complete with scissors snipping, paws pampered, cucumbers cooling. A huge THANK YOU to Bethany for making Honey Bear look absolutely fabulous!</description>
+      <pubDate>Sun, 12 Apr 2026 08:30:00 +0000</pubDate>
+      <guid>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-04-12</guid>
+    </item>
+
+    <item>
+      <title>🐾 The Slipper Chase 🐾</title>
+      <link>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-04-11</link>
+      <description>There&apos;s a moment every slipper fears, when a Yorkie locks on target. To Honey Bear, those fluffy house shoes aren&apos;t footwear, they&apos;re prey. One second she&apos;s a fearless hunter, charging in with full "YIP-YIP-YIP!!!" energy and the next she&apos;s negotiating a full tactical retreat. Meanwhile Bootsie Belle is quietly engineering chaos behind the scenes.</description>
+      <pubDate>Sat, 11 Apr 2026 08:30:00 +0000</pubDate>
+      <guid>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-04-11</guid>
+    </item>
+
+    <item>
+      <title>🐾📺 TV Remote Wars! 📺🐾</title>
+      <link>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-04-10</link>
+      <description>Bootsie Belle settled in for a refined evening of watching the "Birds of the World" documentary. But Honey Bear couldn&apos;t care less about television, she has a pink elephant to conquer! With one innocent "CLICK" that peace turns into full-blown chaos with channels flipping, aliens invading, tempers flaring…this is WAR!</description>
+      <pubDate>Fri, 10 Apr 2026 18:30:00 +0000</pubDate>
+      <guid>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-04-10</guid>
+    </item>
+
+    <item>
+      <title>🐾🎪 Aerobatic Kitty 🎪🐾</title>
+      <link>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-04-09</link>
+      <description>When the cat wand comes out, it&apos;s Trapeze Showtime with Bootsie Belle literally doing backflips! With every flick of that faux fur boa cat toy, she transforms into the high-flying queen of the living room circus. Meanwhile, Honey Bear is front row wondering if her sister has lost her mind.</description>
+      <pubDate>Thu, 09 Apr 2026 14:00:00 +0000</pubDate>
+      <guid>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-04-09</guid>
+    </item>
+
+    <item>
+      <title>🐾🔥 The &apos;Pit Boss&apos; Mom! 🔥🐾</title>
+      <link>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-04-08</link>
+      <description>When the Kamado Joe fires up on the back porch, Honey Bear and Bootsie Belle are ready to take command…or so they think! But behind the scenes, Mom is quietly running a masterclass in BBQ. As the plates hit the table and the first bites land, the truth becomes crystal clear…Mom is the &apos;Pit Boss&apos; in this home!</description>
+      <pubDate>Wed, 08 Apr 2026 07:50:00 +0000</pubDate>
+      <guid>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-04-08</guid>
+    </item>
+
+    <item>
+      <title>Sprinkler Chess</title>
+      <link>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-04-07</link>
+      <description>What starts as a peaceful sunrise sniff session quickly turns into a full-blown tactical showdown as Honey Bear finds herself dodging a surprise sprinkler ambush. But just when she thinks she&apos;s cracked the pattern, the truth is revealed. Bootsie Belle is pulling the strings, orchestrating chaos with precision, elegance, and just a touch of feline mischief.</description>
+      <pubDate>Tue, 07 Apr 2026 07:50:00 +0000</pubDate>
+      <guid>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-04-07</guid>
+    </item>
+
+    <item>
+      <title>Claws &amp; Paws Tax Pros</title>
+      <link>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-04-06</link>
+      <description>As tax season hits, things get real for the Sisters…real chaotic. Dad&apos;s drowning in receipts, calculators are smoking, and the stress is sky-high. So naturally, Honey Bear and Bootsie Belle have a "brilliant" business idea to help out. Let&apos;s just say, when you mix paws, claws, and "creative accounting," you might end up learning a thing or two about audits the hard way!</description>
+      <pubDate>Mon, 06 Apr 2026 07:50:00 +0000</pubDate>
+      <guid>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-04-06</guid>
+    </item>
+
+    <item>
+      <title>🐰🥚 Bunny Hop 🐰🥚</title>
+      <link>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-04-05</link>
+      <description>Easter morning in Summerville starts off sweet with fresh grass, hidden eggs, and Mom and Dad ready for a peaceful backyard hunt. But peace doesn&apos;t last long when Honey Bear decides the best strategy is to become the bunny…and then strike with full Yorkie energy! Meanwhile, Bootsie Belle isn&apos;t chasing anything…she&apos;s building an empire.</description>
+      <pubDate>Sun, 05 Apr 2026 07:50:00 +0000</pubDate>
+      <guid>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-04-05</guid>
+    </item>
+
+    <item>
+      <title>🐾 Sisters of Summerville: Everyday Heroes 🐾</title>
+      <link>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-04-04</link>
+      <description>Honey Bear and Bootsie Belle discover that not all heroes wear capes, some swing golf clubs. At Wescott Golf Course, they witness something truly special as adaptive golf therapy helps lift people up, giving them the chance to stand tall and take their shot.</description>
+      <pubDate>Sat, 04 Apr 2026 07:50:00 +0000</pubDate>
+      <guid>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-04-04</guid>
+    </item>
+
+    <item>
+      <title>Only Murders on the Patio!</title>
+      <link>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-04-03</link>
+      <description>When a mysterious chalk outline appears on the back patio, Honey Bear, Bootsie Belle, and Spot the Hairless Cat dive headfirst into their most dramatic case yet! But just when the mystery reaches peak suspense, a shocking confession turns everything upside down!</description>
+      <pubDate>Fri, 03 Apr 2026 10:00:00 +0000</pubDate>
+      <guid>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-04-03</guid>
+    </item>
+
+    <item>
+      <title>Egg Coloring!</title>
+      <link>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-04-02</link>
+      <description>Easter in Summerville means it&apos;s time for Mom&apos;s annual egg coloring tradition! But when Bootsie Belle brings full-blown chaos chasing Honey Bear&apos;s creation, things go from pastel perfection to a full-on kitchen masterpiece real fast.</description>
+      <pubDate>Thu, 02 Apr 2026 10:00:00 +0000</pubDate>
+      <guid>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-04-02</guid>
+    </item>
+
+    <item>
+      <title>April Fools!</title>
+      <link>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-04-01</link>
+      <description>Honey Bear knows the sound, that glorious rattle of treats calling her name. But today there is nothing but silence. Total betrayal! Bootsie Belle casually reveals the truth — a cleverly crafted false bottom, a perfectly muted jar, and one brilliantly executed prank that outplayed Honey Bear.</description>
+      <pubDate>Wed, 01 Apr 2026 10:00:00 +0000</pubDate>
+      <guid>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-04-01</guid>
+    </item>
+
+    <item>
+      <title>No Spider for You</title>
+      <link>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-03-31</link>
+      <description>What happens when a simple line turns into a high-stakes operation? Honey Bear runs the most intense spider toy counter Summerville has ever seen. Rules are strict, patience is limited, and one wrong move gets you sentenced to No Spider Toys!</description>
+      <pubDate>Tue, 31 Mar 2026 10:00:00 +0000</pubDate>
+      <guid>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-03-31</guid>
+    </item>
+
+    <item>
+      <title>Graduation</title>
+      <link>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-03-30</link>
+      <description>When Dad levels up graduating from a Purdue University-powered brain boost in Applied Generative AI, Honey Bear and Bootsie Belle imagine the whole thing as a grand mysterious ceremony of genius and glory. Bootsie Belle finds herself in a fierce battle with the ultimate academic adversary…a rogue tassel stuck behind her head.</description>
+      <pubDate>Mon, 30 Mar 2026 10:00:00 +0000</pubDate>
+      <guid>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-03-30</guid>
+    </item>
+
+    <item>
+      <title>The Palms</title>
+      <link>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-03-29</link>
+      <description>When Honey Bear and Bootsie Belle spot a crowd on TV waving palm branches, curiosity takes over. What starts as a simple question turns into a heartfelt journey of imagination, discovery, and meaning. As the girls picture their own joyful parade through Summerville, they realize it&apos;s not just about the palms…it&apos;s about welcoming something truly wonderful into the world.</description>
+      <pubDate>Sun, 29 Mar 2026 11:00:00 +0000</pubDate>
+      <guid>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-03-29</guid>
+    </item>
+
+    <item>
+      <title>Flowertown Festival</title>
+      <link>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-03-28</link>
+      <description>Spring has officially arrived in Summerville, and this Southern Sass Duo are diving headfirst into the sights, smells, and fun of the Flowertown Festival. From irresistible vendor booths to royal strolls down Main Street, this festival adventure proves that fun comes in many forms.</description>
+      <pubDate>Sat, 28 Mar 2026 11:00:00 +0000</pubDate>
+      <guid>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-03-28</guid>
+    </item>
+
+    <item>
+      <title>Paws Under the Door</title>
+      <link>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-03-27</link>
+      <description>Our curious duo goes into full investigation mode following their humans from room to room like tiny furry detectives. But when a door shuts, the mission begins. Honey Bear&apos;s and Bootsie Belle&apos;s paws slide under…scratching, reaching, searching for the impossible. No door is safe! No boundary is respected!</description>
+      <pubDate>Fri, 27 Mar 2026 10:45:00 +0000</pubDate>
+      <guid>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-03-27</guid>
+    </item>
+
+    <item>
+      <title>Sourdough Starter</title>
+      <link>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-03-26</link>
+      <description>Mom locks into full determination mode as she stares down a mysterious bubbling jar with heroic resolve. Meanwhile, Honey Bear and Bootsie Belle watch closely…trying to decide whether this is baking, science, or the beginning of a full-blown kitchen mission. This warm and funny episode reminds us that persistence, patience, and a little Southern sass can make anything rise!</description>
+      <pubDate>Thu, 26 Mar 2026 10:45:00 +0000</pubDate>
+      <guid>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-03-26</guid>
+    </item>
+
+    <item>
+      <title>OctoDad</title>
+      <link>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-03-25</link>
+      <description>Ever feel like life is pulling you in eight different directions at once? Today, Honey Bear and Bootsie Belle put Dad through the ultimate multitasking marathon with squeaky toys flying, feather wands swooshing, food bowls filling, and chaos reaching legendary levels. A hilarious, heartfelt reminder that the ones we love most can also turn us into superheroes!</description>
+      <pubDate>Wed, 25 Mar 2026 12:20:00 +0000</pubDate>
+      <guid>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2026-03-25</guid>
     </item>
 
     <item>
@@ -390,7 +356,7 @@ And suddenly, the whole house goes dark. It turns out maybe some powers aren’t
     <item>
       <title>Fireworks</title>
       <link>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2025-12-29</link>
-      <description>For Honey Bear, fireworks aren't fun or festive. When the explosions start, fear takes over — and Bootsie Belle provides moral support in her own very Bootsie way.</description>
+      <description>For Honey Bear, fireworks aren&apos;t fun or festive. When the explosions start, fear takes over — and Bootsie Belle provides moral support in her own very Bootsie way.</description>
       <pubDate>Mon, 29 Dec 2025 00:00:00 +0000</pubDate>
       <guid>https://sisters-of-summerville.github.io/Sisters-of-Summerville/#2025-12-29</guid>
     </item>
