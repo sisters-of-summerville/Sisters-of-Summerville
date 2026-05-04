@@ -211,6 +211,78 @@
   .share-back { background: rgba(192,57,43,0.08);   border-color: rgba(192,57,43,0.3);  color: #e87c6e; }
   .share-btn:hover { filter: brightness(1.2); transform: translateY(-1px); }
 
+  /* ── BLOG ── */
+  .blog-grid { display: flex; flex-direction: column; gap: 1.5rem; }
+
+  .blog-card {
+    background: var(--bg-card); border: 1px solid var(--border);
+    border-radius: var(--radius); overflow: hidden;
+    cursor: pointer; transition: border-color 0.2s, box-shadow 0.2s;
+    box-shadow: var(--shadow); animation: fadeUp 0.35s ease both;
+  }
+  .blog-card:hover { border-color: var(--amber); box-shadow: 0 8px 36px rgba(245,166,35,0.15), var(--shadow); }
+
+  .blog-card-inner { display: grid; grid-template-columns: 200px 1fr; }
+  .blog-thumb { aspect-ratio: 16/9; overflow: hidden; background: var(--bg-mid); }
+  .blog-thumb img { width:100%; height:100%; object-fit:cover; transition: transform 0.3s; }
+  .blog-card:hover .blog-thumb img { transform: scale(1.04); }
+  .blog-thumb-youtube {
+    aspect-ratio: 16/9; background: #000;
+    display: flex; align-items: center; justify-content: center;
+    position: relative; overflow: hidden;
+  }
+  .blog-thumb-youtube img { width:100%; height:100%; object-fit:cover; opacity:0.7; }
+  .blog-thumb-youtube .play-icon {
+    position: absolute; font-size: 2.5rem;
+    filter: drop-shadow(0 2px 8px rgba(0,0,0,0.7));
+  }
+  .blog-card-body { padding: 1.2rem 1.4rem; display: flex; flex-direction: column; gap: 0.4rem; }
+  .blog-date { font-family: 'Caveat', cursive; font-size: 0.85rem; color: var(--blue); }
+  .blog-title { font-family: 'Bangers', cursive; font-size: 1.35rem; letter-spacing: 0.04em; line-height: 1.2; }
+  .blog-excerpt { font-size: 0.83rem; color: var(--text-muted); line-height: 1.55;
+    display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+  .blog-tags { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: auto; padding-top: 0.3rem; }
+  .blog-tag { font-size: 0.65rem; padding: 0.1rem 0.5rem; border-radius: 20px;
+    border: 1px solid var(--border-lit); color: var(--text-muted); font-weight: 700; }
+  .blog-read-more { font-size: 0.78rem; color: var(--amber); font-weight: 700; margin-top: 0.4rem; }
+
+  /* Blog post view */
+  #view-blog-post { display: none; }
+  .blog-post-viewer { max-width: 780px; margin: 1.5rem auto; padding: 0 1.5rem 3rem; }
+  .blog-post-header { margin-bottom: 1.5rem; }
+  .blog-post-date { font-family: 'Caveat', cursive; font-size: 1rem; color: var(--blue); margin-bottom: 0.3rem; }
+  .blog-post-title {
+    font-family: 'Bangers', cursive; font-size: clamp(1.8rem, 4vw, 2.8rem);
+    letter-spacing: 0.04em; line-height: 1.1;
+    background: linear-gradient(135deg, #ffe0a0, var(--amber));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    margin-bottom: 0.8rem;
+  }
+  .blog-post-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+
+  .blog-youtube-wrap {
+    width: 100%; aspect-ratio: 16/9;
+    border-radius: var(--radius); overflow: hidden;
+    background: #000; margin-bottom: 1.5rem;
+    border: 1px solid var(--border-lit);
+  }
+  .blog-youtube-wrap iframe { width:100%; height:100%; border:none; display:block; }
+
+  .blog-post-image { width:100%; border-radius: var(--radius); border: 1px solid var(--border-lit); margin-bottom: 1.5rem; display: block; }
+
+  .blog-post-body {
+    font-size: 0.97rem; color: var(--text-muted);
+    line-height: 1.8; white-space: pre-line;
+  }
+  .blog-post-body p { margin-bottom: 1rem; }
+
+  .blog-back-row { display: flex; justify-content: center; gap: 0.75rem; margin-top: 2rem; flex-wrap: wrap; }
+
+  @media (max-width: 560px) {
+    .blog-card-inner { grid-template-columns: 1fr; }
+    .blog-thumb, .blog-thumb-youtube { aspect-ratio: 16/9; }
+  }
+
   /* ── FOOTER ── */
   .site-footer {
     text-align: center; padding: 1.4rem 1.5rem 1.8rem;
@@ -222,7 +294,7 @@
   .footer-tags { font-size: 0.68rem; opacity: 0.4; margin-top: 0.2rem; }
 
   /* ── ABOUT / SUBSCRIBE ── */
-  #section-about, #section-subscribe, #section-characters { display: none; }
+  #section-about, #section-subscribe, #section-characters, #section-blog { display: none; }
 
   /* ── MODAL BACKDROP ── */
   .modal-backdrop {
@@ -410,6 +482,7 @@
     <button class="nav-link" onclick="showTab('characters',this)">🐾 Characters</button>
     <button class="nav-link" onclick="showTab('about',this)">🎨 About</button>
     <button class="nav-link" onclick="showTab('subscribe',this)">📬 Subscribe</button>
+    <button class="nav-link" onclick="showTab('blog',this)">📝 Blog</button>
     <a class="nav-link" href="https://facebook.com/profile.php?id=61581673621814" target="_blank">👍 Facebook</a>
   </nav>
 
@@ -520,6 +593,17 @@
           <a href="https://follow.it" class="powered-by-line">Powered by <img src="https://follow.it/images/colored-logo.svg" alt="follow.it" height="17px"/></a>
         </div>
 
+      </div>
+    </section>
+
+    <!-- BLOG TAB -->
+    <section id="section-blog">
+      <div class="section-head">
+        <h2>📝 Blog</h2>
+        <div class="accent-line"></div>
+      </div>
+      <div class="blog-grid" id="blogGrid">
+        <div class="no-results"><p>Loading posts…</p></div>
       </div>
     </section>
 
@@ -635,6 +719,51 @@
   </footer>
 
 </div><!-- /view-character -->
+
+<!-- ══════════════════════════════════════
+     BLOG POST VIEW
+═══════════════════════════════════════ -->
+<div id="view-blog-post">
+
+  <div class="single-banner">
+    <a href="index.html">
+      <img src="sos-banner.png" alt="Sisters of Summerville"
+           onerror="this.style.display='none'">
+    </a>
+  </div>
+
+  <div class="blog-post-viewer">
+    <div class="blog-post-header">
+      <div class="blog-post-date"  id="blogPostDate"></div>
+      <div class="blog-post-title" id="blogPostTitle"></div>
+      <div class="blog-post-tags"  id="blogPostTags"></div>
+    </div>
+
+    <!-- YouTube embed (shown if post has youtube field) -->
+    <div class="blog-youtube-wrap" id="blogYoutubeWrap" style="display:none;">
+      <iframe id="blogYoutubeFrame" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+
+    <!-- Image (shown if post has image field and no youtube) -->
+    <img class="blog-post-image" id="blogPostImage" src="" alt="" style="display:none;">
+
+    <div class="blog-post-body" id="blogPostBody"></div>
+
+    <div class="blog-back-row">
+      <button class="share-btn share-fb"   id="blogShareFb"  onclick="shareBlogFb()">👍 Facebook</button>
+      <button class="share-btn share-x"    id="blogShareX"   onclick="shareBlogX()">🐦 X / Twitter</button>
+      <button class="share-btn share-copy" onclick="copyBlogLink()">🔗 Copy Link</button>
+      <button class="share-btn share-back" onclick="backToBlog()">◀ All Posts</button>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div>🐾 <strong>Sisters of Summerville</strong> · Daily Comic Strip · Summerville, SC</div>
+    <div>Creative partnership between Artist + AI · <a href="https://github.com" target="_blank">GitHub</a></div>
+    <div class="footer-tags">#SistersOfSummerville #YorkieLife #TuxedoCat #PetComedy #AIChaos</div>
+  </footer>
+
+</div><!-- /view-blog-post -->
 
 <div class="toast" id="toast"></div>
 
@@ -897,15 +1026,125 @@ function backToCharacters() {
 }
 
 // ══════════════════════════════════════════
+//  BLOG
+// ══════════════════════════════════════════
+let BLOG_POSTS = [];
+let currentBlogSlug = '';
+
+async function loadBlog() {
+  if (BLOG_POSTS.length) { renderBlogGrid(); return; }
+  try {
+    const res = await fetch('blog.json');
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    BLOG_POSTS = await res.json();
+    renderBlogGrid();
+  } catch(e) {
+    document.getElementById('blogGrid').innerHTML =
+      `<div class="no-results"><p>⚠️ Could not load blog.json</p></div>`;
+  }
+}
+
+function renderBlogGrid() {
+  document.getElementById('blogGrid').innerHTML = BLOG_POSTS.map((p, i) => {
+    const thumb = p.youtube
+      ? `<div class="blog-thumb-youtube">
+           <img src="https://img.youtube.com/vi/${p.youtube}/mqdefault.jpg" alt="${p.title}">
+           <span class="play-icon">▶️</span>
+         </div>`
+      : `<div class="blog-thumb"><img src="${p.image || ''}" alt="${p.title}" loading="lazy"
+           onerror="this.src='https://placehold.co/400x225/1c1818/f5a623?text=Blog'"></div>`;
+    return `
+      <div class="blog-card" onclick="openBlogPost('${p.slug}')" style="animation-delay:${i*0.06}s">
+        <div class="blog-card-inner">
+          ${thumb}
+          <div class="blog-card-body">
+            <div class="blog-date">${p.date}</div>
+            <div class="blog-title">${p.title}</div>
+            <p class="blog-excerpt">${p.body.replace(/\n/g,' ')}</p>
+            <div class="blog-tags">${(p.tags||[]).map(t=>`<span class="blog-tag">#${t}</span>`).join('')}</div>
+            <div class="blog-read-more">Read more →</div>
+          </div>
+        </div>
+      </div>`;
+  }).join('');
+}
+
+function openBlogPost(slug) {
+  const p = BLOG_POSTS.find(p => p.slug === slug);
+  if (!p) return;
+  currentBlogSlug = slug;
+
+  document.getElementById('blogPostDate').textContent  = p.date;
+  document.getElementById('blogPostTitle').textContent = p.title;
+  document.getElementById('blogPostTags').innerHTML =
+    (p.tags||[]).map(t=>`<span class="caption-tag">#${t}</span>`).join('');
+
+  // Body — split on double newlines for paragraphs
+  document.getElementById('blogPostBody').innerHTML =
+    p.body.split(/\n\n+/).map(para => `<p>${para.replace(/\n/g,'<br>')}</p>`).join('');
+
+  // YouTube or image
+  const ytWrap  = document.getElementById('blogYoutubeWrap');
+  const imgEl   = document.getElementById('blogPostImage');
+  if (p.youtube) {
+    document.getElementById('blogYoutubeFrame').src =
+      `https://www.youtube.com/embed/${p.youtube}?rel=0`;
+    ytWrap.style.display = 'block';
+    imgEl.style.display  = 'none';
+  } else if (p.image) {
+    imgEl.src = p.image; imgEl.alt = p.title;
+    imgEl.style.display  = 'block';
+    ytWrap.style.display = 'none';
+  } else {
+    ytWrap.style.display = 'none';
+    imgEl.style.display  = 'none';
+  }
+
+  history.pushState(null, '', '#blog/' + slug);
+  document.getElementById('view-gallery').style.display   = 'none';
+  document.getElementById('view-blog-post').style.display = 'block';
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function backToBlog() {
+  // Stop YouTube playback
+  const frame = document.getElementById('blogYoutubeFrame');
+  frame.src = '';
+  document.getElementById('view-blog-post').style.display = 'none';
+  document.getElementById('view-gallery').style.display   = 'block';
+  history.pushState(null, '', '#blog');
+  showTab('blog', null);
+  document.querySelectorAll('#view-gallery .nav-link').forEach(l => {
+    l.classList.toggle('active', l.textContent.includes('Blog'));
+  });
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function shareBlogFb() {
+  const url = window.location.href.split('#')[0] + '#blog/' + currentBlogSlug;
+  window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`, '_blank');
+}
+function shareBlogX() {
+  const p   = BLOG_POSTS.find(p => p.slug === currentBlogSlug);
+  const url = window.location.href.split('#')[0] + '#blog/' + currentBlogSlug;
+  window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent((p?.title||'') + ' 🐾')}&url=${encodeURIComponent(url)}`, '_blank');
+}
+function copyBlogLink() {
+  const url = window.location.href.split('#')[0] + '#blog/' + currentBlogSlug;
+  navigator.clipboard.writeText(url).then(()=>showToast('🔗 Link copied!')).catch(()=>showToast('Could not copy'));
+}
+
+// ══════════════════════════════════════════
 //  TAB SWITCHER
 // ══════════════════════════════════════════
 function showTab(name, btn) {
-  ['comics','characters','about','subscribe'].forEach(s => {
+  ['comics','characters','about','subscribe','blog'].forEach(s => {
     document.getElementById(`section-${s}`).style.display = (s === name) ? 'block' : 'none';
   });
   document.querySelectorAll('#view-gallery .nav-link').forEach(l => l.classList.remove('active'));
   if (btn) btn.classList.add('active');
   if (name === 'characters') loadCharacters();
+  if (name === 'blog')       loadBlog();
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
@@ -925,7 +1164,9 @@ document.addEventListener('keydown', e => {
     if (e.key === 'ArrowRight') navigateComic(1);
     if (e.key === 'Escape')     backToGallery();
   }
-  if (document.getElementById('view-character').style.display === 'block') {
+  if (document.getElementById('view-blog-post').style.display === 'block') {
+    if (e.key === 'Escape') backToBlog();
+  }
     if (e.key === 'ArrowLeft')  navigateChar(-1);
     if (e.key === 'ArrowRight') navigateChar(1);
     if (e.key === 'Escape')     backToCharacters();
@@ -936,6 +1177,26 @@ document.addEventListener('keydown', e => {
 function openComicByHash() {
   const hash = decodeURIComponent(window.location.hash.replace('#',''));
   if (!hash) return;
+
+  // Blog grid: #blog
+  if (hash === 'blog') {
+    showTab('blog', null);
+    document.querySelectorAll('#view-gallery .nav-link').forEach(l => {
+      l.classList.toggle('active', l.textContent.includes('Blog'));
+    });
+    return;
+  }
+
+  // Individual blog post: #blog/post-slug
+  if (hash.startsWith('blog/')) {
+    const slug = hash.replace('blog/','');
+    const tryOpen = () => {
+      if (BLOG_POSTS.find(p => p.slug === slug)) openBlogPost(slug);
+    };
+    if (BLOG_POSTS.length) { tryOpen(); }
+    else { loadBlog().then(tryOpen); }
+    return;
+  }
 
   // Subscribe page: #subscribe
   if (hash === 'subscribe') {
