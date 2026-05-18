@@ -4,7 +4,7 @@ let filteredComics = [];
 
 async function loadComics() {
   try {
-    const res = await fetch('captions.json');
+    const res = await fetch('captions.json?v=' + Date.now());
     if (!res.ok) throw new Error('HTTP ' + res.status);
     COMICS = await res.json();
     filteredComics = [...COMICS];
@@ -121,7 +121,7 @@ let currentCharIndex = 0;
 async function loadCharacters() {
   if (CHARACTERS.length) return;
   try {
-    const res = await fetch('characters.json');
+    const res = await fetch('characters.json?v=' + Date.now());
     if (!res.ok) throw new Error('HTTP ' + res.status);
     CHARACTERS = await res.json();
     renderCharacters();
@@ -191,7 +191,7 @@ let currentBlogIndex = 0;
 async function loadBlog() {
   if (BLOG_POSTS.length) { renderBlogGrid(); return; }
   try {
-    const res = await fetch('blog.json');
+    const res = await fetch('blog.json?v=' + Date.now());
     if (!res.ok) throw new Error('HTTP ' + res.status);
     BLOG_POSTS = await res.json();
     renderBlogGrid();
@@ -316,6 +316,23 @@ function showToast(msg) {
 }
 
 // FIXED keyboard handler
+// ══════════════════════════════════════════
+//  LIGHTBOX
+// ══════════════════════════════════════════
+function openLightbox() {
+  const src = document.getElementById('singleImg').src;
+  if (!src) return;
+  const lb = document.getElementById('lightbox');
+  document.getElementById('lightboxImg').src = src;
+  lb.style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+  document.getElementById('lightbox').style.display = 'none';
+  document.body.style.overflow = '';
+}
+
 document.addEventListener('keydown', e => {
   if (document.getElementById('view-single').style.display === 'block') {
     if (e.key === 'ArrowLeft')  navigateComic(-1);
@@ -327,6 +344,7 @@ document.addEventListener('keydown', e => {
     if (e.key === 'ArrowRight') navigateChar(1);
     if (e.key === 'Escape')     backToCharacters();
   }
+  if (document.getElementById('lightbox').style.display === 'flex') { if (e.key === 'Escape') closeLightbox(); return; }
   if (document.getElementById('view-blog-post').style.display === 'block') {
     if (e.key === 'ArrowLeft')  navigateBlog(-1);
     if (e.key === 'ArrowRight') navigateBlog(1);
