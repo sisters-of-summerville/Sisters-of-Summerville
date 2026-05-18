@@ -389,7 +389,7 @@
 //  CONFIGURATION
 // ══════════════════════════════════════════════════════
 const CONFIG = {
-  password:  'SoS2026!',           // ← CHANGE THIS to your preferred password
+  password:  'P@ss4sos!',           // ← CHANGE THIS to your preferred password
   repoOwner: 'sisters-of-summerville',
   repoName:  'Sisters-of-Summerville',
   branch:    'main',
@@ -668,7 +668,9 @@ async function submitEpisode() {
     const rssFile = await getFile('rss.xml');
     if (!rssFile) throw new Error('Could not read rss.xml');
     let rssXml = decodeB64(rssFile.content);
-    const newItem = `\n    <item>\n      <title>${escapeXml(title)}</title>\n      <link>${episodeUrl}</link>\n      <description>${escapeXml(intro)}</description>\n      <enclosure url="${CONFIG.siteUrl}/${imagePath}" type="image/jpeg" length="0"/>\n      <pubDate>${formatPubDate(dateVal)}</pubDate>\n      <guid>${episodeUrl}</guid>\n    </item>`;
+    const imageUrl  = `${CONFIG.siteUrl}/${imagePath}`;
+    const imgHtml   = `<img src="${imageUrl}" alt="${escapeXml(title)}" style="max-width:100%;border-radius:8px;margin-bottom:12px;"/><br/>`;
+    const newItem = `\n    <item>\n      <title>${escapeXml(title)}</title>\n      <link>${episodeUrl}</link>\n      <description><![CDATA[${imgHtml}${intro}<br/><br/><a href="${episodeUrl}">👉 Read this episode on the Sisters of Summerville website</a>]]></description>\n      <enclosure url="${imageUrl}" type="image/jpeg" length="0"/>\n      <pubDate>${formatPubDate(dateVal)}</pubDate>\n      <guid>${episodeUrl}</guid>\n    </item>`;
     const insertAt = rssXml.includes('<item>') ? rssXml.indexOf('<item>') : rssXml.indexOf('</channel>');
     rssXml = rssXml.slice(0, insertAt) + newItem + '\n    ' + rssXml.slice(insertAt);
     await putFile('rss.xml', encodeB64(rssXml), `Add "${title}" to rss.xml`, rssFile.sha);
