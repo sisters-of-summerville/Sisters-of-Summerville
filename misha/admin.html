@@ -261,6 +261,7 @@
       <div class="progress-wrap" id="blog-progress">
         <div class="progress-step" id="blog-step-image"><span class="step-icon" id="blog-icon-image">⬆️</span><span>Uploading image…</span></div>
         <div class="progress-step" id="blog-step-json"><span class="step-icon" id="blog-icon-json">📝</span><span>Updating blog.json…</span></div>
+        <div class="progress-step" id="blog-step-rss"><span class="step-icon" id="blog-icon-rss">📡</span><span>Updating rss.xml…</span></div>
       </div>
       <div class="success-box" id="blog-success">
         <span class="big-check">✅</span><h3>Post Published!</h3>
@@ -299,6 +300,7 @@
       <div class="progress-wrap" id="char-progress">
         <div class="progress-step" id="char-step-image"><span class="step-icon" id="char-icon-image">⬆️</span><span>Uploading character image…</span></div>
         <div class="progress-step" id="char-step-json"><span class="step-icon" id="char-icon-json">🐾</span><span>Updating characters.json…</span></div>
+        <div class="progress-step" id="char-step-rss"><span class="step-icon" id="char-icon-rss">📡</span><span>Updating rss.xml…</span></div>
       </div>
       <div class="success-box" id="char-success">
         <span class="big-check">✅</span><h3>Character Added!</h3>
@@ -637,6 +639,21 @@ async function submitBlog() {
     await putFile('blog.json', encodeB64(JSON.stringify(posts, null, 2)), `Add blog post: ${title}`, blogFile.sha);
     stepDone('blog','json');
 
+    // Update RSS
+    stepActive('blog','rss');
+    const blogRssFile = await getFile('rss.xml');
+    if (blogRssFile) {
+      let rssXml = decodeB64(blogRssFile.content);
+      const postUrl  = `${CONFIG.siteUrl}/#blog/${slug}`;
+      const imgHtml  = imagePath ? `<img src="${CONFIG.siteUrl}/${imagePath}" alt="${escapeXml(title)}" style="max-width:100%;border-radius:8px;margin-bottom:12px;"/><br/>` : '';
+      const bodySnip = body.substring(0, 300) + (body.length > 300 ? '…' : '');
+      const newItem  = `\n    <item>\n      <title>${escapeXml(title)}</title>\n      <link>${postUrl}</link>\n      <description><![CDATA[${imgHtml}${bodySnip}<br/><br/><a href="${postUrl}">👉 Read full post on Sisters of Summerville</a>]]></description>\n      <pubDate>${formatPubDate(dateVal)}</pubDate>\n      <guid>${postUrl}</guid>\n    </item>`;
+      const insertAt = rssXml.includes('<item>') ? rssXml.indexOf('<item>') : rssXml.indexOf('</channel>');
+      rssXml = rssXml.slice(0, insertAt) + newItem + '\n    ' + rssXml.slice(insertAt);
+      await putFile('rss.xml', encodeB64(rssXml), `Add blog RSS entry: ${title}`, blogRssFile.sha);
+    }
+    stepDone('blog','rss');
+
     const postUrl = `${CONFIG.siteUrl}/#blog/${slug}`;
     document.getElementById('blog-success-msg').textContent = `"${title}" published for ${dateVal}.`;
     document.getElementById('blog-success-link').href = postUrl;
@@ -688,6 +705,22 @@ async function submitCharacter() {
     await putFile('characters.json', encodeB64(JSON.stringify(chars, null, 2)), `Add character: ${name}`, charFile.sha);
     stepDone('char','json');
 
+    // Update RSS
+    stepActive('char','rss');
+    const charRssFile = await getFile('rss.xml');
+    if (charRssFile) {
+      let rssXml = decodeB64(charRssFile.content);
+      const charUrl = `${CONFIG.siteUrl}/#character/${slug}`;
+      const imgHtml = `<img src="${CONFIG.siteUrl}/${imagePath}" alt="${escapeXml(name)}" style="max-width:100%;border-radius:8px;margin-bottom:12px;"/><br/>`;
+      const descSnip = desc.substring(0, 300) + (desc.length > 300 ? '…' : '');
+      const today = new Date();
+      const newItem = `\n    <item>\n      <title>New Character: ${escapeXml(name)}</title>\n      <link>${charUrl}</link>\n      <description><![CDATA[${imgHtml}Meet ${escapeXml(name)}! ${descSnip}<br/><br/><a href="${charUrl}">👉 Meet ${escapeXml(name)} on the Sisters of Summerville website</a>]]></description>\n      <pubDate>${formatPubDate(today.toISOString().slice(0,10))}</pubDate>\n      <guid>${charUrl}</guid>\n    </item>`;
+      const insertAt = rssXml.includes('<item>') ? rssXml.indexOf('<item>') : rssXml.indexOf('</channel>');
+      rssXml = rssXml.slice(0, insertAt) + newItem + '\n    ' + rssXml.slice(insertAt);
+      await putFile('rss.xml', encodeB64(rssXml), `Add character RSS entry: ${name}`, charRssFile.sha);
+    }
+    stepDone('char','rss');
+
     document.getElementById('char-success-msg').textContent = `${name} has been added to the Characters page!`;
     document.getElementById('char-success').style.display = 'block';
     document.getElementById('char-submit').style.display  = 'none';
@@ -728,7 +761,7 @@ function resetForm(prefix) {
     document.getElementById('blogPreviewWrap').style.display = 'none';
     document.getElementById('youtubePreview').style.display = 'none';
     document.getElementById('blog-step-image').style.display = '';
-    ['image','json'].forEach(id => { const s = document.getElementById(`blog-step-${id}`); s.className='progress-step'; document.getElementById(`blog-icon-${id}`).textContent = id==='image'?'⬆️':'📝'; });
+    ['image','json','rss'].forEach(id => { const s = document.getElementById(`blog-step-${id}`); if(s){ s.className='progress-step'; s.style.display=''; } const ic = document.getElementById(`blog-icon-${id}`); if(ic) ic.textContent = id==='image'?'⬆️':id==='json'?'📝':'📡'; });
     imageState.blog = { file: null, b64: null };
   } else if (prefix === 'char') {
     ['charName','charDesc','charTags'].forEach(id => document.getElementById(id).value = '');
@@ -738,7 +771,7 @@ function resetForm(prefix) {
     document.getElementById('char-submit').disabled        = false;
     document.getElementById('charImageInput').value        = '';
     document.getElementById('charPreviewWrap').style.display = 'none';
-    ['image','json'].forEach(id => { const s = document.getElementById(`char-step-${id}`); s.className='progress-step'; document.getElementById(`char-icon-${id}`).textContent = id==='image'?'⬆️':'🐾'; });
+    ['image','json','rss'].forEach(id => { const s = document.getElementById(`char-step-${id}`); if(s){ s.className='progress-step'; } const ic = document.getElementById(`char-icon-${id}`); if(ic) ic.textContent = id==='image'?'⬆️':id==='json'?'🐾':'📡'; });
     imageState.char = { file: null, b64: null };
   }
   isSubmitting = false;
