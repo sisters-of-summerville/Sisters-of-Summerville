@@ -267,5 +267,16 @@
       "Blood Sucker"
     ],
     "description": "Small but mighty. Big personality. Always buzzing around somewhere!\nSPECIES: Aedes Sillyus\nPERSONALITY: Curious, upbeat, and a little bitey.\nLOVES: Adventure, shiny things, sweet nectar\nDISLIKES: Bug spray, swatting, rainy days"
+  },
+  {
+    "name": "Dr. Vacuum",
+    "image": "characters/dr-vacuum.png",
+    "tags": [
+      "Dr Vacuum",
+      "Hairball Horde",
+      "Villain",
+      "Sinister"
+    ],
+    "description": "A sinister villain, Dr. Vacuum and his Hairball Horde suck up all the treats and toys."
   }
 ]
