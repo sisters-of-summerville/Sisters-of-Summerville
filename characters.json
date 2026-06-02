@@ -278,5 +278,15 @@
       "Sinister"
     ],
     "description": "A sinister villain, Dr. Vacuum and his Hairball Horde suck up all the treats and toys."
+  },
+  {
+    "name": "Mom Pixie Curl",
+    "image": "characters/mom-pixie-curl.png",
+    "tags": [
+      "Mom",
+      "Pixie Curl",
+      "Haircut"
+    ],
+    "description": "Mom get a new hairdo with Pixie Curls and there are mixed feelings about it!  But even Bootsie Belle warms up to the new style and her Mom over time!"
   }
 ]
