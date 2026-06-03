@@ -288,5 +288,16 @@
       "Haircut"
     ],
     "description": "Mom get a new hairdo with Pixie Curls and there are mixed feelings about it!  But even Bootsie Belle warms up to the new style and her Mom over time!"
+  },
+  {
+    "name": "General Frog",
+    "image": "characters/general-frog.png",
+    "tags": [
+      "Garage",
+      "Tree Frog",
+      "General Frog",
+      "Godzilla"
+    ],
+    "description": "An American Green Tree Frog (Hyla cinerea), this General leads from the pond! Disciplined, brave, strategic, and fair, he leads with honor and expects the best from others.\nLIKES:\n• Dewy mornings\n• Order and duty\n• Protecting the pond\n• A job well done\nDISLIKES:\n• Careless campers\n• Pollution\n• Loud leaf blowers\n• Unnecessary chaos\n\nGeneral Frog is the respected leader of the Backyard Battalion, keeping Summerville safe from everyday threats big and small. Wise in counsel and swift in action, he believes in teamwork, preparation, and doing what's right — no matter your size.\n\n“Because a calm pond makes for a strong Summerville!”"
   }
 ]
