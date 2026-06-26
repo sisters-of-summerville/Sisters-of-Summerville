@@ -2,6 +2,16 @@ let COMICS = [];
 let currentIndex = 0;
 let filteredComics = [];
 
+// Extract reliable YYYY-MM-DD date from a comic entry.
+// Uses the image path as source of truth since c.date may be in
+// various text formats (e.g. "January 29, 2026") in older entries.
+function getIsoDate(comic) {
+  const match = (comic.image || '').match(/(\d{4}-\d{2}-\d{2})/);
+  if (match) return match[1];
+  if (/^\d{4}-\d{2}-\d{2}$/.test(comic.date)) return comic.date;
+  return comic.date;
+}
+
 async function loadComics() {
   try {
     const res = await fetch('captions.json?v=' + Date.now());
@@ -90,7 +100,7 @@ function renderSingle() {
   document.getElementById('singleTags').innerHTML = (c.tags||[]).map(t => `<span class="caption-tag">#${t}</span>`).join('');
   document.getElementById('arrowNewer').classList.toggle('disabled', currentIndex <= 0);
   document.getElementById('arrowOlder').classList.toggle('disabled', currentIndex >= COMICS.length - 1);
-  const pageUrl = window.location.href.split('#')[0] + '#' + encodeURIComponent(c.date);
+  const pageUrl = window.location.href.split('#')[0] + '#' + getIsoDate(c);
   const shareText = `Sisters of Summerville: "${c.title}" #SistersOfSummerville`;
   document.getElementById('shareFb').href = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(pageUrl)}&quote=${encodeURIComponent(shareText)}`;
   document.getElementById('shareX').href  = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(pageUrl)}`;
@@ -111,7 +121,7 @@ function backToGallery() {
 
 function copyLink() {
   const c = COMICS[currentIndex];
-  const url = window.location.href.split('#')[0] + '#' + encodeURIComponent(c.date);
+  const url = window.location.href.split('#')[0] + '#' + getIsoDate(COMICS[currentIndex]);
   navigator.clipboard.writeText(url).then(()=>showToast('Link copied!')).catch(()=>showToast('Could not copy'));
 }
 
@@ -388,7 +398,7 @@ function openComicByHash() {
     return;
   }
   if (hash.match(/\d{4}-\d{2}-\d{2}/)) {
-    const idx = COMICS.findIndex(c => c.date === hash || c.image.includes(hash));
+    const idx = COMICS.findIndex(c => getIsoDate(c) === hash || c.image.includes(hash));
     if (idx !== -1) openComic(idx);
   }
 }
